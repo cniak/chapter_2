@@ -45,7 +45,7 @@ Wymagania niefunkcjonalne:
 użyteczność:
 - błędy zapisywane będą do pliku (logi)
 - użytkownik będzie powiadamiany o błędach
-- użytkownik będzie powiadamiany o przewidywanych błędach, takich jak włączony caps-lock podczas wpisywania loginu/hasła
+- użytkownik będzie powiadamiany o przewidywanych błędach, takich jak włączony caps-lock podczas wpisywania hasła do klasy
 
 niezawodność:
 - system powinien umożliwiać bezpieczne zapisanie wprowadzonych danych
