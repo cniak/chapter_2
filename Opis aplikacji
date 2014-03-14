@@ -58,12 +58,12 @@ niezawodność:
 implementacyjne:
 - aplikacja jest pisana w środowisku .NET (jeżyk C#), przy wykorzystaniu niektórych bibliotek dostępnych od Framework 4.0
 - aplikacja działać będzie jedynie w systemie Windows.
-- baza danych SQLite znajduje się na dysku lokalnym
+- baza danych SQLite znajduje się na dysku lokalnym użytkownika
 
 Zewnętrzne:
 - każdy użytkownik, który posiada konto w systemie nie powinien nikomu udostępniać hasła.
 - nauczyciele dostana instrukcje obsługi programu
-- osoba wyznaczona przez placówkę zobowiązana jest do przeprowadzenia szkolenia dla nauczycieli oraz sekretariatu w celu opanowania funkcji systemu
+- osoba wyznaczona przez placówkę zobowiązana jest do przeprowadzenia szkolenia dla nauczycieli w celu opanowania funkcji systemu
 
 Wykorzystane w systemie ustawy:
 - Ustawa z dnia 29 sierpnia 1997 r. o ochronie danych osobowych.
