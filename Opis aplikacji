@@ -4,7 +4,11 @@ Przedmiot:            Inżynieria oprogramowania
 Rok akademicki:       2013/2014
 
 Opis aplikacji:
-Aplikacja jest przeznaczona dla nauczycieli. Program będzie potrafił graficznie wyświetlać informacje (wykresy) w sposób przejrzysty i zrozumiały dla użytkowników aplikacji. Umożliwia również wprowadzanie danych o uczniach poszczególnych klas takich jak oceny i frekwencja. Będzie zapewniać kontrolę nad klasami oraz pozwoli na kontrolowanie postępów uczniów. W początkowej wersji aplikacji program będzie przeznaczony dla pracowników zarządzających klasami 1-3 szkoły podstawowej.
+Aplikacja jest przeznaczona dla nauczycieli. Program będzie potrafił graficznie wyświetlać informacje (wykresy) 
+w sposób przejrzysty i zrozumiały dla użytkowników aplikacji. Umożliwia również wprowadzanie danych o uczniach 
+poszczególnych klas takich jak oceny i frekwencja. Będzie zapewniać kontrolę nad klasami oraz pozwoli na kontrolowanie 
+postępów uczniów. W początkowej wersji aplikacji program będzie przeznaczony dla pracowników zarządzających klasami 1-3 
+szkoły podstawowej.
 
 Role:
 Nauczyciel
