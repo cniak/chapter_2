@@ -1,0 +1,78 @@
+Grupa:                Marek Woźniak, Tomasz Iwańczuk
+Grupa laboratoryjna:  220B
+Przedmiot:            Inżynieria oprogramowania
+Rok akademicki:       2013/2014
+
+Opis aplikacji:
+Aplikacja jest przeznaczona dla szkó. Program bdzie potrafi w sposób graficzny ( wykresy ) wyswietlać
+informacje w przeyrzysty i zrozumiay sposób dla użytkowników aplikacji. Bedzie zapewniac dwustronna komunikacje
+pracownikow szkoly- z opiekunami dzieki opcji wiadomosci i powiadomien. System ten skierowany jest do
+dyrektorow, sekretarek, nauczycieli, opiekunow oraz uczniow. W poczatkowej wersji aplikacji program bedzie przeznaczony
+dla pracownikow zarzadzajacymi klasami 1-3 szkoly podstawowej.
+
+Wymagania funkcjonalne:
+
+Uczen oraz jego opiekun beda mieli mozliwosc:
+1.      przegladania ocen
+2.      przegladania frekwencji w danym miesiacu
+3.      przegladania uwag
+4.      odbierania wiadomosci od wychowawcy
+5.      wyswietlania wykresu ocen i porywnania z innymi przedmiotami
+6.      wyswietlania wykresu frekwencji i porownania z innymi miesiacami
+7.      potwierdzenie obecnosci na spotkaniu klasowym (jako opiekun)
+
+nauczyciel bedzie miec mozliwosc (jako wychowawca klasy):
+8.      dodawania ocen uczniowi
+9.      wysylania wiadomosci do pojedynczego ucznia
+10.     wysylania wiadomosci do klasy
+11.     wyswietlania wykresu pojedynczego ucznia i analizowanie jego postepow
+12.     wyswietlania frekwencji uczniow klasy i porownania miedzy uczniami.
+13.     wyswietlania wykresu przedstawiajacego srednia ocen z przedmiotow pojedynczego ucznia lub calej klasy.
+14.     wyslania informaci o zebraniu klasowym do opiekuna lub opiekunow wszystkich uczniow w klasie
+15.     odbierania wiadomosci od sekretarki
+16.     edycji ocen ucznia
+
+sekretarka bedzie miala mozliwosc:
+17.     wysylania wiadomosci do nauczycieli
+18.     wyswietlania statystyk (wykresu) pojedynczej klasy, nt. frekwencji, sredniej ocen
+19.     wyswietlania statystyk (wykresu) calego roku (np. klas drugich), nt. frekwencji, sredniej ocen klasy, sredniej ocen klasy z wybranego przedmiotu.
+20.     wyswietlania statystyk (wykresu) sredniej ocen calego roku i porownania z innymi rocznikami
+21.     zapisu statystyk do pliku PDF w formie tekstowej
+22.     dodania klasy
+23.     przepisania wychowawcy
+24.     zmiany wychowawcy
+25.     zapisu ucznia do innej klasy
+26.     zmiany hasla ucznia, nauczyciela
+27.     przepisania ucznia do innej klasy
+28.     usuniecia ucznia z listy
+
+Wymagania niefunkcjonalne:
+  uzytecznosc:
+Dodawanie uzytkownika nie powinno przekraczac 3 minut, jezeli serwer bedzie w chuwili rejestracji przeciazony - zostanie wyswietlony
+odpowiedni komunikat oraz zapis bledu do pliku (do ktorego ma dostep administrator aplikacji, w celu analizy bledow).
+
+  niezawodnosc:
+W systemie moga wystepowac bledy przy filtrowaniu zapytan do bazy danych. Zwrocenie prawidlowych wynikow wyszukiwania nie powinno
+byc mniejsze niz 90%.
+
+  organizacyjne:
+    srodowiskowe:
+- system przeznaczony jest dla pracownikow placowki edukacyjnej, uczniow klas 1-3 oraz ich opiekunow. Docelowa grupa wiekowa to 7-60 lat.
+- system jest napisany w jezyku polkim
+- system dziala calodobowo
+- uzytkownik systemu musi posiadac polaczenie internetowe (w trakcie uruchamiania aplikacji, jak i w trakcie korzystania z niej).
+
+    implementacyjne:
+- aplikacja jest pisana w srodowisku .NET (jezyk C#), przy wykorzystaniu niektorych bibliotek dostepnych od Framework 4.0
+- aplikacja dzialac bedzie jedynie w systemie Windows.
+- baza danych MySQL znajduje sie na stronie internetowej.
+
+Zewnetrzne:
+Kazdy uzytkownik, ktory posiada konto w systemie nie powinien nikomu udostepniac hasla. W przypadku zaistnialej sytuacji powinien to zglosic sekretarce.
+Uczniowie oraz ich opiekunowie dostana instrukcje obslugi programu. Wlasciciel aplikacji lub wyznaczona przez niego osoba zobowiazana
+jest do przeprowadzenia szkolenia dla nauczycieli oraz sekretariatu w celu opanowania funkcji systemu.
+
+Wykorzystane w systemie ustawy:
+Ustawa z dnia 29 sierpnia 1997 r. o ochronie danych osobowych.
+
+
