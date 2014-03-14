@@ -1,0 +1,24 @@
+
+
+
+
+1Jako nauczyciel mam mozliwosc dodania klasy
+2Jako nauczyciel mam mozliwosc dodania ucznia do klasy
+3Jako nauczyciel mam mozliwosc dodania oceny uczniowi
+4Jako nauczyciel mam mozliwosc edycji oceny ucznia
+6Jako nauczyciel mam mozliwosc wyslania wiadomosci mail do ucznia
+7Jako nauczyciel mam mozliwosc wyslania wiadomosci mail do wszystkich uczniow klasy
+8Jako nauczyciel mam mozliwosc tworzenia pliku PDF
+9Jako nauczyciel mam mozliwosc tworzenia hasla na plik PDF
+10Jako nauczyciel mam mozliwosc zapisu pliku PDF na dysku
+11Jako nauczyciel mam mozliwosc wyslania pliku PDF do ucznia (mail)
+12Jako nauczyciel mam mozliwosc otworzenia pliku PDF, ktory wczesniej byl edytowany
+13Jako nauczyciel mam mozliwosc generowania wykresow ocen ucznia
+14Jako nauczyciel mam mozliwosc generowania wykresow ocen ucznia z wybranego przedmiotu
+15Jako nauczyciel mam mozliwosc generowania wykresow ocen klasy
+16Jako nauczyciel mam mozliwosc generowania wykresow ocen klasy z wybranego przedmiotu
+17Jako nauczyciel mam mozliwosc generowania wykresow frekwencji ucznia
+18Jako nauczyciel mam mozliwosc generowania wykresow frekwencji klasy
+19Jako nauczyciel mam mozliwosc przegladania ocen ucznia
+
+
