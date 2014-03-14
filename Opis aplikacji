@@ -13,38 +13,41 @@ dla pracownikow zarzadzajacymi klasami 1-3 szkoly podstawowej.
 Wymagania funkcjonalne:
 
 Uczen oraz jego opiekun beda mieli mozliwosc:
-1.      przegladania ocen
-2.      przegladania frekwencji w danym miesiacu
-3.      przegladania uwag
-4.      odbierania wiadomosci od wychowawcy
-5.      wyswietlania wykresu ocen i porywnania z innymi przedmiotami
-6.      wyswietlania wykresu frekwencji i porownania z innymi miesiacami
-7.      potwierdzenie obecnosci na spotkaniu klasowym (jako opiekun)
+1.      Jako uczen mam mozliwosc przegladania ocen
+2.      Jako uczen mam mozliwosc przegladania frekwencji w danym miesiacu
+3.      Jako uczen mam mozliwosc przegladania uwag
+4.      Jako uczen mam mozliwosc odbierania wiadomosci od wychowawcy
+5.      Jako uczen mam mozliwosc wyswietlania wykresu ocen i porywnania z innymi przedmiotami
+6.      Jako uczen mam mozliwosc wyswietlania wykresu frekwencji i porownania z innymi miesiacami
+7.      Jako uczen mam mozliwosc potwierdzenia obecnosci na spotkaniu klasowym (jako opiekun)
 
 nauczyciel bedzie miec mozliwosc (jako wychowawca klasy):
-8.      dodawania ocen uczniowi
-9.      wysylania wiadomosci do pojedynczego ucznia
-10.     wysylania wiadomosci do klasy
-11.     wyswietlania wykresu pojedynczego ucznia i analizowanie jego postepow
-12.     wyswietlania frekwencji uczniow klasy i porownania miedzy uczniami.
-13.     wyswietlania wykresu przedstawiajacego srednia ocen z przedmiotow pojedynczego ucznia lub calej klasy.
-14.     wyslania informaci o zebraniu klasowym do opiekuna lub opiekunow wszystkich uczniow w klasie
-15.     odbierania wiadomosci od sekretarki
-16.     edycji ocen ucznia
+8.      Jako nauczyciel mam mozliwosc dodawania ocen uczniowi [ x ]
+9.      Jako nauczyciel mam mozliwosc wysylania wiadomosci do pojedynczego ucznia (mail) [ x ]
+10.     Jako nauczyciel mam mozliwosc wysylania wiadomosci do klasy (mail) [ x ] 
+10a.    Jako nauczyciel mam mozliwosc zapisu danych do pliku [ x ]
+10b.    Jako nauczyciel mam mozliwosc odczytu danych z pliku [ x ]
+11.     Jako nauczyciel mam mozliwosc wyswietlania wykresu pojedynczego ucznia i analizowanie jego postepow [ x ]
+12.     Jako nauczyciel mam mozliwosc wyswietlania frekwencji uczniow klasy i porownania miedzy uczniami.
+13.     Jako nauczyciel mam mozliwosc wyswietlania wykresu przedstawiajacego srednia ocen z przedmiotow pojedynczego ucznia lub calej klasy.
+14.     Jako nauczyciel mam mozliwosc wyslania informaci o zebraniu klasowym do opiekuna lub opiekunow wszystkich uczniow w klasie
+15.     Jako nauczyciel mam mozliwosc odbierania wiadomosci od sekretarki
+16.     Jako nauczyciel mam mozliwosc edycji ocen ucznia
 
 sekretarka bedzie miala mozliwosc:
-17.     wysylania wiadomosci do nauczycieli
-18.     wyswietlania statystyk (wykresu) pojedynczej klasy, nt. frekwencji, sredniej ocen
-19.     wyswietlania statystyk (wykresu) calego roku (np. klas drugich), nt. frekwencji, sredniej ocen klasy, sredniej ocen klasy z wybranego przedmiotu.
-20.     wyswietlania statystyk (wykresu) sredniej ocen calego roku i porownania z innymi rocznikami
-21.     zapisu statystyk do pliku PDF w formie tekstowej
-22.     dodania klasy
-23.     przepisania wychowawcy
-24.     zmiany wychowawcy
-25.     zapisu ucznia do innej klasy
-26.     zmiany hasla ucznia, nauczyciela
-27.     przepisania ucznia do innej klasy
-28.     usuniecia ucznia z listy
+17.     Jako sekretarka mam mozliwosc wysylania wiadomosci do nauczycieli (mail) [ x ]
+18.     Jako sekretarka mam mozliwosc wyswietlania statystyk (wykresu) pojedynczej klasy, nt. frekwencji, sredniej ocen [ x ]
+19.     Jako sekretarka mam mozliwosc wyswietlania statystyk (wykresu) calego roku (np. klas drugich), nt. frekwencji, sredniej ocen klasy, sredniej ocen klasy z wybranego przedmiotu. [ x ]
+20.     Jako sekretarka mam mozliwosc wyswietlania statystyk (wykresu) sredniej ocen calego roku i porownania z innymi rocznikami [ x ]
+21.     Jako sekretarka mam mozliwosc zapisu statystyk do pliku PDF w formie tekstowej [ x ]
+22.     Jako sekretarka mam mozliwosc dodania klasy [ x ]
+23.     Jako sekretarka mam mozliwosc przepisania wychowawcy [ x ]
+24.     Jako sekretarka mam mozliwosc zmiany wychowawcy [ x ]
+25.     Jako sekretarka mam mozliwosc zapisu ucznia do innej klasy [ x ]
+26.     Jako sekretarka mam mozliwosc zmiany hasla ucznia, nauczyciela  [ x ] 
+27.     Jako sekretarka mam mozliwosc przepisania ucznia do innej klasy [ x ]
+28.     Jako sekretarka mam mozliwosc dodania ucznia do klasy [ x ]
+29.     Jako sekretarka mam mozliwosc dodania nauczyciela do klasy [ x ] 
 
 Wymagania niefunkcjonalne:
   uzytecznosc:
