@@ -1,14 +1,13 @@
 
 
-
-1Jako nauczyciel mam mozliwosc dodania klasy [x]
-2Jako nauczyciel mam mozliwosc dodania ucznia do klasy [x]
-3Jako nauczyciel mam mozliwosc dodania oceny uczniowi [x]
-4Jako nauczyciel mam mozliwosc edycji oceny ucznia [x]
-6Jako nauczyciel mam mozliwosc wyslania wiadomosci mail do ucznia [x]
-7Jako nauczyciel mam mozliwosc wyslania wiadomosci mail do wszystkich uczniow klasy [x]
+1Jako nauczyciel mam mozliwosc dodania klasy [x] [T]
+2Jako nauczyciel mam mozliwosc dodania ucznia do klasy [x] [T]
+3Jako nauczyciel mam mozliwosc dodania oceny uczniowi [x] [M]
+4Jako nauczyciel mam mozliwosc edycji oceny ucznia [x] 
+6Jako nauczyciel mam mozliwosc wyslania wiadomosci mail do ucznia [x] [M]
+7Jako nauczyciel mam mozliwosc wyslania wiadomosci mail do wszystkich uczniow klasy [x] [M]
 8Jako nauczyciel mam mozliwosc tworzenia pliku PDF[x]
-9Jako nauczyciel mam mozliwosc dodawania uwag do ucznia [x]
+9Jako nauczyciel mam mozliwosc dodawania uwag do ucznia [x] [T]
 10Jako nauczyciel mam mozliwosc zapisu pliku PDF na dysku [x]
 11Jako nauczyciel mam mozliwosc wyslania pliku PDF do ucznia (mail) [x]
 12Jako nauczyciel mam mozliwosc przegladania uwag ucznia [x]
