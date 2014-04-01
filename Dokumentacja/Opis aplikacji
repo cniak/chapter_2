@@ -1,0 +1,70 @@
+Grupa:                Marek Woźniak, Tomasz Iwańczuk
+Grupa laboratoryjna:  220B
+Przedmiot:            Inżynieria oprogramowania
+Rok akademicki:       2013/2014
+
+Opis aplikacji:
+Aplikacja jest przeznaczona dla nauczycieli. Program będzie potrafił graficznie wyświetlać informacje (wykresy) 
+w sposób przejrzysty i zrozumiały dla użytkowników aplikacji. Umożliwia również wprowadzanie danych o uczniach 
+poszczególnych klas takich jak oceny i frekwencja. Będzie zapewniać kontrolę nad klasami oraz pozwoli na kontrolowanie 
+postępów uczniów. W początkowej wersji aplikacji program będzie przeznaczony dla pracowników zarządzających klasami 1-3 
+szkoły podstawowej.
+
+Role:
+Nauczyciel
+
+Wymagania funkcjonalne:
+
+1.	Jako nauczyciel mam możliwość dodania klasy
+2.	Jako nauczyciel mam możliwość edycji danych klasy
+3.	Jako nauczyciel mam możliwość usunięcia klasy
+4.	Jako nauczyciel mam możliwość dodania ucznia do klasy
+5.	Jako nauczyciel mam możliwość edycji danych ucznia
+6.	Jako nauczyciel mam możliwość usunięcia ucznia z klasy
+7.	Jako nauczyciel mam możliwość dodania oceny uczniowi
+8.	Jako nauczyciel mam możliwość edycji oceny ucznia
+9.	Jako nauczyciel mam możliwość przeglądania ocen ucznia
+10.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do ucznia
+11.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do wszystkich uczniów klasy 
+12.	Jako nauczyciel mam możliwość tworzenia pliku PDF
+13.	Jako nauczyciel mam możliwość zapisu pliku PDF na dysku 
+14.	Jako nauczyciel mam możliwość wysłania pliku PDF do ucznia (mail) 
+15.	Jako nauczyciel mam możliwość dodawania uwag dotyczących ucznia
+16.	Jako nauczyciel mam możliwość przeglądania uwag ucznia 
+17.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia 
+18.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia z wybranego przedmiotu
+19.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy
+20.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy z wybranego przedmiotu
+21.	Jako nauczyciel mam możliwość generowania wykresów frekwencji ucznia
+22.	Jako nauczyciel mam możliwość generowania wykresów frekwencji klasy
+23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu 
+24.	Jako nauczyciel mam możliwość dodania nieobecności w wybranym dniu
+
+Wymagania niefunkcjonalne:
+
+użyteczność:
+- błędy zapisywane będą do pliku (logi)
+- użytkownik będzie powiadamiany o błędach
+- użytkownik będzie powiadamiany o przewidywanych błędach, takich jak włączony caps-lock podczas wpisywania hasła do klasy
+
+niezawodność:
+- system powinien umożliwiać bezpieczne zapisanie wprowadzonych danych
+
+środowiskowe:
+- system przeznaczony jest dla nauczycieli placówki edukacyjnej klas 1-3
+- system jest napisany w języku polskim
+- dostęp do systemu powinien być całodobowy
+
+implementacyjne:
+- aplikacja jest pisana w środowisku .NET (jeżyk C#), przy wykorzystaniu niektórych bibliotek dostępnych od Framework 4.0
+- aplikacja działać będzie jedynie w systemie Windows.
+- baza danych SQLite znajduje się na dysku lokalnym użytkownika
+
+Zewnętrzne:
+- każdy użytkownik, który posiada konto w systemie nie powinien nikomu udostępniać hasła.
+- nauczyciele dostana instrukcje obsługi programu
+- osoba wyznaczona przez placówkę zobowiązana jest do przeprowadzenia szkolenia dla nauczycieli w celu opanowania funkcji systemu
+
+Wykorzystane w systemie ustawy:
+- Ustawa z dnia 29 sierpnia 1997 r. o ochronie danych osobowych.
+
