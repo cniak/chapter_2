@@ -14,6 +14,7 @@ namespace Dziennik_nauczyciela
         [STAThread]
         static void Main()
         {
+            //dodalem komentarz - do nauki sourceTree
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new fStart());
