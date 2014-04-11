@@ -16,7 +16,7 @@ namespace Dziennik_nauczyciela
     public partial class fStart : Form
     {
         cSQLite SQLite = null;
-
+//edycja pliku 2
         DataSet listaNauczycieli = null;
         DataTable tabelaListyNauczycieli = null;
 

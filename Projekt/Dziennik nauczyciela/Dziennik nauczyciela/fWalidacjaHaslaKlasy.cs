@@ -17,6 +17,7 @@ namespace Dziennik_nauczyciela
 
         public fWalidacjaHaslaKlasy(cDaneDoWatku daneDoWatku)
         {
+			//edycja pliku 1
             this.daneDoWatku = daneDoWatku;
             this.haslo = daneDoWatku.haslo;
             InitializeComponent();
