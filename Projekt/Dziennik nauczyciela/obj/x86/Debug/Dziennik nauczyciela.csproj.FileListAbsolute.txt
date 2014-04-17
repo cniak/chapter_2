@@ -1,0 +1,34 @@
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\x86\Debug\Dziennik nauczyciela.exe.config
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\x86\Debug\Dziennik nauczyciela.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\x86\Debug\Dziennik nauczyciela.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\x86\Debug\ImapX.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\x86\Debug\LinqBridge.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\x86\Debug\ImapX.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.csprojResolveAssemblyReference.cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fEdycjaNauczyciela.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fListaKlas.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fStart.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fWalidacjaHaslaKlasy.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.Properties.Resources.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.csproj.GenerateResource.Cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.csprojResolveAssemblyReference.cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fEdycjaNauczyciela.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fListaKlas.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fStart.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.fWalidacjaHaslaKlasy.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik_nauczyciela.Properties.Resources.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.csproj.GenerateResource.Cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Debug\Dziennik nauczyciela.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\Dziennik nauczyciela.exe.config
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\Dziennik nauczyciela.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\Dziennik nauczyciela.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\ImapX.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\System.Data.SQLite.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\System.Data.SQLite.Linq.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\LinqBridge.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\ImapX.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\System.Data.SQLite.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\bin\x86\Debug\System.Data.SQLite.Linq.pdb
