@@ -20,6 +20,7 @@ namespace Dziennik_nauczyciela
         DataSet listaNauczycieli = null;
         DataTable tabelaListyNauczycieli = null;
         int zaznaczonyUzytkownikDoUsunieciaID = int.MaxValue;
+        int indexZaznaczonegoWiersza = -1;
         public fStart()
         {
             InitializeComponent();
@@ -32,7 +33,6 @@ namespace Dziennik_nauczyciela
             this.dgv_listaUzytkownikow.AllowUserToAddRows = false;
             
         }
-
         private void fStart_Load(object sender, EventArgs e)
         {
             SQLite = new cSQLite();
@@ -40,7 +40,6 @@ namespace Dziennik_nauczyciela
             try
             {
                 wczytajListeUzytkownikow();
-                //wczytajListeUzytkownikow();
             }
             catch (Exception ex)
             {
@@ -48,7 +47,6 @@ namespace Dziennik_nauczyciela
             }
             dgv_listaUzytkownikow.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-
 
         private void wczytajListeUzytkownikow()
         {
@@ -59,7 +57,7 @@ namespace Dziennik_nauczyciela
             SQLiteDataReader dr = SQLite.sqliteCommand.ExecuteReader();
             // stworzenie listy nauczycieli
             List<BAZADANYCH.nauczyciel> listaUzytkownikow = new List<BAZADANYCH.nauczyciel>();
-
+            int counter = 0;
             while (dr.Read())
             {
                 listaUzytkownikow.Add(new BAZADANYCH.nauczyciel
@@ -72,7 +70,17 @@ namespace Dziennik_nauczyciela
                     haslo = dr["haslo"].ToString(),
                     email_haslo = dr["email_haslo"].ToString()
                 });
+                counter++;
+                
             }
+            if (counter == 0) {
+                b_usun.Visible = false;
+                dgv_listaUzytkownikow.Visible = false;
+                return;
+            } else {
+                b_usun.Visible = true;
+                dgv_listaUzytkownikow.Visible = true;
+            }                 
 
             listaNauczycieli = new DataSet();
             tabelaListyNauczycieli = new DataTable("tabelaListyNauczycieli");
@@ -113,13 +121,14 @@ namespace Dziennik_nauczyciela
         private void b_dodaj_Click(object sender, EventArgs e)
         {
             dodajUzytkownika();
+            sprawdzenieCzyZaznaczoneDane();
             t_haslo.Text = string.Empty;
             t_nazwaUzytkownika.Text = string.Empty;
+            b_usun.Enabled = false;
         }
 
         private void dodajUzytkownika()
         {
-
             try
             {
             BAZADANYCH.nauczyciel nowyNauczyciel = new BAZADANYCH.nauczyciel
@@ -145,14 +154,13 @@ namespace Dziennik_nauczyciela
             SQLite.sqliteCommand.Parameters.AddWithValue("zalogowany_mail", nowyNauczyciel.zalogowany_mail);
 
                 SQLite.sqliteCommand.ExecuteNonQuery();
-
+                //sprawdzenieCzyZaznaczoneDane();
                 wczytajListeUzytkownikow();
             } catch(Exception ex){
                 MessageBox.Show(ex.Message);
                 SQLite.Logger(ex.Message);
             }           
         }
-
         private void czyszczenieListyUzytkownikow()
         {
             while (dgv_listaUzytkownikow.Columns.Count != 0) this.dgv_listaUzytkownikow.Columns.RemoveAt(0);
@@ -223,16 +231,63 @@ namespace Dziennik_nauczyciela
             else MessageBox.Show("zle!");
 
         }
-
         private void t_nazwaUzytkownika_Enter(object sender, EventArgs e)
         {
             ActiveForm.AcceptButton = b_dodaj;
         }
-
         private void b_usun_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(zaznaczonyUzytkownikDoUsunieciaID.ToString());
+        {  
+            DataGridViewRow row = this.dgv_listaUzytkownikow.Rows[indexZaznaczonegoWiersza];
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "select * from nauczyciel where nauczycielID=@wybranyUzytkownikID;";
+            SQLite.sqliteCommand.Parameters.AddWithValue("wybranyUzytkownikID", row.Cells[0].Value.ToString());
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            
+            dataReader.Read();
+
+            cDaneDoWatku daneDoWatku = new cDaneDoWatku
+            {
+               tytulOkna        = dataReader["login"].ToString(),
+               haslo            = dataReader["haslo"].ToString(),
+               flaga            = false
+            };
+            MessageBox.Show(daneDoWatku.haslo);
+            Task podajHaslo = new Task((dane) =>
+                {
+                    fWalidacjaHaslaKlasy.uruchamianieNowegoWatkuDoWalidacjiHasla(daneDoWatku);
+                }, daneDoWatku);
+
+            podajHaslo.Start();
+            podajHaslo.Wait();
+
+            if (daneDoWatku.flaga == true)
+            {
+                usunUzytkownika();
+            }
+            else MessageBox.Show("zle!");
+            sprawdzenieCzyZaznaczoneDane();
+            wczytajListeUzytkownikow();
         }
+
+        private void usunUzytkownika()
+        {
+            try
+            {
+                if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+                SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+                SQLite.sqliteCommand.CommandText = "DELETE FROM nauczyciel WHERE nauczycielID =" + zaznaczonyUzytkownikDoUsunieciaID + ";";
+                SQLite.sqliteCommand.ExecuteNonQuery();
+
+                wczytajListeUzytkownikow();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                SQLite.Logger(ex.Message);
+            }
+        }
+
+
         private void sprawdzenieCzyZaznaczoneDane()
         {
             if (dgv_listaUzytkownikow.SelectedRows.Count != 0)
@@ -249,7 +304,26 @@ namespace Dziennik_nauczyciela
         private void dgv_listaUzytkownikow_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             sprawdzenieCzyZaznaczoneDane();
-            zaznaczonyUzytkownikDoUsunieciaID = Convert.ToInt32(dgv_listaUzytkownikow[0,e.RowIndex].Value);
+            if (e.RowIndex >= 0 && e.RowIndex < (dgv_listaUzytkownikow.Rows.Count))
+            {
+                zaznaczonyUzytkownikDoUsunieciaID = Convert.ToInt32(dgv_listaUzytkownikow[0, e.RowIndex].Value);
+                indexZaznaczonegoWiersza = e.RowIndex;
+            }
+        }
+
+        //wylaczenie obslugi przewijania za pomoca klawiatury dla dgv_listaUzytkownikow
+        private void dgv_listaUzytkownikow_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData & Keys.KeyCode)
+            {
+                case Keys.Up:
+                case Keys.Right:
+                case Keys.Down:
+                case Keys.Left:
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                    break;
+            }
         }
         
     }

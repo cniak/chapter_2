@@ -36,8 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.b_dodaj = new System.Windows.Forms.Button();
             this.l_uzupelnijDane = new System.Windows.Forms.Label();
-            this.dgv_listaUzytkownikow = new System.Windows.Forms.DataGridView();
             this.b_usun = new System.Windows.Forms.Button();
+            this.dgv_listaUzytkownikow = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUzytkownikow)).BeginInit();
@@ -133,28 +133,9 @@
             this.l_uzupelnijDane.TabIndex = 5;
             this.l_uzupelnijDane.Text = "Uzupełnij dane, aby aktywować przycisk";
             // 
-            // dgv_listaUzytkownikow
-            // 
-            this.dgv_listaUzytkownikow.AllowUserToAddRows = false;
-            this.dgv_listaUzytkownikow.AllowUserToDeleteRows = false;
-            this.dgv_listaUzytkownikow.AllowUserToOrderColumns = true;
-            this.dgv_listaUzytkownikow.AllowUserToResizeColumns = false;
-            this.dgv_listaUzytkownikow.AllowUserToResizeRows = false;
-            this.dgv_listaUzytkownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_listaUzytkownikow.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_listaUzytkownikow.Location = new System.Drawing.Point(322, 0);
-            this.dgv_listaUzytkownikow.MultiSelect = false;
-            this.dgv_listaUzytkownikow.Name = "dgv_listaUzytkownikow";
-            this.dgv_listaUzytkownikow.ReadOnly = true;
-            this.dgv_listaUzytkownikow.RowHeadersVisible = false;
-            this.dgv_listaUzytkownikow.Size = new System.Drawing.Size(179, 239);
-            this.dgv_listaUzytkownikow.TabIndex = 2;
-            this.dgv_listaUzytkownikow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellClick);
-            this.dgv_listaUzytkownikow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellDoubleClick);
-            // 
             // b_usun
             // 
-            this.b_usun.Location = new System.Drawing.Point(230, 204);
+            this.b_usun.Location = new System.Drawing.Point(414, 132);
             this.b_usun.Name = "b_usun";
             this.b_usun.Size = new System.Drawing.Size(75, 23);
             this.b_usun.TabIndex = 4;
@@ -162,14 +143,35 @@
             this.b_usun.UseVisualStyleBackColor = true;
             this.b_usun.Click += new System.EventHandler(this.b_usun_Click);
             // 
+            // dgv_listaUzytkownikow
+            // 
+            this.dgv_listaUzytkownikow.AllowUserToAddRows = false;
+            this.dgv_listaUzytkownikow.AllowUserToDeleteRows = false;
+            this.dgv_listaUzytkownikow.AllowUserToOrderColumns = true;
+            this.dgv_listaUzytkownikow.AllowUserToResizeColumns = false;
+            this.dgv_listaUzytkownikow.AllowUserToResizeRows = false;
+            this.dgv_listaUzytkownikow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgv_listaUzytkownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaUzytkownikow.Location = new System.Drawing.Point(325, 12);
+            this.dgv_listaUzytkownikow.MultiSelect = false;
+            this.dgv_listaUzytkownikow.Name = "dgv_listaUzytkownikow";
+            this.dgv_listaUzytkownikow.ReadOnly = true;
+            this.dgv_listaUzytkownikow.RowHeadersVisible = false;
+            this.dgv_listaUzytkownikow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgv_listaUzytkownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_listaUzytkownikow.Size = new System.Drawing.Size(164, 114);
+            this.dgv_listaUzytkownikow.TabIndex = 17;
+            this.dgv_listaUzytkownikow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellClick);
+            this.dgv_listaUzytkownikow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellDoubleClick);
+            // 
             // fStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 239);
+            this.ClientSize = new System.Drawing.Size(501, 170);
+            this.Controls.Add(this.dgv_listaUzytkownikow);
             this.Controls.Add(this.b_usun);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgv_listaUzytkownikow);
             this.Name = "fStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logowanie do systemu";
@@ -192,8 +194,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button b_dodaj;
         private System.Windows.Forms.Label l_uzupelnijDane;
-        private System.Windows.Forms.DataGridView dgv_listaUzytkownikow;
         private System.Windows.Forms.Button b_usun;
+        private System.Windows.Forms.DataGridView dgv_listaUzytkownikow;
 
     }
 }

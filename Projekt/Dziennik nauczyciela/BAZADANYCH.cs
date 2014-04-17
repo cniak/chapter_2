@@ -35,7 +35,6 @@ namespace Dziennik_nauczyciela
             public string nazwa { get; set; }
             public string rocznik { get; set; }
             public int nauczycielNR { get; set; }
-            public string haslo { get; set; }
         }
     }
 }

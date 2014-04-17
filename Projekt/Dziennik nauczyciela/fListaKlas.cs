@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.NetworkInformation;
 
 namespace Dziennik_nauczyciela
 {
@@ -19,6 +20,8 @@ namespace Dziennik_nauczyciela
         DataSet listaKlas = null;
         DataTable tabelaListyKlas = null;
         BAZADANYCH.nauczyciel nauczyciel = null;
+        private int zaznaczonaKlasaDoUsunieciaID;
+        private int indexZaznaczonegoWiersza;
 
         public fListaKlas(BAZADANYCH.nauczyciel zalogowanyNauczyciel)
         {
@@ -28,7 +31,6 @@ namespace Dziennik_nauczyciela
             SQLite = new cSQLite();
 
             InitializeComponent();
-
             obslugaPrzyciskuDodajKlase();
 
             this.Text = "Wybor klasy (" + nauczyciel.login + ")";
@@ -37,9 +39,11 @@ namespace Dziennik_nauczyciela
             this.t_powtorzHaslo.PasswordChar = '\u25CF';
             this.t_loginMail.Text = nauczyciel.email;
             this.t_hasloMail.Text = nauczyciel.email_haslo;
-
+            this.dgv_listaKlas.BackgroundColor = this.BackColor;
+            this.dgv_listaKlas.BorderStyle = BorderStyle.None;
             this.gb_mailZalogowany.Visible = false;
             this.gb_powiazanieKontaZPoczta.Visible = false;
+            this.b_usunKlase.Enabled = false;
             try
             {
                 Task <bool> task = Task<bool>.Factory.StartNew(() =>
@@ -73,8 +77,6 @@ namespace Dziennik_nauczyciela
             //polaczZMailem();
             //obslugaPrzyciskuDodajKlase();
         }
-
-
         private void fListaKlas_Load(object sender, EventArgs e)
         {
             SQLite = new cSQLite();
@@ -101,7 +103,7 @@ namespace Dziennik_nauczyciela
             SQLiteDataReader dr = SQLite.sqliteCommand.ExecuteReader();
             List<BAZADANYCH.klasa> BAZADANCYHListaKlas = new List<BAZADANYCH.klasa>();            
             //tworzenie listy klas
-
+            int counter = 0;
             while (dr.Read())
             {
                 BAZADANCYHListaKlas.Add(new BAZADANYCH.klasa
@@ -111,8 +113,17 @@ namespace Dziennik_nauczyciela
                     rocznik = dr["rocznik"].ToString(),
                     nauczycielNR = Convert.ToInt32(dr["nauczycielNR"])
                 });
+                counter++;
             }
-            
+            if (counter == 0)
+            {
+                b_usunKlase.Visible = dgv_listaKlas.Visible = false;
+                return;
+            }
+            else
+            {
+                b_usunKlase.Visible = dgv_listaKlas.Visible = true;
+            }
             listaKlas= new DataSet();
             tabelaListyKlas = new DataTable("tabelaListyKlas");
             listaKlas.Tables.Add(tabelaListyKlas);
@@ -254,17 +265,15 @@ namespace Dziennik_nauczyciela
                 {
                     nazwa = t_nazwa.Text,
                     nauczycielNR = this.nauczyciel.nauczycielID,
-                    rocznik = string.Empty,
-                    haslo = t_haslo.Text
+                    rocznik = string.Empty
                 };
 
                 if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
-                SQLite.sqliteCommand.CommandText = "INSERT INTO klasa (nazwa, nauczycielNR, rocznik, haslo) VALUES (@nazwa, @nauczycielNR, @rocznik, @haslo);";
+                SQLite.sqliteCommand.CommandText = "INSERT INTO klasa (nazwa, nauczycielNR, rocznik) VALUES (@nazwa, @nauczycielNR, @rocznik);";
                 SQLite.sqliteCommand.Parameters.AddWithValue("nazwa", nowaKlasa.nazwa);
                 SQLite.sqliteCommand.Parameters.AddWithValue("nauczycielNR", nowaKlasa.nauczycielNR);
                 SQLite.sqliteCommand.Parameters.AddWithValue("rocznik", nowaKlasa.rocznik);
-                SQLite.sqliteCommand.Parameters.AddWithValue("haslo", nowaKlasa.haslo);
 
                 SQLite.sqliteCommand.ExecuteNonQuery();
                 wczytajListeKlas();
@@ -275,7 +284,6 @@ namespace Dziennik_nauczyciela
                 SQLite.Logger(ex.Message);
             }
         }
-
         private int polaczZMailem()
         {
             if (nauczyciel.email.Length == 0) return -1;
@@ -288,7 +296,6 @@ namespace Dziennik_nauczyciela
             }
             else return -1;
         }
-
         private void b_zalogujMail_Click(object sender, EventArgs e)
         {
             try
@@ -326,7 +333,6 @@ namespace Dziennik_nauczyciela
             }, TaskScheduler.FromCurrentSynchronizationContext());
 
         }
-
         private void b_edytujDane_Click(object sender, EventArgs e)
         {
             otworzOknoEdycjiDanych();
@@ -423,14 +429,88 @@ namespace Dziennik_nauczyciela
                     //this.t_nazwa.Text = "Complete";
                 }, TaskScheduler.FromCurrentSynchronizationContext());
 
-
-
-
-
-
-
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private void b_usunKlase_Click(object sender, EventArgs e)
+        {
+            /*
+                SELECT nauczyciel.login, nauczyciel.haslo
+                FROM nauczyciel
+                LEFT JOIN klasa ON klasa.nauczycielNR = 15
+                where (klasaID = 3 AND nauczyciel.nauczycielID = 15)
+             */
+            DataGridViewRow row = this.dgv_listaKlas.Rows[indexZaznaczonegoWiersza];
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "SELECT nauczyciel.login, nauczyciel.haslo " +
+                                                "FROM nauczyciel" +
+                                                " LEFT JOIN klasa ON klasa.nauczycielNR = " + nauczyciel.nauczycielID +
+                                                " WHERE (klasaID = @wybranaklasaID AND nauczyciel.nauczycielID = " + nauczyciel.nauczycielID + ");";
+            SQLite.sqliteCommand.Parameters.AddWithValue("wybranaKlasaID", row.Cells[0].Value.ToString());
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            dataReader.Read();
+
+            cDaneDoWatku daneDoWatku = new cDaneDoWatku
+            {
+                tytulOkna = dataReader["login"].ToString(),
+                haslo = dataReader["haslo"].ToString(),
+                flaga = false
+            };
+            Task podajHaslo = new Task((dane) =>
+            {
+                fWalidacjaHaslaKlasy.uruchamianieNowegoWatkuDoWalidacjiHasla(daneDoWatku);
+            }, daneDoWatku);
+
+            podajHaslo.Start();
+            podajHaslo.Wait();
+
+            if (daneDoWatku.flaga == true)
+            {
+                usunKlase();
+            }
+            else MessageBox.Show("zle!");
+            sprawdzenieCzyZaznaczoneDane();
+            wczytajListeKlas();
+        }
+
+        private void usunKlase()
+        {
+            try
+            {
+                if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+                SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+                SQLite.sqliteCommand.CommandText = "DELETE FROM klasa WHERE klasaID =" + zaznaczonaKlasaDoUsunieciaID + ";";
+                SQLite.sqliteCommand.ExecuteNonQuery();
+
+                wczytajListeKlas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                SQLite.Logger(ex.Message);
+            }
+        }
+
+        private void sprawdzenieCzyZaznaczoneDane()
+        {
+            if (dgv_listaKlas.SelectedRows.Count != 0)
+            {
+                b_usunKlase.Enabled = true;
+            }
+            else
+            {
+                b_usunKlase.Enabled = false;
+            }
+
+        }
+        private void dgv_listaKlas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < (dgv_listaKlas.Rows.Count))
+            {
+                zaznaczonaKlasaDoUsunieciaID = Convert.ToInt32(dgv_listaKlas[0, e.RowIndex].Value);
+                indexZaznaczonegoWiersza = e.RowIndex;
+            }
+            sprawdzenieCzyZaznaczoneDane();   
         }
 
     }

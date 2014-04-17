@@ -55,7 +55,6 @@ namespace Dziennik_nauczyciela
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS klasa([klasaID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[nazwa] VARCHAR(25) NOT NULL,");
                 sql.AppendLine("[rocznik] VARCHAR(25),");
-                sql.AppendLine("[haslo] VARCHAR(25),");
                 sql.AppendLine("[nauczycielNR] INT,");
                 sql.AppendLine("FOREIGN KEY (nauczycielNR) REFERENCES nauczyciel(nauczycielID))");
 

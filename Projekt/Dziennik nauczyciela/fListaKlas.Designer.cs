@@ -54,8 +54,8 @@
             this.b_wyloguj = new System.Windows.Forms.Button();
             this.l_mail = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.b_edytujDane = new System.Windows.Forms.Button();
+            this.b_usunKlase = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaKlas)).BeginInit();
@@ -67,9 +67,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.s_statusInternetu});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 356);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 404);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(649, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(616, 22);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -172,8 +172,8 @@
             this.dgv_listaKlas.AllowUserToResizeRows = false;
             this.dgv_listaKlas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgv_listaKlas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_listaKlas.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_listaKlas.Location = new System.Drawing.Point(405, 0);
+            this.dgv_listaKlas.Location = new System.Drawing.Point(372, 12);
+            this.dgv_listaKlas.MultiSelect = false;
             this.dgv_listaKlas.Name = "dgv_listaKlas";
             this.dgv_listaKlas.ReadOnly = true;
             this.dgv_listaKlas.RowHeadersVisible = false;
@@ -181,6 +181,7 @@
             this.dgv_listaKlas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listaKlas.Size = new System.Drawing.Size(244, 356);
             this.dgv_listaKlas.TabIndex = 16;
+            this.dgv_listaKlas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaKlas_CellClick);
             // 
             // gb_powiazanieKontaZPoczta
             // 
@@ -330,11 +331,22 @@
             this.b_edytujDane.UseVisualStyleBackColor = true;
             this.b_edytujDane.Click += new System.EventHandler(this.b_edytujDane_Click);
             // 
+            // b_usunKlase
+            // 
+            this.b_usunKlase.Location = new System.Drawing.Point(529, 374);
+            this.b_usunKlase.Name = "b_usunKlase";
+            this.b_usunKlase.Size = new System.Drawing.Size(75, 23);
+            this.b_usunKlase.TabIndex = 22;
+            this.b_usunKlase.Text = "Usun";
+            this.b_usunKlase.UseVisualStyleBackColor = true;
+            this.b_usunKlase.Click += new System.EventHandler(this.b_usunKlase_Click);
+            // 
             // fListaKlas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 378);
+            this.ClientSize = new System.Drawing.Size(616, 426);
+            this.Controls.Add(this.b_usunKlase);
             this.Controls.Add(this.b_edytujDane);
             this.Controls.Add(this.gb_mailZalogowany);
             this.Controls.Add(this.dgv_listaKlas);
@@ -372,7 +384,6 @@
         protected System.Windows.Forms.TextBox t_nazwa;
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label1;
-        public System.Windows.Forms.DataGridView dgv_listaKlas;
         private System.Windows.Forms.GroupBox gb_powiazanieKontaZPoczta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox cb_wymagajHasla;
@@ -387,7 +398,8 @@
         private System.Windows.Forms.Button b_wyloguj;
         private System.Windows.Forms.Label l_mail;
         private System.Windows.Forms.Label label9;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button b_edytujDane;
+        private System.Windows.Forms.Button b_usunKlase;
+        private System.Windows.Forms.DataGridView dgv_listaKlas;
     }
 }
