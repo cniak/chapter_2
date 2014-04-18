@@ -17,3 +17,6 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauc
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Release\Dziennik nauczyciela.exe
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Release\Dziennik nauczyciela.pdb
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela - na rdp\Dziennik nauczyciela\obj\x86\Release\Dziennik nauczyciela.csprojResolveAssemblyReference.cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\bin\x86\Release\Dziennik nauczyciela.exe.config
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik nauczyciela.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik nauczyciela.pdb

@@ -163,6 +163,7 @@
             this.dgv_listaUzytkownikow.TabIndex = 17;
             this.dgv_listaUzytkownikow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellClick);
             this.dgv_listaUzytkownikow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellDoubleClick);
+            this.dgv_listaUzytkownikow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_listaUzytkownikow_KeyDown);
             // 
             // fStart
             // 
