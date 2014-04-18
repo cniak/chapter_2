@@ -18,3 +18,5 @@ column login is not unique]	1:19 18-04-2014
 column login is not unique]	3:3 18-04-2014
 [constraint failed
 column login is not unique]	3:9 18-04-2014
+[stworzono baze danych.]	13:7 18-04-2014
+[stworzono baze danych.]	13:26 18-04-2014

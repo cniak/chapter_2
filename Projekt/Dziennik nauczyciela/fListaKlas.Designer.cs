@@ -32,14 +32,12 @@
             this.s_statusInternetu = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.b_dodaj = new System.Windows.Forms.Button();
-            this.t_rocznik = new System.Windows.Forms.TextBox();
-            this.l_capslock = new System.Windows.Forms.Label();
+            this.t_rocznik1 = new System.Windows.Forms.TextBox();
             this.t_nazwa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_listaKlas = new System.Windows.Forms.DataGridView();
             this.gb_powiazanieKontaZPoczta = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cb_wymagajHasla = new System.Windows.Forms.CheckBox();
             this.b_zalogujMail = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,6 +53,10 @@
             this.b_edytujDane = new System.Windows.Forms.Button();
             this.b_usunKlase = new System.Windows.Forms.Button();
             this.bw_polaczZMailem = new System.ComponentModel.BackgroundWorker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.t_rocznik2 = new System.Windows.Forms.TextBox();
+            this.s_statusCapslock = new System.Windows.Forms.ToolStripStatusLabel();
+            this.l_rocznikInfo = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaKlas)).BeginInit();
@@ -65,7 +67,8 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.s_statusInternetu});
+            this.s_statusInternetu,
+            this.s_statusCapslock});
             this.statusStrip1.Location = new System.Drawing.Point(0, 359);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(616, 22);
@@ -80,9 +83,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.l_rocznikInfo);
+            this.groupBox1.Controls.Add(this.t_rocznik2);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.b_dodaj);
-            this.groupBox1.Controls.Add(this.t_rocznik);
-            this.groupBox1.Controls.Add(this.l_capslock);
+            this.groupBox1.Controls.Add(this.t_rocznik1);
             this.groupBox1.Controls.Add(this.t_nazwa);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -103,21 +108,14 @@
             this.b_dodaj.UseVisualStyleBackColor = true;
             this.b_dodaj.Click += new System.EventHandler(this.b_dodaj_Click);
             // 
-            // t_rocznik
+            // t_rocznik1
             // 
-            this.t_rocznik.Location = new System.Drawing.Point(91, 39);
-            this.t_rocznik.Name = "t_rocznik";
-            this.t_rocznik.Size = new System.Drawing.Size(50, 20);
-            this.t_rocznik.TabIndex = 3;
-            // 
-            // l_capslock
-            // 
-            this.l_capslock.AutoSize = true;
-            this.l_capslock.Location = new System.Drawing.Point(74, 70);
-            this.l_capslock.Name = "l_capslock";
-            this.l_capslock.Size = new System.Drawing.Size(131, 13);
-            this.l_capslock.TabIndex = 6;
-            this.l_capslock.Text = "CAPSLOCK jest włączony";
+            this.t_rocznik1.Location = new System.Drawing.Point(91, 39);
+            this.t_rocznik1.MaxLength = 4;
+            this.t_rocznik1.Name = "t_rocznik1";
+            this.t_rocznik1.Size = new System.Drawing.Size(53, 20);
+            this.t_rocznik1.TabIndex = 3;
+            this.t_rocznik1.TextChanged += new System.EventHandler(this.t_rocznik1_TextChanged);
             // 
             // t_nazwa
             // 
@@ -158,15 +156,14 @@
             this.dgv_listaKlas.Name = "dgv_listaKlas";
             this.dgv_listaKlas.ReadOnly = true;
             this.dgv_listaKlas.RowHeadersVisible = false;
-            this.dgv_listaKlas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgv_listaKlas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listaKlas.Size = new System.Drawing.Size(244, 313);
             this.dgv_listaKlas.TabIndex = 16;
             this.dgv_listaKlas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaKlas_CellClick);
+            this.dgv_listaKlas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_listaKlas_KeyDown);
             // 
             // gb_powiazanieKontaZPoczta
             // 
-            this.gb_powiazanieKontaZPoczta.Controls.Add(this.label3);
             this.gb_powiazanieKontaZPoczta.Controls.Add(this.cb_wymagajHasla);
             this.gb_powiazanieKontaZPoczta.Controls.Add(this.b_zalogujMail);
             this.gb_powiazanieKontaZPoczta.Controls.Add(this.label6);
@@ -174,21 +171,12 @@
             this.gb_powiazanieKontaZPoczta.Controls.Add(this.label5);
             this.gb_powiazanieKontaZPoczta.Controls.Add(this.label4);
             this.gb_powiazanieKontaZPoczta.Controls.Add(this.t_loginMail);
-            this.gb_powiazanieKontaZPoczta.Location = new System.Drawing.Point(15, 170);
+            this.gb_powiazanieKontaZPoczta.Location = new System.Drawing.Point(12, 170);
             this.gb_powiazanieKontaZPoczta.Name = "gb_powiazanieKontaZPoczta";
             this.gb_powiazanieKontaZPoczta.Size = new System.Drawing.Size(354, 155);
             this.gb_powiazanieKontaZPoczta.TabIndex = 19;
             this.gb_powiazanieKontaZPoczta.TabStop = false;
             this.gb_powiazanieKontaZPoczta.Text = "Powiązanie konta z pocztą e-mail";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "CAPSLOCK jest włączony";
             // 
             // cb_wymagajHasla
             // 
@@ -225,6 +213,7 @@
             this.t_hasloMail.Name = "t_hasloMail";
             this.t_hasloMail.Size = new System.Drawing.Size(249, 20);
             this.t_hasloMail.TabIndex = 3;
+            this.t_hasloMail.TextChanged += new System.EventHandler(this.t_hasloMail_TextChanged);
             // 
             // label5
             // 
@@ -250,6 +239,7 @@
             this.t_loginMail.Name = "t_loginMail";
             this.t_loginMail.Size = new System.Drawing.Size(178, 20);
             this.t_loginMail.TabIndex = 0;
+            this.t_loginMail.TextChanged += new System.EventHandler(this.t_loginMail_TextChanged);
             // 
             // gb_mailZalogowany
             // 
@@ -257,7 +247,7 @@
             this.gb_mailZalogowany.Controls.Add(this.b_wyloguj);
             this.gb_mailZalogowany.Controls.Add(this.l_mail);
             this.gb_mailZalogowany.Controls.Add(this.label9);
-            this.gb_mailZalogowany.Location = new System.Drawing.Point(12, 173);
+            this.gb_mailZalogowany.Location = new System.Drawing.Point(9, 173);
             this.gb_mailZalogowany.Name = "gb_mailZalogowany";
             this.gb_mailZalogowany.Size = new System.Drawing.Size(357, 108);
             this.gb_mailZalogowany.TabIndex = 20;
@@ -280,7 +270,7 @@
             this.b_wyloguj.Name = "b_wyloguj";
             this.b_wyloguj.Size = new System.Drawing.Size(75, 23);
             this.b_wyloguj.TabIndex = 7;
-            this.b_wyloguj.Text = "wyloguj";
+            this.b_wyloguj.Text = "Wyloguj";
             this.b_wyloguj.UseVisualStyleBackColor = true;
             this.b_wyloguj.Click += new System.EventHandler(this.b_wyloguj_Click);
             // 
@@ -328,6 +318,41 @@
             this.bw_polaczZMailem.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bw_polaczZMailem_ProgressChanged);
             this.bw_polaczZMailem.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bw_polaczZMailem_RunWorkerCompleted);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(148, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(12, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "/";
+            // 
+            // t_rocznik2
+            // 
+            this.t_rocznik2.Location = new System.Drawing.Point(166, 39);
+            this.t_rocznik2.MaxLength = 4;
+            this.t_rocznik2.Name = "t_rocznik2";
+            this.t_rocznik2.Size = new System.Drawing.Size(53, 20);
+            this.t_rocznik2.TabIndex = 8;
+            this.t_rocznik2.TextChanged += new System.EventHandler(this.t_rocznik2_TextChanged);
+            // 
+            // s_statusCapslock
+            // 
+            this.s_statusCapslock.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.s_statusCapslock.Name = "s_statusCapslock";
+            this.s_statusCapslock.Size = new System.Drawing.Size(59, 17);
+            this.s_statusCapslock.Text = "CAPSLOCK";
+            // 
+            // l_rocznikInfo
+            // 
+            this.l_rocznikInfo.AutoSize = true;
+            this.l_rocznikInfo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.l_rocznikInfo.Location = new System.Drawing.Point(226, 41);
+            this.l_rocznikInfo.Name = "l_rocznikInfo";
+            this.l_rocznikInfo.Size = new System.Drawing.Size(80, 13);
+            this.l_rocznikInfo.TabIndex = 9;
+            this.l_rocznikInfo.Text = "Bledna wartosc";
+            // 
             // fListaKlas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,13 +389,11 @@
         protected System.Windows.Forms.ToolStripStatusLabel s_statusInternetu;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.Button b_dodaj;
-        protected System.Windows.Forms.TextBox t_rocznik;
-        protected System.Windows.Forms.Label l_capslock;
+        protected System.Windows.Forms.TextBox t_rocznik1;
         protected System.Windows.Forms.TextBox t_nazwa;
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gb_powiazanieKontaZPoczta;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox cb_wymagajHasla;
         private System.Windows.Forms.Button b_zalogujMail;
         private System.Windows.Forms.Label label6;
@@ -387,5 +410,9 @@
         private System.Windows.Forms.Button b_usunKlase;
         private System.Windows.Forms.DataGridView dgv_listaKlas;
         private System.ComponentModel.BackgroundWorker bw_polaczZMailem;
+        private System.Windows.Forms.TextBox t_rocznik2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolStripStatusLabel s_statusCapslock;
+        private System.Windows.Forms.Label l_rocznikInfo;
     }
 }

@@ -10,11 +10,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 
 namespace Dziennik_nauczyciela
 {
     public partial class fListaKlas : Form
     {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern short GetKeyState(int keyCode);
         cSQLite SQLite = null;
 
         DataSet listaKlas = null;
@@ -31,10 +34,11 @@ namespace Dziennik_nauczyciela
             SQLite = new cSQLite();
 
             InitializeComponent();
+            l_rocznikInfo.Visible = false;
+            s_statusCapslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
             obslugaPrzyciskuDodajKlase();
 
             this.Text = "Wybor klasy (" + nauczyciel.login + ")";
-            this.t_rocznik.PasswordChar = '\u25CF';
             this.t_hasloMail.PasswordChar = '\u25CF';
             this.t_loginMail.Text = nauczyciel.email;
             this.t_hasloMail.Text = nauczyciel.email_haslo;
@@ -109,12 +113,14 @@ namespace Dziennik_nauczyciela
 
             tabelaListyKlas.Columns.Add("ID", typeof(int));
             tabelaListyKlas.Columns.Add("nazwa", typeof(string));
+            tabelaListyKlas.Columns.Add("rocznik", typeof(string));
 
             for (int i = 0; i < BAZADANCYHListaKlas.Count; i++)
             {
                 DataRow drr = tabelaListyKlas.NewRow();
                 drr["ID"] = BAZADANCYHListaKlas[i].klasaID;
                 drr["nazwa"] = BAZADANCYHListaKlas[i].nazwa;
+                drr["rocznik"] = BAZADANCYHListaKlas[i].rocznik;
                 tabelaListyKlas.Rows.Add(drr);
             }
 
@@ -126,17 +132,36 @@ namespace Dziennik_nauczyciela
             col.DataPropertyName = "ID";
             col.Name = "ID";
             col.HeaderText = "ID";
-            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.dgv_listaKlas.Columns.Add(col);
 
             col = new DataGridViewTextBoxColumn();
             col.DataPropertyName = "nazwa";
             col.Name = "nazwa";
             col.HeaderText = "nazwa";
-            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgv_listaKlas.Columns.Add(col);
+
+            col = new DataGridViewTextBoxColumn();
+            col.DataPropertyName = "rocznik";
+            col.Name = "rocznik";
+            col.HeaderText = "rocznik";
+            
+            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            
             this.dgv_listaKlas.Columns.Add(col);
 
             this.dgv_listaKlas.DataSource = listaKlas.Tables["tabelaListyKlas"];
+            // ustawienie czy ustatnia kolumna ma byc do konca szerokosci, czy jak pojawia sie vertical scroll bar to ma byc tylko tyle ile trzeba
+            int suma = 0;
+            for (int i = 0; i < dgv_listaKlas.Columns.Count; i++)
+            {
+                suma += dgv_listaKlas.Columns[i].Width;
+            }
+            if (suma < dgv_listaKlas.Size.Width)
+            {
+                dgv_listaKlas.Columns[dgv_listaKlas.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
         private bool ustawieniePaskaIGrupy()
         {
@@ -198,19 +223,20 @@ namespace Dziennik_nauczyciela
         }
         private bool sprawdzenieCzyWypelnioneDane()
         {
-            return ((t_nazwa.Text.Length != 0) && (t_rocznik.Text.Length != 0));
-        }
-        
+            return ((t_nazwa.Text.Length != 0) && (t_rocznik1.Text.Length != 0) && (l_rocznikInfo.Visible == false));
+        }       
         private void obslugaPrzyciskuDodajKlase()
         {
             t_nazwa.TextChanged += ((o, e) =>
             {
                 b_dodaj.Enabled = sprawdzenieCzyWypelnioneDane();
+                s_statusCapslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
             });
 
-            t_rocznik.TextChanged += ((o, e) =>
+            t_rocznik1.TextChanged += ((o, e) =>
             {
                 b_dodaj.Enabled = sprawdzenieCzyWypelnioneDane();
+                s_statusCapslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
             });
 
         }
@@ -219,7 +245,7 @@ namespace Dziennik_nauczyciela
             if (sprawdzenieCzyWypelnioneDane())
             {
                     dodajKlase();
-                    t_rocznik.Text = t_nazwa.Text = string.Empty;
+                    t_rocznik1.Text = t_nazwa.Text = string.Empty;
             }
         }
         private void dodajKlase()
@@ -230,7 +256,7 @@ namespace Dziennik_nauczyciela
                 {
                     nazwa = t_nazwa.Text,
                     nauczycielNR = this.nauczyciel.nauczycielID,
-                    rocznik = string.Empty
+                    rocznik = t_rocznik1.Text + @"/" + t_rocznik2.Text
                 };
 
                 if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
@@ -422,7 +448,6 @@ namespace Dziennik_nauczyciela
             sprawdzenieCzyZaznaczoneDane();
             wczytajListeKlas();
         }
-
         private void usunKlase()
         {
             try
@@ -440,7 +465,6 @@ namespace Dziennik_nauczyciela
                 SQLite.Logger(ex.Message);
             }
         }
-
         private void sprawdzenieCzyZaznaczoneDane()
         {
             if (dgv_listaKlas.SelectedRows.Count != 0)
@@ -462,17 +486,15 @@ namespace Dziennik_nauczyciela
             }
             sprawdzenieCzyZaznaczoneDane();   
         }
-
+        // backgroundworker
         private void bw_polaczZMailem_DoWork(object sender, DoWorkEventArgs e)
         {
             e.Result = ustawieniePaskaIGrupy();
         }
-
         private void bw_polaczZMailem_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
 
         }
-
         private void bw_polaczZMailem_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             bool status = (bool)e.Result;
@@ -487,6 +509,56 @@ namespace Dziennik_nauczyciela
                 this.gb_powiazanieKontaZPoczta.Visible = true;
             }
         }
+
+        private void t_loginMail_TextChanged(object sender, EventArgs e)
+        {
+            s_statusCapslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
+        }
+        private void t_hasloMail_TextChanged(object sender, EventArgs e)
+        {
+            s_statusCapslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
+        }
+        private void t_rocznik1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (t_rocznik1.Text.Length == 0) t_rocznik2.Text = string.Empty;
+                else t_rocznik2.Text = (Convert.ToInt32(t_rocznik1.Text) + 1).ToString();
+                l_rocznikInfo.Visible = false;
+            }
+            catch (Exception)
+            {
+                l_rocznikInfo.Visible = true;
+            }
+        }
+        private void t_rocznik2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (t_rocznik2.Text.Length == 0) t_rocznik1.Text = string.Empty;
+                else t_rocznik1.Text = (Convert.ToInt32(t_rocznik2.Text) - 1).ToString();
+                l_rocznikInfo.Visible = false;
+            }
+            catch (Exception)
+            {
+                l_rocznikInfo.Visible = true;
+            }
+        }
+
+        private void dgv_listaKlas_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyData & Keys.KeyCode)
+            {
+                case Keys.Up:
+                case Keys.Right:
+                case Keys.Down:
+                case Keys.Left:
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                    break;
+            }
+        }
+
 
     }
 }

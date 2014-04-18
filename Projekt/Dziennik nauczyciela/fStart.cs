@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,8 +14,11 @@ using System.Windows.Forms;
 
 namespace Dziennik_nauczyciela
 {
+
     public partial class fStart : Form
     {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern short GetKeyState(int keyCode);
         cSQLite SQLite = null;
 
         DataSet listaNauczycieli = null;
@@ -24,6 +28,7 @@ namespace Dziennik_nauczyciela
         public fStart()
         {
             InitializeComponent();
+            l_capslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
             b_usun.Enabled = false;
             listaNauczycieli = new DataSet();
             tabelaListyNauczycieli = new DataTable("tabelaListyNauczycieli");
@@ -115,7 +120,8 @@ namespace Dziennik_nauczyciela
             col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.dgv_listaUzytkownikow.Columns.Add(col);
 
-            this.dgv_listaUzytkownikow.DataSource = listaNauczycieli.Tables["tabelaListyNauczycieli"];    
+            this.dgv_listaUzytkownikow.DataSource = listaNauczycieli.Tables["tabelaListyNauczycieli"];
+            
         }
 
         private void b_dodaj_Click(object sender, EventArgs e)
@@ -170,11 +176,16 @@ namespace Dziennik_nauczyciela
         //Dodawanie uzytkownika - sprawdzanie dlugosci i wlczanie przycisku
         private void t_nazwaUzytkownika_TextChanged(object sender, EventArgs e)
         {
+            l_uzupelnijDane.Visible = !sprawdzCzyWypelnioneDane();
             b_dodaj.Enabled = sprawdzCzyWypelnioneDane();
+            l_capslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
         }
         private void t_haslo_TextChanged(object sender, EventArgs e)
         {
+            l_uzupelnijDane.Visible = !sprawdzCzyWypelnioneDane();
             b_dodaj.Enabled = sprawdzCzyWypelnioneDane();
+            l_capslock.Visible = (((ushort)GetKeyState(0x14)) & 0xffff) != 0;
+
         }
         private bool sprawdzCzyWypelnioneDane()
         {

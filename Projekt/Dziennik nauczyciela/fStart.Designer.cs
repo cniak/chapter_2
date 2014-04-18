@@ -38,6 +38,7 @@
             this.l_uzupelnijDane = new System.Windows.Forms.Label();
             this.b_usun = new System.Windows.Forms.Button();
             this.dgv_listaUzytkownikow = new System.Windows.Forms.DataGridView();
+            this.l_capslock = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUzytkownikow)).BeginInit();
@@ -62,15 +63,17 @@
             this.tableLayoutPanel1.Controls.Add(this.t_nazwaUzytkownika, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.t_haslo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.b_dodaj, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.l_uzupelnijDane, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.b_dodaj, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.l_uzupelnijDane, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.l_capslock, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(293, 130);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -165,6 +168,15 @@
             this.dgv_listaUzytkownikow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellDoubleClick);
             this.dgv_listaUzytkownikow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_listaUzytkownikow_KeyDown);
             // 
+            // l_capslock
+            // 
+            this.l_capslock.AutoSize = true;
+            this.l_capslock.Location = new System.Drawing.Point(3, 63);
+            this.l_capslock.Name = "l_capslock";
+            this.l_capslock.Size = new System.Drawing.Size(63, 13);
+            this.l_capslock.TabIndex = 6;
+            this.l_capslock.Text = "CAPSLOCK";
+            // 
             // fStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +209,7 @@
         private System.Windows.Forms.Label l_uzupelnijDane;
         private System.Windows.Forms.Button b_usun;
         private System.Windows.Forms.DataGridView dgv_listaUzytkownikow;
+        private System.Windows.Forms.Label l_capslock;
 
     }
 }
