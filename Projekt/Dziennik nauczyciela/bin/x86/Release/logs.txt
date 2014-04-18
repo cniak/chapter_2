@@ -1,0 +1,20 @@
+[stworzono baze danych.]	22:28 17-04-2014
+[stworzono baze danych.]	23:20 17-04-2014
+[stworzono baze danych.]	23:24 17-04-2014
+[stworzono baze danych.]	23:24 17-04-2014
+[constraint failed
+column login is not unique]	23:28 17-04-2014
+[constraint failed
+column login is not unique]	23:29 17-04-2014
+[constraint failed
+column login is not unique]	1:19 18-04-2014
+[stworzono baze danych.]	2:13 18-04-2014
+[Invalid ConnectionString format, cannot parse: string value to split cannot be null]	2:33 18-04-2014
+[Invalid ConnectionString format, cannot parse: string value to split cannot be null]	2:33 18-04-2014
+[Invalid ConnectionString format, cannot parse: string value to split cannot be null]	2:33 18-04-2014
+[Ze względu na bieżący stan obiektu operacja jest nieprawidłowa.]	2:36 18-04-2014
+[Ze względu na bieżący stan obiektu operacja jest nieprawidłowa.]	2:44 18-04-2014
+[constraint failed
+column login is not unique]	3:3 18-04-2014
+[constraint failed
+column login is not unique]	3:9 18-04-2014
