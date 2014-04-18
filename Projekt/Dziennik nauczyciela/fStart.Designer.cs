@@ -36,9 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.b_dodaj = new System.Windows.Forms.Button();
             this.l_uzupelnijDane = new System.Windows.Forms.Label();
+            this.l_capslock = new System.Windows.Forms.Label();
             this.b_usun = new System.Windows.Forms.Button();
             this.dgv_listaUzytkownikow = new System.Windows.Forms.DataGridView();
-            this.l_capslock = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUzytkownikow)).BeginInit();
@@ -136,6 +136,16 @@
             this.l_uzupelnijDane.TabIndex = 5;
             this.l_uzupelnijDane.Text = "Uzupełnij dane, aby aktywować przycisk";
             // 
+            // l_capslock
+            // 
+            this.l_capslock.AutoSize = true;
+            this.l_capslock.ForeColor = System.Drawing.Color.Red;
+            this.l_capslock.Location = new System.Drawing.Point(3, 63);
+            this.l_capslock.Name = "l_capslock";
+            this.l_capslock.Size = new System.Drawing.Size(63, 13);
+            this.l_capslock.TabIndex = 6;
+            this.l_capslock.Text = "CAPSLOCK";
+            // 
             // b_usun
             // 
             this.b_usun.Location = new System.Drawing.Point(414, 132);
@@ -167,15 +177,6 @@
             this.dgv_listaUzytkownikow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellClick);
             this.dgv_listaUzytkownikow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellDoubleClick);
             this.dgv_listaUzytkownikow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_listaUzytkownikow_KeyDown);
-            // 
-            // l_capslock
-            // 
-            this.l_capslock.AutoSize = true;
-            this.l_capslock.Location = new System.Drawing.Point(3, 63);
-            this.l_capslock.Name = "l_capslock";
-            this.l_capslock.Size = new System.Drawing.Size(63, 13);
-            this.l_capslock.TabIndex = 6;
-            this.l_capslock.Text = "CAPSLOCK";
             // 
             // fStart
             // 

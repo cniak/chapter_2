@@ -16,8 +16,11 @@ namespace Dziennik_nauczyciela
 {
     public partial class fListaKlas : Form
     {
+        //[DllImport("user32.dll", Entrypoint = "func1", SeLastError = true)]
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern short GetKeyState(int keyCode);
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int conn, int val);
         cSQLite SQLite = null;
 
         DataSet listaKlas = null;
@@ -218,7 +221,9 @@ namespace Dziennik_nauczyciela
         }
         private bool sprawdzeniePolaczeniaZInternetem()
         {
-            return System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+            //return System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+            int Out;
+            return InternetGetConnectedState(out Out, 0);
             
         }
         private bool sprawdzenieCzyWypelnioneDane()
