@@ -295,7 +295,8 @@ namespace Dziennik_nauczyciela
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
                 SQLite.sqliteCommand.CommandText = "UPDATE nauczyciel set " +
                                                    "zalogowany_mail=1, " +
-                                                   "email_haslo = '" + t_hasloMail.Text + "' " +
+                                                   "email_haslo = '" + t_hasloMail.Text + "', " +
+                                                   "email = '" + t_loginMail.Text + "' " +
                                                    "WHERE nauczycielID = " + nauczyciel.nauczycielID + ";";
                 SQLite.sqliteCommand.ExecuteNonQuery();
                 SQLite.sqliteConnection.Close();
