@@ -305,30 +305,12 @@ namespace Dziennik_nauczyciela
                                                    "WHERE nauczycielID = " + nauczyciel.nauczycielID + ";";
                 SQLite.sqliteCommand.ExecuteNonQuery();
                 SQLite.sqliteConnection.Close();
+                l_mail.Text = t_loginMail.Text;
                 this.nauczyciel.zalogowany_mail = 1;
                 this.nauczyciel.email_haslo = t_hasloMail.Text;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-
-            Task<bool> task = Task<bool>.Factory.StartNew(() =>
-            {
-                return ustawieniePaskaIGrupy();
-            });
-
-            Task UITask = task.ContinueWith((tt) =>
-            {
-                if (task.Result == true)
-                {
-                    this.gb_mailZalogowany.Visible = true;
-                    this.gb_powiazanieKontaZPoczta.Visible = false;
-                }
-                else
-                {
-                    this.gb_mailZalogowany.Visible = false;
-                    this.gb_powiazanieKontaZPoczta.Visible = true;
-                }
-            }, TaskScheduler.FromCurrentSynchronizationContext());
-
+            bw_polaczZMailem.RunWorkerAsync();
         }
         private void b_edytujDane_Click(object sender, EventArgs e)
         {
