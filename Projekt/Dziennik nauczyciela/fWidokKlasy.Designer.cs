@@ -35,9 +35,6 @@
             this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.przedmiotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dodajToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.edytujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.raportyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,7 +75,7 @@
             // edytujToolStripMenuItem2
             // 
             this.edytujToolStripMenuItem2.Name = "edytujToolStripMenuItem2";
-            this.edytujToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.edytujToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.edytujToolStripMenuItem2.Text = "Edytuj";
             this.edytujToolStripMenuItem2.Click += new System.EventHandler(this.edytujToolStripMenuItem2_Click);
             // 
@@ -94,44 +91,21 @@
             // dodajToolStripMenuItem
             // 
             this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
-            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.dodajToolStripMenuItem.Text = "Dodaj/Edytuj";
             // 
             // usuńToolStripMenuItem
             // 
             this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
-            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.usuńToolStripMenuItem.Text = "Usuń";
             // 
             // przedmiotToolStripMenuItem
             // 
-            this.przedmiotToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajToolStripMenuItem2,
-            this.edytujToolStripMenuItem,
-            this.usuńToolStripMenuItem1});
             this.przedmiotToolStripMenuItem.Name = "przedmiotToolStripMenuItem";
             this.przedmiotToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.przedmiotToolStripMenuItem.Text = "Przedmiot";
-            // 
-            // dodajToolStripMenuItem2
-            // 
-            this.dodajToolStripMenuItem2.Name = "dodajToolStripMenuItem2";
-            this.dodajToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
-            this.dodajToolStripMenuItem2.Text = "Dodaj";
-            this.dodajToolStripMenuItem2.Click += new System.EventHandler(this.dodajToolStripMenuItem2_Click);
-            // 
-            // edytujToolStripMenuItem
-            // 
-            this.edytujToolStripMenuItem.Name = "edytujToolStripMenuItem";
-            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.edytujToolStripMenuItem.Text = "Edytuj";
-            // 
-            // usuńToolStripMenuItem1
-            // 
-            this.usuńToolStripMenuItem1.Name = "usuńToolStripMenuItem1";
-            this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
-            this.usuńToolStripMenuItem1.Text = "Usuń";
-            this.usuńToolStripMenuItem1.Click += new System.EventHandler(this.usuńToolStripMenuItem1_Click);
+            this.przedmiotToolStripMenuItem.Click += new System.EventHandler(this.przedmiotToolStripMenuItem_Click);
             // 
             // raportyToolStripMenuItem
             // 
@@ -283,9 +257,6 @@
         private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem przedmiotToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem edytujToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem raportyToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;

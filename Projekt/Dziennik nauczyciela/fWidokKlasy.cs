@@ -84,13 +84,19 @@ namespace Dziennik_nauczyciela
             t.Start();
             t.Wait();
             // wyswietl info o odswiezeniu!
-
         }
 
-        private void usuńToolStripMenuItem1_Click(object sender, EventArgs e)
+
+
+        private void przedmiotToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fUsuwaniePrzedmiotuLubUcznia usuwaniePrzedmiotuLubUcznia = new fUsuwaniePrzedmiotuLubUcznia(usuwanyTypDanych: "przedmiot", klasaID: this.klasaID);
-            usuwaniePrzedmiotuLubUcznia.ShowDialog();
+            fWidokPrzedmiotu widokPrzedmiotu = new fWidokPrzedmiotu(this.klasaID);
+            Task t = new Task(() =>
+            {
+                widokPrzedmiotu.ShowDialog();
+            });
+            t.Start();
+            t.Wait();
         }
     }
 }

@@ -125,12 +125,6 @@
     <Compile Include="fStart.Designer.cs">
       <DependentUpon>fStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="fUsuwaniePrzedmiotuLubUcznia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fUsuwaniePrzedmiotuLubUcznia.Designer.cs">
-      <DependentUpon>fUsuwaniePrzedmiotuLubUcznia.cs</DependentUpon>
-    </Compile>
     <Compile Include="fWalidacjaHaslaKlasy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +136,24 @@
     </Compile>
     <Compile Include="fWidokKlasy.Designer.cs">
       <DependentUpon>fWidokKlasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fWidokPrzedmiotu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fWidokPrzedmiotu.Designer.cs">
+      <DependentUpon>fWidokPrzedmiotu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fWidokUcznia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fWidokUcznia.Designer.cs">
+      <DependentUpon>fWidokUcznia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fWidokUczniaLubPrzedmiotu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fWidokUczniaLubPrzedmiotu.Designer.cs">
+      <DependentUpon>fWidokUczniaLubPrzedmiotu.cs</DependentUpon>
     </Compile>
     <Compile Include="klasaNaKomentarze.cs" />
     <Compile Include="Program.cs" />
@@ -161,14 +173,20 @@
     <EmbeddedResource Include="fStart.resx">
       <DependentUpon>fStart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fUsuwaniePrzedmiotuLubUcznia.resx">
-      <DependentUpon>fUsuwaniePrzedmiotuLubUcznia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fWalidacjaHaslaKlasy.resx">
       <DependentUpon>fWalidacjaHaslaKlasy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fWidokKlasy.resx">
       <DependentUpon>fWidokKlasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fWidokPrzedmiotu.resx">
+      <DependentUpon>fWidokPrzedmiotu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fWidokUcznia.resx">
+      <DependentUpon>fWidokUcznia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fWidokUczniaLubPrzedmiotu.resx">
+      <DependentUpon>fWidokUczniaLubPrzedmiotu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

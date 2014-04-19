@@ -8,7 +8,7 @@ using System.Data.SQLite;
 
 namespace Dziennik_nauczyciela
 {
-    class cSQLite
+    public class cSQLite
     {
         private static string zrodloDanych = "Data Source=bazadanych.db";
         private static string nazwaPliku = "bazadanych.db";

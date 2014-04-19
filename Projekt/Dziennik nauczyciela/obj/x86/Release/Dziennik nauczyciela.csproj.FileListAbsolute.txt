@@ -39,4 +39,6 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciel
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fWidokKlasy.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fEdycjaKlasy.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fDodawaniePrzedmiotu.resources
-M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fUsuwaniePrzedmiotuLubUcznia.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fWidokUczniaLubPrzedmiotu.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fWidokUcznia.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fWidokPrzedmiotu.resources

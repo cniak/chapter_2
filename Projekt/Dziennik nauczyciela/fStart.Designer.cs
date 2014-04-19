@@ -39,6 +39,7 @@
             this.l_capslock = new System.Windows.Forms.Label();
             this.b_usun = new System.Windows.Forms.Button();
             this.dgv_listaUzytkownikow = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUzytkownikow)).BeginInit();
@@ -176,13 +177,24 @@
             this.dgv_listaUzytkownikow.TabIndex = 17;
             this.dgv_listaUzytkownikow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellClick);
             this.dgv_listaUzytkownikow.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUzytkownikow_CellDoubleClick);
+            this.dgv_listaUzytkownikow.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_listaUzytkownikow_DataBindingComplete);
             this.dgv_listaUzytkownikow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_listaUzytkownikow_KeyDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(322, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Zaznacz element";
             // 
             // fStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 170);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_listaUzytkownikow);
             this.Controls.Add(this.b_usun);
             this.Controls.Add(this.groupBox1);
@@ -195,6 +207,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUzytkownikow)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,6 +224,7 @@
         private System.Windows.Forms.Button b_usun;
         private System.Windows.Forms.DataGridView dgv_listaUzytkownikow;
         private System.Windows.Forms.Label l_capslock;
+        private System.Windows.Forms.Label label1;
 
     }
 }

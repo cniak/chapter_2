@@ -304,13 +304,15 @@ namespace Dziennik_nauczyciela
 
         private void sprawdzenieCzyZaznaczoneDane()
         {
-            if (dgv_listaUzytkownikow.SelectedRows.Count != 0)
+            if ((dgv_listaUzytkownikow.SelectedRows.Count != 0) && (indexZaznaczonegoWiersza >=0))
             {
                 b_usun.Enabled = true;
+                label1.Visible = false;
             }
             else
             {
                 b_usun.Enabled = false;
+                label1.Visible = true;
             }
 
         }
@@ -338,6 +340,11 @@ namespace Dziennik_nauczyciela
                     e.SuppressKeyPress = true;
                     break;
             }
+        }
+
+        private void dgv_listaUzytkownikow_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgv_listaUzytkownikow.Rows[0].Selected = false;
         }
         
     }

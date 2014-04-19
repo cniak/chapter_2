@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 93);
+            this.ClientSize = new System.Drawing.Size(293, 90);
             this.Controls.Add(this.b_dodaj);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.t_nazwaPrzedmiotu);

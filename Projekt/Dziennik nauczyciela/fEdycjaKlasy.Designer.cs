@@ -34,14 +34,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.t_nazwaKlasy = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.l_gospodarzImieNazwisko = new System.Windows.Forms.Label();
+            this.cb_listaUczniow = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // b_zapiszZmiany
             // 
-            this.b_zapiszZmiany.Location = new System.Drawing.Point(81, 127);
+            this.b_zapiszZmiany.Location = new System.Drawing.Point(12, 91);
             this.b_zapiszZmiany.Name = "b_zapiszZmiany";
-            this.b_zapiszZmiany.Size = new System.Drawing.Size(148, 23);
+            this.b_zapiszZmiany.Size = new System.Drawing.Size(238, 23);
             this.b_zapiszZmiany.TabIndex = 19;
             this.b_zapiszZmiany.Text = "Zapisz zmiany";
             this.b_zapiszZmiany.UseVisualStyleBackColor = true;
@@ -52,7 +52,7 @@
             this.t_nauczyciel.Enabled = false;
             this.t_nauczyciel.Location = new System.Drawing.Point(129, 6);
             this.t_nauczyciel.Name = "t_nauczyciel";
-            this.t_nauczyciel.Size = new System.Drawing.Size(100, 20);
+            this.t_nauczyciel.Size = new System.Drawing.Size(121, 20);
             this.t_nauczyciel.TabIndex = 18;
             // 
             // label7
@@ -77,7 +77,7 @@
             // 
             this.t_nazwaKlasy.Location = new System.Drawing.Point(129, 32);
             this.t_nazwaKlasy.Name = "t_nazwaKlasy";
-            this.t_nazwaKlasy.Size = new System.Drawing.Size(100, 20);
+            this.t_nazwaKlasy.Size = new System.Drawing.Size(121, 20);
             this.t_nazwaKlasy.TabIndex = 14;
             this.t_nazwaKlasy.TextChanged += new System.EventHandler(this.t_nazwaKlasy_TextChanged);
             // 
@@ -90,21 +90,21 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Nazwa klasy:";
             // 
-            // l_gospodarzImieNazwisko
+            // cb_listaUczniow
             // 
-            this.l_gospodarzImieNazwisko.AutoSize = true;
-            this.l_gospodarzImieNazwisko.Location = new System.Drawing.Point(126, 67);
-            this.l_gospodarzImieNazwisko.Name = "l_gospodarzImieNazwisko";
-            this.l_gospodarzImieNazwisko.Size = new System.Drawing.Size(35, 13);
-            this.l_gospodarzImieNazwisko.TabIndex = 20;
-            this.l_gospodarzImieNazwisko.Text = "label2";
+            this.cb_listaUczniow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_listaUczniow.FormattingEnabled = true;
+            this.cb_listaUczniow.Location = new System.Drawing.Point(129, 64);
+            this.cb_listaUczniow.Name = "cb_listaUczniow";
+            this.cb_listaUczniow.Size = new System.Drawing.Size(121, 21);
+            this.cb_listaUczniow.TabIndex = 21;
             // 
             // fEdycjaKlasy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 161);
-            this.Controls.Add(this.l_gospodarzImieNazwisko);
+            this.ClientSize = new System.Drawing.Size(258, 121);
+            this.Controls.Add(this.cb_listaUczniow);
             this.Controls.Add(this.b_zapiszZmiany);
             this.Controls.Add(this.t_nauczyciel);
             this.Controls.Add(this.label7);
@@ -126,6 +126,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox t_nazwaKlasy;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label l_gospodarzImieNazwisko;
+        private System.Windows.Forms.ComboBox cb_listaUczniow;
     }
 }
