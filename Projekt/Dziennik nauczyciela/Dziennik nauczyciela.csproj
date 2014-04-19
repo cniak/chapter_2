@@ -95,6 +95,12 @@
     <Compile Include="BAZADANYCH.cs" />
     <Compile Include="cSQLite.cs" />
     <Compile Include="cStaleProgramu.cs" />
+    <Compile Include="fEdycjaKlasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEdycjaKlasy.Designer.cs">
+      <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEdycjaNauczyciela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +125,18 @@
     <Compile Include="fWalidacjaHaslaKlasy.Designer.cs">
       <DependentUpon>fWalidacjaHaslaKlasy.cs</DependentUpon>
     </Compile>
+    <Compile Include="fWidokKlasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fWidokKlasy.Designer.cs">
+      <DependentUpon>fWidokKlasy.cs</DependentUpon>
+    </Compile>
     <Compile Include="klasaNaKomentarze.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fEdycjaKlasy.resx">
+      <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fEdycjaNauczyciela.resx">
       <DependentUpon>fEdycjaNauczyciela.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fWalidacjaHaslaKlasy.resx">
       <DependentUpon>fWalidacjaHaslaKlasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fWidokKlasy.resx">
+      <DependentUpon>fWidokKlasy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -40,7 +40,7 @@ namespace Dziennik_nauczyciela
 
                 sqliteConnection.Open();
 
-                List<StringBuilder> listaTabelDoStworzenia = new List<StringBuilder>();
+                
                 StringBuilder sql = new StringBuilder();
 
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS nauczyciel([nauczycielID] INTEGER PRIMARY KEY AUTOINCREMENT,");
@@ -56,12 +56,35 @@ namespace Dziennik_nauczyciela
                 sql.AppendLine("[nazwa] VARCHAR(25) NOT NULL,");
                 sql.AppendLine("[rocznik] VARCHAR(25),");
                 sql.AppendLine("[nauczycielNR] INT,");
-                sql.AppendLine("FOREIGN KEY (nauczycielNR) REFERENCES nauczyciel(nauczycielID))");
+                sql.AppendLine("[gospodarzNR] INT,");
+                sql.AppendLine("FOREIGN KEY (nauczycielNR) REFERENCES nauczyciel(nauczycielID),");
+                sql.AppendLine("FOREIGN KEY (gospodarzNR) REFERENCES uczen(uczenID));");
+
+
+                /*
+                 CREATE TABLE IF NOT EXISTS przedmiot (
+                    przedmiotID INTEGER PRIMARY KEY NOT NULL,
+                    nauczycielNR INTEGER,
+                    nazwa VARCHAR(30),
+                    FOREIGN KEY (nauczycielNR) references nauczyciel
+                 );
+                */
+                sqliteCommand = sqliteConnection.CreateCommand();
+                sqliteCommand.CommandText = sql.ToString();
+                sqliteCommand.ExecuteNonQuery();
+
+                sql = new StringBuilder();
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS przedmiot([przedmiotID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
+                sql.AppendLine("[klasaNR] INT, ");
+                sql.AppendLine("[nazwa] VARCHAR(25) NOT NULL, ");
+                sql.AppendLine("UNIQUE (klasaNR, nazwa), ");
+                sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID));");
 
 
                 sqliteCommand = sqliteConnection.CreateCommand();
                 sqliteCommand.CommandText = sql.ToString();
                 sqliteCommand.ExecuteNonQuery();
+
                 Logger("stworzono baze danych.");
                 try
                 {

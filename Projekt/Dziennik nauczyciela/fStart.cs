@@ -121,7 +121,7 @@ namespace Dziennik_nauczyciela
             this.dgv_listaUzytkownikow.Columns.Add(col);
 
             this.dgv_listaUzytkownikow.DataSource = listaNauczycieli.Tables["tabelaListyNauczycieli"];
-            
+            dgv_listaUzytkownikow.Columns["ID"].Visible = false;
         }
 
         private void b_dodaj_Click(object sender, EventArgs e)

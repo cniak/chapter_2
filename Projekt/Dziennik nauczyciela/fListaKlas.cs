@@ -165,6 +165,7 @@ namespace Dziennik_nauczyciela
             {
                 dgv_listaKlas.Columns[dgv_listaKlas.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
+            dgv_listaKlas.Columns["ID"].Visible = false;
         }
         private bool ustawieniePaskaIGrupy()
         {
@@ -261,15 +262,17 @@ namespace Dziennik_nauczyciela
                 {
                     nazwa = t_nazwa.Text,
                     nauczycielNR = this.nauczyciel.nauczycielID,
-                    rocznik = t_rocznik1.Text + @"/" + t_rocznik2.Text
+                    rocznik = t_rocznik1.Text + @"/" + t_rocznik2.Text,
+                    gospodarzNR = -1
                 };
 
                 if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
-                SQLite.sqliteCommand.CommandText = "INSERT INTO klasa (nazwa, nauczycielNR, rocznik) VALUES (@nazwa, @nauczycielNR, @rocznik);";
+                SQLite.sqliteCommand.CommandText = "INSERT INTO klasa (nazwa, nauczycielNR, rocznik, gospodarzNR) VALUES (@nazwa, @nauczycielNR, @rocznik,@gospodarzNR);";
                 SQLite.sqliteCommand.Parameters.AddWithValue("nazwa", nowaKlasa.nazwa);
                 SQLite.sqliteCommand.Parameters.AddWithValue("nauczycielNR", nowaKlasa.nauczycielNR);
                 SQLite.sqliteCommand.Parameters.AddWithValue("rocznik", nowaKlasa.rocznik);
+                SQLite.sqliteCommand.Parameters.AddWithValue("gospodarzNR", nowaKlasa.gospodarzNR);
 
                 SQLite.sqliteCommand.ExecuteNonQuery();
                 wczytajListeKlas();
@@ -545,6 +548,14 @@ namespace Dziennik_nauczyciela
                     e.SuppressKeyPress = true;
                     break;
             }
+        }
+
+        private void dgv_listaKlas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            fWidokKlasy widokKlasy = new fWidokKlasy(this.zaznaczonaKlasaDoUsunieciaID);
+            this.Hide();
+            widokKlasy.ShowDialog();
+            this.Close();
         }
 
 

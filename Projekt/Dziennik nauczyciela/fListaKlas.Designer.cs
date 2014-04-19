@@ -30,7 +30,11 @@
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.s_statusInternetu = new System.Windows.Forms.ToolStripStatusLabel();
+            this.s_statusCapslock = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.l_rocznikInfo = new System.Windows.Forms.Label();
+            this.t_rocznik2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.b_dodaj = new System.Windows.Forms.Button();
             this.t_rocznik1 = new System.Windows.Forms.TextBox();
             this.t_nazwa = new System.Windows.Forms.TextBox();
@@ -53,10 +57,6 @@
             this.b_edytujDane = new System.Windows.Forms.Button();
             this.b_usunKlase = new System.Windows.Forms.Button();
             this.bw_polaczZMailem = new System.ComponentModel.BackgroundWorker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.t_rocznik2 = new System.Windows.Forms.TextBox();
-            this.s_statusCapslock = new System.Windows.Forms.ToolStripStatusLabel();
-            this.l_rocznikInfo = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaKlas)).BeginInit();
@@ -81,6 +81,13 @@
             this.s_statusInternetu.Size = new System.Drawing.Size(30, 17);
             this.s_statusInternetu.Text = "LAN:";
             // 
+            // s_statusCapslock
+            // 
+            this.s_statusCapslock.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.s_statusCapslock.Name = "s_statusCapslock";
+            this.s_statusCapslock.Size = new System.Drawing.Size(59, 17);
+            this.s_statusCapslock.Text = "CAPSLOCK";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.l_rocznikInfo);
@@ -97,6 +104,34 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodawanie klasy";
+            // 
+            // l_rocznikInfo
+            // 
+            this.l_rocznikInfo.AutoSize = true;
+            this.l_rocznikInfo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.l_rocznikInfo.Location = new System.Drawing.Point(226, 41);
+            this.l_rocznikInfo.Name = "l_rocznikInfo";
+            this.l_rocznikInfo.Size = new System.Drawing.Size(80, 13);
+            this.l_rocznikInfo.TabIndex = 9;
+            this.l_rocznikInfo.Text = "Bledna wartosc";
+            // 
+            // t_rocznik2
+            // 
+            this.t_rocznik2.Location = new System.Drawing.Point(166, 39);
+            this.t_rocznik2.MaxLength = 4;
+            this.t_rocznik2.Name = "t_rocznik2";
+            this.t_rocznik2.Size = new System.Drawing.Size(53, 20);
+            this.t_rocznik2.TabIndex = 8;
+            this.t_rocznik2.TextChanged += new System.EventHandler(this.t_rocznik2_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(148, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(12, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "/";
             // 
             // b_dodaj
             // 
@@ -160,6 +195,7 @@
             this.dgv_listaKlas.Size = new System.Drawing.Size(244, 313);
             this.dgv_listaKlas.TabIndex = 16;
             this.dgv_listaKlas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaKlas_CellClick);
+            this.dgv_listaKlas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaKlas_CellDoubleClick);
             this.dgv_listaKlas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_listaKlas_KeyDown);
             // 
             // gb_powiazanieKontaZPoczta
@@ -317,41 +353,6 @@
             this.bw_polaczZMailem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bw_polaczZMailem_DoWork);
             this.bw_polaczZMailem.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bw_polaczZMailem_ProgressChanged);
             this.bw_polaczZMailem.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bw_polaczZMailem_RunWorkerCompleted);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(148, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(12, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "/";
-            // 
-            // t_rocznik2
-            // 
-            this.t_rocznik2.Location = new System.Drawing.Point(166, 39);
-            this.t_rocznik2.MaxLength = 4;
-            this.t_rocznik2.Name = "t_rocznik2";
-            this.t_rocznik2.Size = new System.Drawing.Size(53, 20);
-            this.t_rocznik2.TabIndex = 8;
-            this.t_rocznik2.TextChanged += new System.EventHandler(this.t_rocznik2_TextChanged);
-            // 
-            // s_statusCapslock
-            // 
-            this.s_statusCapslock.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.s_statusCapslock.Name = "s_statusCapslock";
-            this.s_statusCapslock.Size = new System.Drawing.Size(59, 17);
-            this.s_statusCapslock.Text = "CAPSLOCK";
-            // 
-            // l_rocznikInfo
-            // 
-            this.l_rocznikInfo.AutoSize = true;
-            this.l_rocznikInfo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.l_rocznikInfo.Location = new System.Drawing.Point(226, 41);
-            this.l_rocznikInfo.Name = "l_rocznikInfo";
-            this.l_rocznikInfo.Size = new System.Drawing.Size(80, 13);
-            this.l_rocznikInfo.TabIndex = 9;
-            this.l_rocznikInfo.Text = "Bledna wartosc";
             // 
             // fListaKlas
             // 

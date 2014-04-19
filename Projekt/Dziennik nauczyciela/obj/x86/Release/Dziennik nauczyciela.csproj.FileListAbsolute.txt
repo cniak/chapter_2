@@ -36,3 +36,5 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciel
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fWalidacjaHaslaKlasy.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.Properties.Resources.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik nauczyciela.csproj.GenerateResource.Cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fWidokKlasy.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\GITHUB\Projekt\Dziennik nauczyciela\obj\x86\Release\Dziennik_nauczyciela.fEdycjaKlasy.resources
