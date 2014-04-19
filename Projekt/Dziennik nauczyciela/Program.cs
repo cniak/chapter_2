@@ -51,7 +51,7 @@ namespace Dziennik_nauczyciela
             {
                 MessageBox.Show(ex.Message);
             }
-             */
+           */ 
         }
     }
 }

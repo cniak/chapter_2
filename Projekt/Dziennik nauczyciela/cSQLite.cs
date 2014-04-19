@@ -43,6 +43,7 @@ namespace Dziennik_nauczyciela
                 
                 StringBuilder sql = new StringBuilder();
 
+                //struktura: nauczyciel
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS nauczyciel([nauczycielID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[login] VARCHAR(25) NOT NULL UNIQUE,");
                 sql.AppendLine("[haslo] VARCHAR(25) NOT NULL,");
@@ -52,6 +53,7 @@ namespace Dziennik_nauczyciela
                 sql.AppendLine("[zalogowany_mail] INTEGER,");
                 sql.AppendLine("[email] VARCHAR(25));");
                 
+                //struktura: klasa
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS klasa([klasaID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[nazwa] VARCHAR(25) NOT NULL,");
                 sql.AppendLine("[rocznik] VARCHAR(25),");
@@ -60,24 +62,27 @@ namespace Dziennik_nauczyciela
                 sql.AppendLine("FOREIGN KEY (nauczycielNR) REFERENCES nauczyciel(nauczycielID),");
                 sql.AppendLine("FOREIGN KEY (gospodarzNR) REFERENCES uczen(uczenID));");
 
-
-                /*
-                 CREATE TABLE IF NOT EXISTS przedmiot (
-                    przedmiotID INTEGER PRIMARY KEY NOT NULL,
-                    nauczycielNR INTEGER,
-                    nazwa VARCHAR(30),
-                    FOREIGN KEY (nauczycielNR) references nauczyciel
-                 );
-                */
                 sqliteCommand = sqliteConnection.CreateCommand();
                 sqliteCommand.CommandText = sql.ToString();
                 sqliteCommand.ExecuteNonQuery();
 
                 sql = new StringBuilder();
+                //struktura: przedmiot
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS przedmiot([przedmiotID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
                 sql.AppendLine("[klasaNR] INT, ");
                 sql.AppendLine("[nazwa] VARCHAR(25) NOT NULL, ");
                 sql.AppendLine("UNIQUE (klasaNR, nazwa), ");
+                sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID));");
+
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS uczen([uczenID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
+                sql.AppendLine("[klasaNR] INT NOT NULL, ");
+                sql.AppendLine("[imie] VARCHAR(25) NOT NULL, ");
+                sql.AppendLine("[nazwisko] VARCHAR(25) NOT NULL, ");
+                sql.AppendLine("[pesel] VARCHAR(25) NOT NULL, ");
+                sql.AppendLine("[email] VARCHAR(25), ");
+                sql.AppendLine("[telefon_ucznia] VARCHAR(25) NOT NULL, ");
+                sql.AppendLine("[telefon_rodzica] VARCHAR(25) NOT NULL, ");
+                sql.AppendLine("UNIQUE (klasaNR, imie, nazwisko), ");
                 sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID));");
 
 

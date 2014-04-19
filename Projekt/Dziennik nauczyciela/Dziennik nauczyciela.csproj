@@ -95,6 +95,12 @@
     <Compile Include="BAZADANYCH.cs" />
     <Compile Include="cSQLite.cs" />
     <Compile Include="cStaleProgramu.cs" />
+    <Compile Include="fDodawaniePrzedmiotu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDodawaniePrzedmiotu.Designer.cs">
+      <DependentUpon>fDodawaniePrzedmiotu.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEdycjaKlasy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="fStart.Designer.cs">
       <DependentUpon>fStart.cs</DependentUpon>
     </Compile>
+    <Compile Include="fUsuwaniePrzedmiotuLubUcznia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fUsuwaniePrzedmiotuLubUcznia.Designer.cs">
+      <DependentUpon>fUsuwaniePrzedmiotuLubUcznia.cs</DependentUpon>
+    </Compile>
     <Compile Include="fWalidacjaHaslaKlasy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,9 @@
     <Compile Include="klasaNaKomentarze.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fDodawaniePrzedmiotu.resx">
+      <DependentUpon>fDodawaniePrzedmiotu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fEdycjaKlasy.resx">
       <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fStart.resx">
       <DependentUpon>fStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUsuwaniePrzedmiotuLubUcznia.resx">
+      <DependentUpon>fUsuwaniePrzedmiotuLubUcznia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fWalidacjaHaslaKlasy.resx">
       <DependentUpon>fWalidacjaHaslaKlasy.cs</DependentUpon>

@@ -61,7 +61,6 @@ namespace Dziennik_nauczyciela
             l_mail.Text = nauczyciel.email;
             this.dgv_listaKlas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.b_dodaj.Enabled = false;
-
         }
         private void fListaKlas_Load(object sender, EventArgs e)
         {

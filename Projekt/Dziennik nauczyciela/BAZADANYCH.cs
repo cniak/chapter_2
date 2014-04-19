@@ -40,10 +40,10 @@ namespace Dziennik_nauczyciela
         public class uczen
         {
             public int uczenID { get; set; }
+            public int klasaNR { get; set; }
             public string imie { get; set; }
             public string nazwisko { get; set; }
             public string pesel { get; set; }
-            public int klasaNR { get; set; }
             public string email { get; set; }
             public string telefon_ucznia { get; set; }
             public string telefon_rodzica { get; set; }
