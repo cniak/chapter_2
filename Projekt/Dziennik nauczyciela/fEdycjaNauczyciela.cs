@@ -15,12 +15,13 @@ namespace Dziennik_nauczyciela
     public partial class fEdycjaNauczyciela : Form
     {
         cSQLite SQLite = null;
-
-        public fEdycjaNauczyciela(int nauczycielID)
+        BAZADANYCH.nauczyciel edytowanyNauczyciel = null;
+        public fEdycjaNauczyciela(int nauczycielID, BAZADANYCH.nauczyciel nauczyciel)
         {
             InitializeComponent();
             this.t_hasloEmail.PasswordChar= '\u25CF';
             this.t_hasloUzytkownika.PasswordChar = '\u25CF';
+            edytowanyNauczyciel = nauczyciel;
             SQLite = new cSQLite();
             ladowanieDanych(nauczycielID);
         }
@@ -35,7 +36,6 @@ namespace Dziennik_nauczyciela
                 while (dr.Read())
                 {
                     t_ID.Text = dr["nauczycielID"].ToString();
-
                     t_imie.Text = dr["imie"].ToString();
                     t_nazwisko.Text = dr["nazwisko"].ToString();
                     t_email.Text = dr["email"].ToString();
@@ -62,7 +62,6 @@ namespace Dziennik_nauczyciela
                                                    "email=@email, " +
                                                    "email_haslo=@email_haslo " +
                                                    "WHERE nauczycielID = " + Convert.ToInt32(t_ID.Text) + ";";
-
                 SQLite.sqliteCommand.Parameters.AddWithValue("login", t_login.Text);
                 SQLite.sqliteCommand.Parameters.AddWithValue("haslo", t_hasloUzytkownika.Text);
                 SQLite.sqliteCommand.Parameters.AddWithValue("imie", t_imie.Text);
@@ -70,6 +69,15 @@ namespace Dziennik_nauczyciela
                 SQLite.sqliteCommand.Parameters.AddWithValue("email", t_email.Text);
                 SQLite.sqliteCommand.Parameters.AddWithValue("email_haslo", t_hasloEmail.Text);
                 SQLite.sqliteCommand.Parameters.AddWithValue("ID", Convert.ToInt32(t_ID.Text));
+
+                // taka dziwna edycja, nie chce mi sie juz poprawiac, moze kiedys :-)
+                edytowanyNauczyciel.login = t_login.Text;
+                edytowanyNauczyciel.haslo = t_hasloUzytkownika.Text;
+                edytowanyNauczyciel.imie = t_imie.Text;
+                edytowanyNauczyciel.nazwisko = t_nazwisko.Text;
+                edytowanyNauczyciel.email = t_email.Text;
+                edytowanyNauczyciel.email_haslo = t_hasloEmail.Text;
+
                 SQLite.sqliteCommand.ExecuteNonQuery();
                 SQLite.sqliteConnection.Close();
                 this.Close();

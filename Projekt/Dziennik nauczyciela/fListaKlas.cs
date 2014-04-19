@@ -353,7 +353,7 @@ namespace Dziennik_nauczyciela
             Task edytujDane = new Task((ID) =>
             {
                 int myID = Convert.ToInt32(ID);
-                Application.Run(new fEdycjaNauczyciela(myID));
+                Application.Run(new fEdycjaNauczyciela(myID, nauczyciel));
             }, this.nauczyciel.nauczycielID);
 
             edytujDane.Start();
@@ -551,10 +551,18 @@ namespace Dziennik_nauczyciela
 
         private void dgv_listaKlas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            fWidokKlasy widokKlasy = new fWidokKlasy(this.zaznaczonaKlasaDoUsunieciaID);
-            this.Hide();
-            widokKlasy.ShowDialog();
-            this.Close();
+            if (e.RowIndex >= 0 && e.RowIndex < dgv_listaKlas.Rows.Count)
+            {
+                if ((nauczyciel.imie.Length == 0) || (nauczyciel.nazwisko.Length == 0))
+                {
+                    MessageBox.Show("Imie i nazwisko musi zostac uzupelnione!");
+                    return;
+                }
+                fWidokKlasy widokKlasy = new fWidokKlasy(this.zaznaczonaKlasaDoUsunieciaID);
+                this.Hide();
+                widokKlasy.ShowDialog();
+                this.Close();
+            }
         }
 
 
