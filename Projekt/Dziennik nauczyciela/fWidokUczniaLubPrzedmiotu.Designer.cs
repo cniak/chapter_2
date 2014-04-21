@@ -32,11 +32,11 @@
             this.tp_dodaj = new System.Windows.Forms.TabPage();
             this.tp_edytuj = new System.Windows.Forms.TabPage();
             this.tp_usun = new System.Windows.Forms.TabPage();
+            this.l_zaznaczElementDoUsuniecia = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.b_usun = new System.Windows.Forms.Button();
             this.t_usun = new System.Windows.Forms.TextBox();
             this.dgv_lista = new System.Windows.Forms.DataGridView();
-            this.l_zaznaczElementDoUsuniecia = new System.Windows.Forms.Label();
             this.tc_widok.SuspendLayout();
             this.tp_usun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
@@ -88,6 +88,16 @@
             this.tp_usun.Text = "Usun";
             this.tp_usun.UseVisualStyleBackColor = true;
             // 
+            // l_zaznaczElementDoUsuniecia
+            // 
+            this.l_zaznaczElementDoUsuniecia.AutoSize = true;
+            this.l_zaznaczElementDoUsuniecia.ForeColor = System.Drawing.Color.Red;
+            this.l_zaznaczElementDoUsuniecia.Location = new System.Drawing.Point(6, 50);
+            this.l_zaznaczElementDoUsuniecia.Name = "l_zaznaczElementDoUsuniecia";
+            this.l_zaznaczElementDoUsuniecia.Size = new System.Drawing.Size(88, 13);
+            this.l_zaznaczElementDoUsuniecia.TabIndex = 19;
+            this.l_zaznaczElementDoUsuniecia.Text = "Zaznacz element";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -100,7 +110,7 @@
             // b_usun
             // 
             this.b_usun.Enabled = false;
-            this.b_usun.Location = new System.Drawing.Point(187, 22);
+            this.b_usun.Location = new System.Drawing.Point(106, 45);
             this.b_usun.Name = "b_usun";
             this.b_usun.Size = new System.Drawing.Size(75, 23);
             this.b_usun.TabIndex = 4;
@@ -111,11 +121,10 @@
             // t_usun
             // 
             this.t_usun.BackColor = System.Drawing.SystemColors.Window;
-            this.t_usun.Location = new System.Drawing.Point(9, 24);
+            this.t_usun.Location = new System.Drawing.Point(9, 19);
             this.t_usun.Name = "t_usun";
             this.t_usun.Size = new System.Drawing.Size(172, 20);
             this.t_usun.TabIndex = 3;
-            this.t_usun.TextChanged += new System.EventHandler(this.t_usun_TextChanged);
             // 
             // dgv_lista
             // 
@@ -136,16 +145,6 @@
             this.dgv_lista.Size = new System.Drawing.Size(181, 303);
             this.dgv_lista.TabIndex = 18;
             this.dgv_lista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_lista_CellClick);
-            // 
-            // l_zaznaczElementDoUsuniecia
-            // 
-            this.l_zaznaczElementDoUsuniecia.AutoSize = true;
-            this.l_zaznaczElementDoUsuniecia.ForeColor = System.Drawing.Color.Red;
-            this.l_zaznaczElementDoUsuniecia.Location = new System.Drawing.Point(6, 47);
-            this.l_zaznaczElementDoUsuniecia.Name = "l_zaznaczElementDoUsuniecia";
-            this.l_zaznaczElementDoUsuniecia.Size = new System.Drawing.Size(151, 13);
-            this.l_zaznaczElementDoUsuniecia.TabIndex = 19;
-            this.l_zaznaczElementDoUsuniecia.Text = "Zaznacz element do usuniecia";
             // 
             // fWidokUczniaLubPrzedmiotu
             // 

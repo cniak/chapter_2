@@ -32,8 +32,6 @@
             this.klasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edytujToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.uczeńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.przedmiotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raportyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +51,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.klasaToolStripMenuItem,
             this.uczeńToolStripMenuItem,
@@ -75,30 +74,16 @@
             // edytujToolStripMenuItem2
             // 
             this.edytujToolStripMenuItem2.Name = "edytujToolStripMenuItem2";
-            this.edytujToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
+            this.edytujToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.edytujToolStripMenuItem2.Text = "Edytuj";
             this.edytujToolStripMenuItem2.Click += new System.EventHandler(this.edytujToolStripMenuItem2_Click);
             // 
             // uczeńToolStripMenuItem
             // 
-            this.uczeńToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajToolStripMenuItem,
-            this.usuńToolStripMenuItem});
             this.uczeńToolStripMenuItem.Name = "uczeńToolStripMenuItem";
             this.uczeńToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.uczeńToolStripMenuItem.Text = "Uczeń";
-            // 
-            // dodajToolStripMenuItem
-            // 
-            this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
-            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.dodajToolStripMenuItem.Text = "Dodaj/Edytuj";
-            // 
-            // usuńToolStripMenuItem
-            // 
-            this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
-            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.usuńToolStripMenuItem.Text = "Usuń";
+            this.uczeńToolStripMenuItem.Click += new System.EventHandler(this.uczeńToolStripMenuItem_Click);
             // 
             // przedmiotToolStripMenuItem
             // 
@@ -234,6 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(684, 358);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -254,8 +240,6 @@
         private System.Windows.Forms.ToolStripMenuItem klasaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem edytujToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem uczeńToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem przedmiotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raportyToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

@@ -30,7 +30,7 @@ namespace Dziennik_nauczyciela
             InitializeComponent();
             this.dgv_lista.BackgroundColor = this.BackColor;
             SQLite = new cSQLite();
-            
+            this.t_usun.PasswordChar = '\u25CF';
             this.dgv_lista.BackgroundColor = this.BackColor;
         }
         /// <summary>
@@ -88,7 +88,16 @@ namespace Dziennik_nauczyciela
 
             SQLite.sqliteCommand.CommandText = "SELECT *" +
                                               " FROM " + this.typDanych +
-                                              " WHERE klasaNR = " + this.klasaID + ";";
+                                              " WHERE klasaNR = " + this.klasaID;
+            if (this.typDanych == "przedmiot")
+            {
+                SQLite.sqliteCommand.CommandText += " ORDER BY nazwa;";
+            }
+            else
+            {
+                SQLite.sqliteCommand.CommandText += " ORDER BY nazwisko;";
+            }
+            
             SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
             int counter = 0;
             while (dataReader.Read())
@@ -133,10 +142,15 @@ namespace Dziennik_nauczyciela
 
             this.dgv_lista.DataSource = lista.Tables["lista"];
             dgv_lista.Columns["ID"].Visible = false;
-            
-            dgv_lista.Columns[dgv_lista.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            //dgv_lista.Columns[1].Width = dgv_lista.Width;
+            dgv_lista.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //dgv_lista.Rows[0].Selected = false;
             SQLite.sqliteConnection.Close();
+            for (int i = 0; i < dgv_lista.Columns.Count; i++)
+            {
+                cStatyczneMetody.ustawZawszeWidoczneKolumny(dgv_lista.Columns[i]);
+            }
         }
         private void czyszczenieListy()
         {
@@ -175,9 +189,36 @@ namespace Dziennik_nauczyciela
         }
         private void b_usun_Click(object sender, EventArgs e)
         {
+            
             if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
             try
             {
+                /*
+                SELECT haslo
+                FROM przedmiot
+                LEFT JOIN klasa
+                LEFT JOIN nauczyciel
+                WHERE klasaID =  1
+                */
+                string hasloNauczyciela = string.Empty;
+                SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+                SQLite.sqliteCommand.CommandText = "SELECT haslo " +
+                                                   "FROM nauczyciel " +
+                                                   "LEFT JOIN klasa ON klasaID = " + klasaID + ";";
+                SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+                int counter = 0;
+                while (dataReader.Read())
+                {
+                    hasloNauczyciela = dataReader["haslo"].ToString();
+                    counter++;
+                }
+                if (counter == 2) throw new Exception("za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click");
+                if (t_usun.Text != hasloNauczyciela)
+                {
+                    MessageBox.Show("zle haslo!");
+                    SQLite.sqliteConnection.Close();
+                    return;
+                }
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
                 SQLite.sqliteCommand.CommandText = "DELETE FROM " + typDanych +
                                                    " WHERE " + typDanych + "ID = " + IDZaznaczonegoElementu + ";";
@@ -190,8 +231,9 @@ namespace Dziennik_nauczyciela
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                SQLite.Logger(ex.Message);
             }
+
         }
 
         public virtual void przedmiot_wczytajDaneDoEdycji()
@@ -203,6 +245,17 @@ namespace Dziennik_nauczyciela
         {
             zapiszZmiany.Enabled = (indexZaznaczonegoElementu > 0);
         }
+
+        private void b_usun_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        /*
+        private void fWidokUczniaLubPrzedmiotu_Load(object sender, EventArgs e)
+        {
+            wczytajListe();
+        }
+         */
     }
 
 

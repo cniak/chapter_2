@@ -80,10 +80,12 @@ namespace Dziennik_nauczyciela
 
             if (counter == 0) {
                 b_usun.Visible = false;
+                l_uzupelnijDane.Visible = false;
                 dgv_listaUzytkownikow.Visible = false;
                 return;
             } else {
                 b_usun.Visible = true;
+                l_uzupelnijDane.Visible = true;
                 dgv_listaUzytkownikow.Visible = true;
             }                 
 
@@ -122,6 +124,10 @@ namespace Dziennik_nauczyciela
 
             this.dgv_listaUzytkownikow.DataSource = listaNauczycieli.Tables["tabelaListyNauczycieli"];
             dgv_listaUzytkownikow.Columns["ID"].Visible = false;
+            for (int i = 0; i < dgv_listaUzytkownikow.Columns.Count; i++)
+            {
+                cStatyczneMetody.ustawZawszeWidoczneKolumny(dgv_listaUzytkownikow.Columns[i]);
+            }
         }
 
         private void b_dodaj_Click(object sender, EventArgs e)

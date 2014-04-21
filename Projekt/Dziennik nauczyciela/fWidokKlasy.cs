@@ -74,20 +74,6 @@ namespace Dziennik_nauczyciela
             tworzPasekInformacji();
         }
 
-        private void dodajToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            fDodawaniePrzedmiotu dodawaniePrzedmiotu = new fDodawaniePrzedmiotu(this.klasaID);
-            Task t = new Task(() =>
-                {
-                    dodawaniePrzedmiotu.ShowDialog();
-                });
-            t.Start();
-            t.Wait();
-            // wyswietl info o odswiezeniu!
-        }
-
-
-
         private void przedmiotToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fWidokPrzedmiotu widokPrzedmiotu = new fWidokPrzedmiotu(this.klasaID);
@@ -95,6 +81,17 @@ namespace Dziennik_nauczyciela
             {
                 widokPrzedmiotu.ShowDialog();
             });
+            t.Start();
+            t.Wait();
+        }
+
+        private void uczeńToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fWidokUcznia widokUcznia = new fWidokUcznia(this.klasaID);
+            Task t = new Task(() =>
+                {
+                    widokUcznia.ShowDialog();
+                });
             t.Start();
             t.Wait();
         }

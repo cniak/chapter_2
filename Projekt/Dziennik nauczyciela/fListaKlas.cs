@@ -165,6 +165,10 @@ namespace Dziennik_nauczyciela
                 dgv_listaKlas.Columns[dgv_listaKlas.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
             dgv_listaKlas.Columns["ID"].Visible = false;
+            for (int i = 0; i < dgv_listaKlas.Columns.Count; i++)
+            {
+                cStatyczneMetody.ustawZawszeWidoczneKolumny(dgv_listaKlas.Columns[i]);
+            }
         }
         private bool ustawieniePaskaIGrupy()
         {

@@ -39,11 +39,11 @@
             // 
             // b_zapiszZmiany
             // 
-            this.b_zapiszZmiany.Location = new System.Drawing.Point(12, 91);
+            this.b_zapiszZmiany.Location = new System.Drawing.Point(193, 91);
             this.b_zapiszZmiany.Name = "b_zapiszZmiany";
-            this.b_zapiszZmiany.Size = new System.Drawing.Size(238, 23);
+            this.b_zapiszZmiany.Size = new System.Drawing.Size(57, 23);
             this.b_zapiszZmiany.TabIndex = 19;
-            this.b_zapiszZmiany.Text = "Zapisz zmiany";
+            this.b_zapiszZmiany.Text = "Zapisz";
             this.b_zapiszZmiany.UseVisualStyleBackColor = true;
             this.b_zapiszZmiany.Click += new System.EventHandler(this.b_zapiszZmiany_Click);
             // 

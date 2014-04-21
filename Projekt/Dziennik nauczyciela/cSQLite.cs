@@ -74,6 +74,7 @@ namespace Dziennik_nauczyciela
                 sql.AppendLine("UNIQUE (klasaNR, nazwa), ");
                 sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID));");
 
+                //struktura: uczen
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS uczen([uczenID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
                 sql.AppendLine("[klasaNR] INT NOT NULL, ");
                 sql.AppendLine("[imie] VARCHAR(25) NOT NULL, ");

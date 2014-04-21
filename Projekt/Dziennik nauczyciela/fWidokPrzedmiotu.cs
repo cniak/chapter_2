@@ -36,6 +36,7 @@ namespace Dziennik_nauczyciela
                 SQLite.sqliteConnection.Close();
                 t_nazwaPrzedmiotu.Text = string.Empty;
                 base.wczytajListe();
+                t_edytujNazwaPrzedmiotu.Text = string.Empty;
             }
             catch (Exception)
             {
@@ -86,10 +87,15 @@ namespace Dziennik_nauczyciela
             }
 
         }
-
+        
         private void t_edytujNazwaPrzedmiotu_TextChanged(object sender, EventArgs e)
         {
             b_zapiszZmiany.Enabled = ((t_edytujNazwaPrzedmiotu.Text.Length != 0) && (indexZaznaczonegoElementu >= 0));
+        }
+
+        private void fWidokPrzedmiotu_Load(object sender, EventArgs e)
+        {
+            base.wczytajListe();
         }
         
     }
