@@ -189,7 +189,6 @@ namespace Dziennik_nauczyciela
         }
         private void b_usun_Click(object sender, EventArgs e)
         {
-            
             if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
             try
             {
@@ -250,6 +249,12 @@ namespace Dziennik_nauczyciela
         {
 
         }
+
+        private void t_usun_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
         /*
         private void fWidokUczniaLubPrzedmiotu_Load(object sender, EventArgs e)
         {

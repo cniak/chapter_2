@@ -125,6 +125,7 @@
             this.t_usun.Name = "t_usun";
             this.t_usun.Size = new System.Drawing.Size(172, 20);
             this.t_usun.TabIndex = 3;
+            this.t_usun.TextChanged += new System.EventHandler(this.t_usun_TextChanged);
             // 
             // dgv_lista
             // 

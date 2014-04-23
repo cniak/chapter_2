@@ -1,3 +1,54 @@
 [stworzono baze danych.]	16:44 20-04-2014
 [constraint failed
 columns klasaNR, imie, nazwisko are not unique]	23:46 21-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	13:31 22-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	13:31 22-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[constraint failed
+columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:53 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014
+[za duzo hasel przyszlo podczas pobierania hasla nauczyciela przy usuwaniu przedmiotu, fWidokUczniaLubPrzedmiotu.cs, funkcja: b_usun_Click]	12:54 23-04-2014

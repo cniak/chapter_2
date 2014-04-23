@@ -17,6 +17,7 @@ namespace Dziennik_nauczyciela
             InitializeComponent();
             base.wczytajDane(klasaID, "uczen");
             b_dodaj.Enabled = false;
+            
         }
 
         private void b_dodaj_Click(object sender, EventArgs e)
@@ -81,6 +82,14 @@ namespace Dziennik_nauczyciela
         private void fWidokUcznia_Load(object sender, EventArgs e)
         {
             base.wczytajListe();
+        }
+
+        private void obslugaEnterDlaTextBoxDodaj(object sender, EventArgs e)
+        {
+            if (b_dodaj.Enabled == true)
+            {
+                b_dodaj_Click(sender, e);
+            }
         }
     }
 }

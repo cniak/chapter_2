@@ -149,6 +149,7 @@
             this.t_imie_dodaj.Size = new System.Drawing.Size(244, 20);
             this.t_imie_dodaj.TabIndex = 5;
             this.t_imie_dodaj.TextChanged += new System.EventHandler(this.t_imie_dodaj_TextChanged);
+            this.t_imie_dodaj.Enter += new System.EventHandler(this.obslugaEnterDlaTextBoxDodaj);
             // 
             // t_nazwisko_dodaj
             // 
@@ -163,7 +164,7 @@
             this.t_nrUcznia_dodaj.Location = new System.Drawing.Point(225, 107);
             this.t_nrUcznia_dodaj.Name = "t_nrUcznia_dodaj";
             this.t_nrUcznia_dodaj.Size = new System.Drawing.Size(244, 20);
-            this.t_nrUcznia_dodaj.TabIndex = 15;
+            this.t_nrUcznia_dodaj.TabIndex = 9;
             this.t_nrUcznia_dodaj.TextChanged += new System.EventHandler(this.t_imie_dodaj_TextChanged);
             // 
             // t_pesel_dodaj
@@ -171,7 +172,7 @@
             this.t_pesel_dodaj.Location = new System.Drawing.Point(225, 55);
             this.t_pesel_dodaj.Name = "t_pesel_dodaj";
             this.t_pesel_dodaj.Size = new System.Drawing.Size(244, 20);
-            this.t_pesel_dodaj.TabIndex = 18;
+            this.t_pesel_dodaj.TabIndex = 7;
             this.t_pesel_dodaj.TextChanged += new System.EventHandler(this.t_imie_dodaj_TextChanged);
             // 
             // label10
@@ -205,7 +206,7 @@
             this.t_email_dodaj.Location = new System.Drawing.Point(225, 81);
             this.t_email_dodaj.Name = "t_email_dodaj";
             this.t_email_dodaj.Size = new System.Drawing.Size(244, 20);
-            this.t_email_dodaj.TabIndex = 0;
+            this.t_email_dodaj.TabIndex = 8;
             this.t_email_dodaj.TextChanged += new System.EventHandler(this.t_imie_dodaj_TextChanged);
             // 
             // label9
