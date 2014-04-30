@@ -83,7 +83,7 @@ namespace Dziennik_nauczyciela
             wczytajListe();
         }
 
-        private void wyczyscDaneEdytuj()
+        public override void wyczyscDaneEdytuj()
         {
             t_imie_edytuj.Text =
             t_nazwisko_edytuj.Text =

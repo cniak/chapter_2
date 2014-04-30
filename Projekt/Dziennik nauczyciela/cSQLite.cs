@@ -85,7 +85,31 @@ namespace Dziennik_nauczyciela
                 sql.AppendLine("[telefon_rodzica] VARCHAR(25) NOT NULL, ");
                 sql.AppendLine("UNIQUE (klasaNR, imie, nazwisko), ");
                 sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID));");
+                
+                //struktura: data
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS data([dataID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
+                sql.AppendLine("[klasaNR] INT NOT NULL, ");
+                sql.AppendLine("[dzien] datetime UNIQUE NOT NULL, ");
+                sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID));");
 
+                //struktura: lekcja
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS lekcja([lekcjaID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
+                sql.AppendLine("[klasaNR] INT NOT NULL, ");
+                sql.AppendLine("[przedmiotNR] INT NOT NULL, ");
+                sql.AppendLine("[dataNR] INT NOT NULL, ");
+                sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID), ");
+                sql.AppendLine("FOREIGN KEY (przedmiotNR) REFERENCES przedmiot(przedmiotID), ");
+                sql.AppendLine("FOREIGN KEY (dataNR) REFERENCES data(dataID));");
+
+                //struktura: uczen_na_lekcji
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS uczen_na_lekcji([uczen_na_lekcjiID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
+                sql.AppendLine("[uczenNR] INT NOT NULL, ");
+                sql.AppendLine("[lekcjaNR] INT NOT NULL, ");
+                sql.AppendLine("[obecnosc] INT, ");
+                sql.AppendLine("[ocena] INT CHECK (ocena >=0 AND ocena <= 5), ");
+                sql.AppendLine("UNIQUE(uczenNR,lekcjaNR), ");
+                sql.AppendLine("FOREIGN KEY (uczenNR) REFERENCES uczen(uczenID), ");
+                sql.AppendLine("FOREIGN KEY (lekcjaNR) REFERENCES lekcja(lekcjaID));");
 
                 sqliteCommand = sqliteConnection.CreateCommand();
                 sqliteCommand.CommandText = sql.ToString();
@@ -103,8 +127,5 @@ namespace Dziennik_nauczyciela
                 sqliteConnection.Close();
             }
         }
-
-
-
     }
 }

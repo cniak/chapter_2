@@ -48,6 +48,26 @@ namespace Dziennik_nauczyciela
             public string telefon_ucznia { get; set; }
             public string telefon_rodzica { get; set; }
         }
-
+        public class lekcja
+        {
+            public int lekcjaID { get; set; }
+            public int klasaNR { get; set; }
+            public int przedmiotNR { get; set; }
+            public int dataID { get; set; }
+        }
+        public class uczen_na_lekcji
+        {
+            public int uczen_na_lekcjiID { get; set; }
+            public int uczenNR { get; set; }
+            public int lekcjaNR { get; set; }
+            public int obecnosc { get; set; }
+            public int ocena { get; set; }
+        }
+        public class data
+        {
+            public int dataID { get; set; }
+            public DateTime dzien { get; set; }
+            public int klasaNR { get; set; }
+        }
     }
 }

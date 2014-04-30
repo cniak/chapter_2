@@ -252,15 +252,13 @@ namespace Dziennik_nauczyciela
         private void b_usun1_Click(object sender, EventArgs e)
         {
             usunElement();
-            MessageBox.Show("hehe");
+            wyczyscDaneEdytuj();
+        }
+        public virtual void wyczyscDaneEdytuj()
+        {
+
         }
 
-        /*
-        private void fWidokUczniaLubPrzedmiotu_Load(object sender, EventArgs e)
-        {
-            wczytajListe();
-        }
-         */
     }
 
 
