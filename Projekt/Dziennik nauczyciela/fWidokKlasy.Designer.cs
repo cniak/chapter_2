@@ -369,8 +369,8 @@
             this.cb_typ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_typ.FormattingEnabled = true;
             this.cb_typ.Items.AddRange(new object[] {
-            "Oceny",
-            "Obecność"});
+            "oceny",
+            "obecnosci"});
             this.cb_typ.Location = new System.Drawing.Point(43, 16);
             this.cb_typ.Name = "cb_typ";
             this.cb_typ.Size = new System.Drawing.Size(121, 21);

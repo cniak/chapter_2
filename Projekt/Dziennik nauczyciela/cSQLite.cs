@@ -89,7 +89,8 @@ namespace Dziennik_nauczyciela
                 //struktura: data
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS data([dataID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
                 sql.AppendLine("[klasaNR] INT NOT NULL, ");
-                sql.AppendLine("[dzien] datetime UNIQUE NOT NULL, ");
+                sql.AppendLine("[dzien] datetime NOT NULL, ");
+                sql.AppendLine("UNIQUE(dzien, klasaNR), ");
                 sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID));");
 
                 //struktura: lekcja

@@ -207,7 +207,7 @@ namespace Dziennik_nauczyciela
                 while (dataReader.Read())
                 {
                     DateTime dt = (DateTime)dataReader["dzien"];
-                    if (typ == "Obecność")
+                    if (typ == "obecnosci")
                     {
                         newCol = new DataGridViewCheckBoxColumn();
                         DataGridViewCheckBoxCell c = new DataGridViewCheckBoxCell();
