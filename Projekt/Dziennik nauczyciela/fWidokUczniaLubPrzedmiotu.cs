@@ -169,14 +169,15 @@ namespace Dziennik_nauczyciela
             }
             sprawdzPotrzebneDaneDoUsuniecia();
             przedmiot_wczytajDaneDoEdycji();
-            
+            uczen_wczytajDaneDoEdycji();
         }
+        
         private void t_usun_TextChanged(object sender, EventArgs e)
         {
             sprawdzPotrzebneDaneDoUsuniecia();
         }
         private void sprawdzPotrzebneDaneDoUsuniecia(){
-            b_usun.Enabled = (t_usun.Text.Length != 0 && (indexZaznaczonegoElementu >= 0));
+            //b_usun.Enabled = (t_usun.Text.Length != 0 && (indexZaznaczonegoElementu >= 0));
             l_zaznaczElementDoUsuniecia.Visible = !(indexZaznaczonegoElementu >= 0);
             if (t_usun.Text.Length == 0)
             {
@@ -187,18 +188,11 @@ namespace Dziennik_nauczyciela
                 t_usun.BackColor = Color.White;
             }
         }
-        private void b_usun_Click(object sender, EventArgs e)
+        private void usunElement()
         {
             if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
             try
             {
-                /*
-                SELECT haslo
-                FROM przedmiot
-                LEFT JOIN klasa
-                LEFT JOIN nauczyciel
-                WHERE klasaID =  1
-                */
                 string hasloNauczyciela = string.Empty;
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
                 SQLite.sqliteCommand.CommandText = "SELECT haslo " +
@@ -226,10 +220,11 @@ namespace Dziennik_nauczyciela
                 wczytajListe();
                 t_usun.Text = string.Empty;
                 sprawdzPotrzebneDaneDoUsuniecia();
-                dgv_lista_CellClick(sender, new DataGridViewCellEventArgs(0,-1));
+                dgv_lista_CellClick(new object(), new DataGridViewCellEventArgs(0,-1));
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 SQLite.Logger(ex.Message);
             }
 
@@ -240,19 +235,24 @@ namespace Dziennik_nauczyciela
             
         }
 
+        public virtual void uczen_wczytajDaneDoEdycji()
+        {
+
+        }
         protected void sprawdzCzyIndexPoprawny(Button zapiszZmiany)
         {
             zapiszZmiany.Enabled = (indexZaznaczonegoElementu > 0);
         }
 
-        private void b_usun_Click_1(object sender, EventArgs e)
+        private void t_usun_TextChanged_1(object sender, EventArgs e)
         {
 
         }
 
-        private void t_usun_TextChanged_1(object sender, EventArgs e)
+        private void b_usun1_Click(object sender, EventArgs e)
         {
-
+            usunElement();
+            MessageBox.Show("hehe");
         }
 
         /*

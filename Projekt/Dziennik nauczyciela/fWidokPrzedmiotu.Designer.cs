@@ -34,6 +34,7 @@
             this.b_dodajPrzedmiot = new System.Windows.Forms.Button();
             this.t_nazwaPrzedmiotu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tc_widok.SuspendLayout();
             this.tp_dodaj.SuspendLayout();
             this.tp_edytuj.SuspendLayout();
@@ -141,5 +142,6 @@
         private System.Windows.Forms.Button b_dodajPrzedmiot;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox t_nazwaPrzedmiotu;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

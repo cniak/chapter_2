@@ -82,7 +82,7 @@
             this.tp_edytuj.Controls.Add(this.label15);
             this.tp_edytuj.Controls.Add(this.b_zapisz);
             this.tp_edytuj.Controls.Add(this.tableLayoutPanel2);
-            this.tp_edytuj.Size = new System.Drawing.Size(610, 277);
+            this.tp_edytuj.Size = new System.Drawing.Size(610, 414);
             // 
             // tp_usun
             // 
@@ -297,6 +297,7 @@
             this.t_imie_edytuj.Name = "t_imie_edytuj";
             this.t_imie_edytuj.Size = new System.Drawing.Size(244, 20);
             this.t_imie_edytuj.TabIndex = 5;
+            this.t_imie_edytuj.TextChanged += new System.EventHandler(this.t_edytuj_TextChanged);
             // 
             // t_nazwisko_edytuj
             // 
@@ -304,6 +305,7 @@
             this.t_nazwisko_edytuj.Name = "t_nazwisko_edytuj";
             this.t_nazwisko_edytuj.Size = new System.Drawing.Size(244, 20);
             this.t_nazwisko_edytuj.TabIndex = 6;
+            this.t_nazwisko_edytuj.TextChanged += new System.EventHandler(this.t_edytuj_TextChanged);
             // 
             // t_nrUcznia_edytuj
             // 
@@ -311,6 +313,7 @@
             this.t_nrUcznia_edytuj.Name = "t_nrUcznia_edytuj";
             this.t_nrUcznia_edytuj.Size = new System.Drawing.Size(244, 20);
             this.t_nrUcznia_edytuj.TabIndex = 15;
+            this.t_nrUcznia_edytuj.TextChanged += new System.EventHandler(this.t_edytuj_TextChanged);
             // 
             // t_pesel_edytuj
             // 
@@ -318,6 +321,7 @@
             this.t_pesel_edytuj.Name = "t_pesel_edytuj";
             this.t_pesel_edytuj.Size = new System.Drawing.Size(244, 20);
             this.t_pesel_edytuj.TabIndex = 18;
+            this.t_pesel_edytuj.TextChanged += new System.EventHandler(this.t_edytuj_TextChanged);
             // 
             // label8
             // 
@@ -343,6 +347,7 @@
             this.t_nrRodzica_edytuj.Name = "t_nrRodzica_edytuj";
             this.t_nrRodzica_edytuj.Size = new System.Drawing.Size(244, 20);
             this.t_nrRodzica_edytuj.TabIndex = 10;
+            this.t_nrRodzica_edytuj.TextChanged += new System.EventHandler(this.t_edytuj_TextChanged);
             // 
             // t_email_edytuj
             // 
@@ -350,6 +355,7 @@
             this.t_email_edytuj.Name = "t_email_edytuj";
             this.t_email_edytuj.Size = new System.Drawing.Size(244, 20);
             this.t_email_edytuj.TabIndex = 0;
+            this.t_email_edytuj.TextChanged += new System.EventHandler(this.t_edytuj_TextChanged);
             // 
             // label12
             // 
@@ -377,6 +383,7 @@
             this.b_zapisz.TabIndex = 2;
             this.b_zapisz.Text = "Zapisz";
             this.b_zapisz.UseVisualStyleBackColor = true;
+            this.b_zapisz.Click += new System.EventHandler(this.b_zapisz_Click);
             // 
             // label14
             // 

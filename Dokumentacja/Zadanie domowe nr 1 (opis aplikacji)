@@ -15,30 +15,30 @@ Nauczyciel
 
 Wymagania funkcjonalne:
 
-1.	Jako nauczyciel mam możliwość dodania klasy
-2.	Jako nauczyciel mam możliwość edycji danych klasy
-3.	Jako nauczyciel mam możliwość usunięcia klasy
-4.	Jako nauczyciel mam możliwość dodania ucznia do klasy
-5.	Jako nauczyciel mam możliwość edycji danych ucznia
-6.	Jako nauczyciel mam możliwość usunięcia ucznia z klasy
-7.	Jako nauczyciel mam możliwość dodania oceny uczniowi
-8.	Jako nauczyciel mam możliwość edycji oceny ucznia
-9.	Jako nauczyciel mam możliwość przeglądania ocen ucznia
-10.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do ucznia
-11.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do wszystkich uczniów klasy 
-12.	Jako nauczyciel mam możliwość tworzenia pliku PDF
-13.	Jako nauczyciel mam możliwość zapisu pliku PDF na dysku 
-14.	Jako nauczyciel mam możliwość wysłania pliku PDF do ucznia (mail) 
-15.	Jako nauczyciel mam możliwość dodawania uwag dotyczących ucznia
-16.	Jako nauczyciel mam możliwość przeglądania uwag ucznia 
-17.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia 
-18.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia z wybranego przedmiotu
-19.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy
-20.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy z wybranego przedmiotu
-21.	Jako nauczyciel mam możliwość generowania wykresów frekwencji ucznia
-22.	Jako nauczyciel mam możliwość generowania wykresów frekwencji klasy
-23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu 
-24.	Jako nauczyciel mam możliwość dodania nieobecności w wybranym dniu
+1.	Jako nauczyciel mam możliwość dodania klasy																[x]M
+2.	Jako nauczyciel mam możliwość edycji danych klasy														[x]M
+3.	Jako nauczyciel mam możliwość usunięcia klasy															[x]M
+4.	Jako nauczyciel mam możliwość dodania ucznia do klasy													[x]M
+5.	Jako nauczyciel mam możliwość edycji danych ucznia														[ ]M
+6.	Jako nauczyciel mam możliwość usunięcia ucznia z klasy													[x]M
+7.	Jako nauczyciel mam możliwość dodania oceny uczniowi													[ ]M
+8.	Jako nauczyciel mam możliwość edycji oceny ucznia														[ ]M
+9.	Jako nauczyciel mam możliwość przeglądania ocen ucznia													[ ]M
+10.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do ucznia										[ ]M
+11.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do wszystkich uczniów klasy 					[ ]M
+12.	Jako nauczyciel mam możliwość tworzenia pliku PDF														[ ]T
+13.	Jako nauczyciel mam możliwość zapisu pliku PDF na dysku 												[ ]T
+14.	Jako nauczyciel mam możliwość wysłania pliku PDF do ucznia (mail) 										[ ]M
+15.	Jako nauczyciel mam możliwość dodawania uwag dotyczących ucznia 										[ ]M
+16.	Jako nauczyciel mam możliwość przeglądania uwag ucznia 													[ ]M
+17.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia  										[ ]T
+18.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia z wybranego przedmiotu					[ ]T
+19.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy 											[ ]T
+20.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy z wybranego przedmiotu 					[ ]T
+21.	Jako nauczyciel mam możliwość generowania wykresów frekwencji ucznia 									[ ]T
+22.	Jako nauczyciel mam możliwość generowania wykresów frekwencji klasy										[ ]T
+23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu							[ ]T
+24.	Jako nauczyciel mam możliwość dodania nieobecności w wybranym dniu										[ ]M
 
 Wymagania niefunkcjonalne:
 

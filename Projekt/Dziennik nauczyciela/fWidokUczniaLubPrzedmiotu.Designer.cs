@@ -34,9 +34,9 @@
             this.tp_usun = new System.Windows.Forms.TabPage();
             this.l_zaznaczElementDoUsuniecia = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.b_usun = new System.Windows.Forms.Button();
             this.t_usun = new System.Windows.Forms.TextBox();
             this.dgv_lista = new System.Windows.Forms.DataGridView();
+            this.b_usun1 = new System.Windows.Forms.Button();
             this.tc_widok.SuspendLayout();
             this.tp_usun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
@@ -76,9 +76,9 @@
             // 
             // tp_usun
             // 
+            this.tp_usun.Controls.Add(this.b_usun1);
             this.tp_usun.Controls.Add(this.l_zaznaczElementDoUsuniecia);
             this.tp_usun.Controls.Add(this.label2);
-            this.tp_usun.Controls.Add(this.b_usun);
             this.tp_usun.Controls.Add(this.t_usun);
             this.tp_usun.Location = new System.Drawing.Point(4, 22);
             this.tp_usun.Name = "tp_usun";
@@ -106,17 +106,6 @@
             this.label2.Size = new System.Drawing.Size(215, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Zaznacz element i podaj haslo uzytkownika:";
-            // 
-            // b_usun
-            // 
-            this.b_usun.Enabled = false;
-            this.b_usun.Location = new System.Drawing.Point(106, 45);
-            this.b_usun.Name = "b_usun";
-            this.b_usun.Size = new System.Drawing.Size(75, 23);
-            this.b_usun.TabIndex = 4;
-            this.b_usun.Text = "Usun";
-            this.b_usun.UseVisualStyleBackColor = true;
-            this.b_usun.Click += new System.EventHandler(this.b_usun_Click);
             // 
             // t_usun
             // 
@@ -147,6 +136,16 @@
             this.dgv_lista.TabIndex = 18;
             this.dgv_lista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_lista_CellClick);
             // 
+            // b_usun1
+            // 
+            this.b_usun1.Location = new System.Drawing.Point(106, 45);
+            this.b_usun1.Name = "b_usun1";
+            this.b_usun1.Size = new System.Drawing.Size(75, 23);
+            this.b_usun1.TabIndex = 20;
+            this.b_usun1.Text = "Usun";
+            this.b_usun1.UseVisualStyleBackColor = true;
+            this.b_usun1.Click += new System.EventHandler(this.b_usun1_Click);
+            // 
             // fWidokUczniaLubPrzedmiotu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,8 +171,8 @@
         public System.Windows.Forms.TabPage tp_usun;
         public System.Windows.Forms.DataGridView dgv_lista;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button b_usun;
         private System.Windows.Forms.TextBox t_usun;
         private System.Windows.Forms.Label l_zaznaczElementDoUsuniecia;
+        private System.Windows.Forms.Button b_usun1;
     }
 }

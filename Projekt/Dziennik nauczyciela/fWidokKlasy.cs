@@ -30,17 +30,12 @@ namespace Dziennik_nauczyciela
             {
                 SQLite.sqliteConnection.Open();
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
-                /*
-                SELECT nauczyciel.imie, nauczyciel.nazwisko
-                FROM klasa
-                LEFT JOIN nauczyciel
-                WHERE klasa.nauczycielNR = 1 
-                */
+                
                 SQLite.sqliteCommand.CommandText = "select klasa.nazwa, klasa.gospodarzNR, nauczyciel.imie, nauczyciel.nazwisko " +
                                                    "FROM klasa " +
                                                    "LEFT JOIN nauczyciel " +
                                                    "WHERE klasaID = " + this.klasaID + ";";
-                 
+                
                 //SQLite.sqliteCommand.CommandText = "select * from klasa WHERE klasaID = " + 1 + ";";
                 using (SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader())
                 {
