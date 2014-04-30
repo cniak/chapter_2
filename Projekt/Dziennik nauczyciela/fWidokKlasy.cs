@@ -207,8 +207,17 @@ namespace Dziennik_nauczyciela
                 while (dataReader.Read())
                 {
                     DateTime dt = (DateTime)dataReader["dzien"];
-                    newCol = new DataGridViewColumn();
-                    newCol.CellTemplate = cell;
+                    if (typ == "Obecność")
+                    {
+                        newCol = new DataGridViewCheckBoxColumn();
+                        DataGridViewCheckBoxCell c = new DataGridViewCheckBoxCell();
+                        newCol.CellTemplate = c;
+                    }
+                    else
+                    {
+                        newCol = new DataGridViewColumn();
+                        newCol.CellTemplate = cell;
+                    }
                     newCol.HeaderText = newCol.Name = dt.ToShortDateString();
                     dgv_dziennik.Columns.Add(newCol);
                 }
