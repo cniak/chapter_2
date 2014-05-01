@@ -13,13 +13,22 @@ namespace Dziennik_nauczyciela
     public partial class fEdycjaKlasy : Form
     {
         private int klasaID = -1;
+        private int gospodarzNR = -1;
         cSQLite SQLite = null;
-        public fEdycjaKlasy(int klasaID)
+        public fEdycjaKlasy(int klasaID, int gospodarzNR)
         {
             InitializeComponent();
             this.klasaID = klasaID;
             SQLite = new cSQLite();
             wczytajDaneKlasy();
+            this.gospodarzNR = gospodarzNR;
+        }
+        private void fEdycjaKlasy_Load(object sender, EventArgs e)
+        {
+            cb_listaUczniow.ValueMember = "Key";
+            cb_listaUczniow.DisplayMember = "Value";
+            cb_listaUczniow.DataSource = new BindingSource(cStatyczneMetody.stworzListeUczniow(this.klasaID), null);
+            cb_listaUczniow.SelectedValue = this.gospodarzNR;
         }
 
         private void wczytajDaneKlasy()
@@ -63,10 +72,13 @@ namespace Dziennik_nauczyciela
         {
             try
             {
+                this.gospodarzNR = ((KeyValuePair<int, string>)cb_listaUczniow.SelectedItem).Key;
                 if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
 
-                SQLite.sqliteCommand.CommandText = "UPDATE klasa SET nazwa = '" + t_nazwaKlasy.Text + "' WHERE klasaID = " + klasaID + ";";
+                SQLite.sqliteCommand.CommandText = "UPDATE klasa " +
+                                                   "SET nazwa = '" + t_nazwaKlasy.Text + "', gospodarzNR = " + this.gospodarzNR +
+                                                   " WHERE klasaID = " + klasaID + ";";
                 SQLite.sqliteCommand.ExecuteNonQuery();
                 SQLite.sqliteConnection.Close();
             }
@@ -74,7 +86,6 @@ namespace Dziennik_nauczyciela
             {
                 MessageBox.Show(ex.Message);
             }
-            this.Close();
         }
 
         private void t_nazwaKlasy_TextChanged(object sender, EventArgs e)

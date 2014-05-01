@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.klasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edytujToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.uczeńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.przedmiotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raportyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +50,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Dziennik = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.b_pokazDaneDziennik = new System.Windows.Forms.Button();
             this.cb_typ = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -106,7 +106,6 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.wczytajPrzedmioty = new System.ComponentModel.BackgroundWorker();
-            this.b_pokazDaneDziennik = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -145,18 +144,10 @@
             // 
             // klasaToolStripMenuItem
             // 
-            this.klasaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.edytujToolStripMenuItem2});
             this.klasaToolStripMenuItem.Name = "klasaToolStripMenuItem";
             this.klasaToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.klasaToolStripMenuItem.Text = "Klasa";
-            // 
-            // edytujToolStripMenuItem2
-            // 
-            this.edytujToolStripMenuItem2.Name = "edytujToolStripMenuItem2";
-            this.edytujToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
-            this.edytujToolStripMenuItem2.Text = "Edytuj";
-            this.edytujToolStripMenuItem2.Click += new System.EventHandler(this.edytujToolStripMenuItem2_Click);
+            this.klasaToolStripMenuItem.Click += new System.EventHandler(this.edytujToolStripMenuItem2_Click);
             // 
             // uczeńToolStripMenuItem
             // 
@@ -363,6 +354,16 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Wybierz grupę danych";
+            // 
+            // b_pokazDaneDziennik
+            // 
+            this.b_pokazDaneDziennik.Location = new System.Drawing.Point(555, 14);
+            this.b_pokazDaneDziennik.Name = "b_pokazDaneDziennik";
+            this.b_pokazDaneDziennik.Size = new System.Drawing.Size(75, 23);
+            this.b_pokazDaneDziennik.TabIndex = 7;
+            this.b_pokazDaneDziennik.Text = "Pokaz";
+            this.b_pokazDaneDziennik.UseVisualStyleBackColor = true;
+            this.b_pokazDaneDziennik.Click += new System.EventHandler(this.b_pokazDaneDziennik_Click);
             // 
             // cb_typ
             // 
@@ -903,16 +904,6 @@
             this.wczytajPrzedmioty.DoWork += new System.ComponentModel.DoWorkEventHandler(this.wczytajPrzedmioty_DoWork);
             this.wczytajPrzedmioty.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.wczytajPrzedmioty_RunWorkerCompleted);
             // 
-            // b_pokazDaneDziennik
-            // 
-            this.b_pokazDaneDziennik.Location = new System.Drawing.Point(555, 14);
-            this.b_pokazDaneDziennik.Name = "b_pokazDaneDziennik";
-            this.b_pokazDaneDziennik.Size = new System.Drawing.Size(75, 23);
-            this.b_pokazDaneDziennik.TabIndex = 7;
-            this.b_pokazDaneDziennik.Text = "Pokaz";
-            this.b_pokazDaneDziennik.UseVisualStyleBackColor = true;
-            this.b_pokazDaneDziennik.Click += new System.EventHandler(this.b_pokazDaneDziennik_Click);
-            // 
             // fWidokKlasy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -961,7 +952,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem klasaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem edytujToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem uczeńToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem przedmiotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raportyToolStripMenuItem;

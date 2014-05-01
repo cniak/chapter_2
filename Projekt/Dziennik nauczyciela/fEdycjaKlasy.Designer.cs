@@ -113,6 +113,7 @@
             this.Controls.Add(this.label1);
             this.Name = "fEdycjaKlasy";
             this.Text = "fEdycjaKlasy";
+            this.Load += new System.EventHandler(this.fEdycjaKlasy_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
