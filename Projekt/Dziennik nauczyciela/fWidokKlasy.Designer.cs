@@ -914,6 +914,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "fWidokKlasy";
             this.Text = "fWidokKlasy";
             this.Load += new System.EventHandler(this.fWidokKlasy_Load);

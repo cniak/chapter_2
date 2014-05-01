@@ -27,8 +27,11 @@ namespace Dziennik_nauczyciela
             mc_kalendarz.MaxSelectionCount = 1;
             //wczytajDatyAsync();
             tworzPasekInformacji();
-            cb_przedmiotDziennik.ValueMember = cb_przedmiotWykresy.ValueMember = "Key";
-            cb_przedmiotDziennik.DisplayMember = cb_przedmiotWykresy.DisplayMember = "Value";
+            cb_przedmiotDziennik.ValueMember = "Key";
+            cb_przedmiotWykresy.ValueMember = "Key";
+            cb_przedmiotDziennik.DisplayMember = "Value";
+            cb_przedmiotWykresy.DisplayMember = "Value";
+            //kolorujKalendarz();
         }
 
         static public object listaPrzedmiotow = null;
@@ -75,6 +78,7 @@ namespace Dziennik_nauczyciela
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void edytujToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             fEdycjaKlasy edycjaKlasy = new fEdycjaKlasy(this.klasaID, this.gospodarzNR);
@@ -119,7 +123,15 @@ namespace Dziennik_nauczyciela
         }
         private void mc_kalendarz_DateChanged(object sender, DateRangeEventArgs e)
         {
-            b_dodajDzien.Enabled = true;
+                b_dodajDzien.Enabled = true;
+            //TODO 1 dodac kolorowanie miesiecy
+            /*
+            this.BeginInvoke(new Action(() => {
+                DateTime[] dteBolded = { new DateTime(2014, 5, 28, 0, 0, 0), new DateTime(2012, 9, 21, 0, 0, 0) };
+                this.mc_kalendarz.RemoveAllBoldedDates();
+                this.mc_kalendarz.BoldedDates = dteBolded;
+            }));
+             */
         }
         private void b_dodajDzien_Click(object sender, EventArgs e)
         {
@@ -141,14 +153,15 @@ namespace Dziennik_nauczyciela
                 MessageBox.Show(ex.Message);
             }
         }   
+
         private void wczytajPrzedmioty_DoWork(object sender, DoWorkEventArgs e)
         {
                     e.Result = new BindingSource(cStatyczneMetody.stworzListePrzedmiotow(this.klasaID), null);
         }
-
         private void wczytajPrzedmioty_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            cb_przedmiotDziennik.DataSource = cb_przedmiotWykresy.DataSource = e.Result;
+            cb_przedmiotDziennik.DataSource = e.Result;
+            cb_przedmiotWykresy.DataSource = e.Result;
         }
 
         private void b_pokazDaneDziennik_Click(object sender, EventArgs e)
@@ -199,9 +212,11 @@ namespace Dziennik_nauczyciela
                 SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
                 SQLite.sqliteCommand.CommandText = "SELECT dzien FROM data WHERE klasaNR = " + this.klasaID + " ORDER BY dzien;";
                 SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+                List<DateTime> listaDat = new List<DateTime>();
                 while (dataReader.Read())
                 {
                     DateTime dt = (DateTime)dataReader["dzien"];
+                    listaDat.Add(dt);
                     if (typ == "obecnosci")
                     {
                         newCol = new DataGridViewCheckBoxColumn();
@@ -216,6 +231,7 @@ namespace Dziennik_nauczyciela
                     newCol.HeaderText = newCol.Name = dt.ToShortDateString();
                     dgv_dziennik.Columns.Add(newCol);
                 }
+                mc_kalendarz.BoldedDates = listaDat.ToArray<DateTime>();
             }
             catch (Exception ex)
             {
@@ -230,7 +246,6 @@ namespace Dziennik_nauczyciela
             dgv_dziennik.Columns.Add(newCol);
             #endregion
         }
-
         private void wczytajListeUczniowDoDziennika()
         {
             try
@@ -252,7 +267,6 @@ namespace Dziennik_nauczyciela
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
         private int wczytajIDPrzedmiotu()
         {
             if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
