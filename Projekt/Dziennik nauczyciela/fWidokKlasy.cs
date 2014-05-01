@@ -27,16 +27,15 @@ namespace Dziennik_nauczyciela
             mc_kalendarz.MaxSelectionCount = 1;
             //wczytajDatyAsync();
             tworzPasekInformacji();
+            cb_przedmiotDziennik.ValueMember = cb_przedmiotWykresy.ValueMember = "Key";
+            cb_przedmiotDziennik.DisplayMember = cb_przedmiotWykresy.DisplayMember = "Value";
         }
 
         static public object listaPrzedmiotow = null;
 
         private void fWidokKlasy_Load(object sender, EventArgs e)
         {
-            cb_przedmiotDziennik.ValueMember = cb_przedmiotWykresy.ValueMember = "Key";
-            cb_przedmiotDziennik.DisplayMember = cb_przedmiotWykresy.DisplayMember = "Value";
-
-            wczytajPrzedmioty.RunWorkerAsync();
+            if(!wczytajPrzedmioty.IsBusy) wczytajPrzedmioty.RunWorkerAsync();
         }
         private void tworzPasekInformacji()
         {
@@ -85,7 +84,15 @@ namespace Dziennik_nauczyciela
             });
             t.Start();
             t.Wait();
-            tworzPasekInformacji();
+            fWidokKlasy widokKlasy = new fWidokKlasy(this.klasaID);
+            Task t2 = new Task(() =>
+                {
+                    this.Hide();
+                    widokKlasy.ShowDialog();
+                });
+            t2.Start();
+            this.Close();
+            //tworzPasekInformacji();
         }
         private void przedmiotToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,7 +103,7 @@ namespace Dziennik_nauczyciela
             });
             t.Start();
             t.Wait();
-            wczytajPrzedmioty.RunWorkerAsync();
+            if(!wczytajPrzedmioty.IsBusy) wczytajPrzedmioty.RunWorkerAsync();
         }
         private void uczeńToolStripMenuItem_Click(object sender, EventArgs e)
         {
