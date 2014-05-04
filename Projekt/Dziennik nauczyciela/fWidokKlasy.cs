@@ -18,6 +18,7 @@ namespace Dziennik_nauczyciela
         cSQLite SQLite = null;
         private int klasaID = -1;
         private int gospodarzNR = -1;
+        List<DateTime> listaDat = null;
         public fWidokKlasy(int klasaID)
         {
             InitializeComponent();
@@ -31,12 +32,25 @@ namespace Dziennik_nauczyciela
             cb_przedmiotWykresy.ValueMember = "Key";
             cb_przedmiotDziennik.DisplayMember = "Value";
             cb_przedmiotWykresy.DisplayMember = "Value";
-            kolorujKalendarz();
         }
 
         private void kolorujKalendarz()
         {
-            //asdfadsfasdfasdfasdfajsd
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "SELECT dzien FROM data WHERE klasaNR = " + this.klasaID + ";";
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            listaDat = new List<DateTime>();
+            while (dataReader.Read())
+            {
+                listaDat.Add((DateTime)dataReader["dzien"]);
+            }
+            SQLite.sqliteConnection.Close();
+            this.BeginInvoke(new Action(() =>
+            {
+                this.mc_kalendarz.RemoveAllBoldedDates();
+                this.mc_kalendarz.BoldedDates = listaDat.ToArray();
+            }));
         }
 
         static public object listaPrzedmiotow = null;
@@ -44,6 +58,7 @@ namespace Dziennik_nauczyciela
         private void fWidokKlasy_Load(object sender, EventArgs e)
         {
             if(!wczytajPrzedmioty.IsBusy) wczytajPrzedmioty.RunWorkerAsync();
+            kolorujKalendarz();
         }
         private void tworzPasekInformacji()
         {
@@ -128,15 +143,14 @@ namespace Dziennik_nauczyciela
         }
         private void mc_kalendarz_DateChanged(object sender, DateRangeEventArgs e)
         {
+            
                 b_dodajDzien.Enabled = true;
-            //TODO 1 dodac kolorowanie miesiecy
-            /*
+                listaDat.Add(e.Start);
             this.BeginInvoke(new Action(() => {
-                DateTime[] dteBolded = { new DateTime(2014, 5, 28, 0, 0, 0), new DateTime(2012, 9, 21, 0, 0, 0) };
                 this.mc_kalendarz.RemoveAllBoldedDates();
-                this.mc_kalendarz.BoldedDates = dteBolded;
+                this.mc_kalendarz.BoldedDates = listaDat.ToArray();
             }));
-             */
+            
         }
         private void b_dodajDzien_Click(object sender, EventArgs e)
         {
