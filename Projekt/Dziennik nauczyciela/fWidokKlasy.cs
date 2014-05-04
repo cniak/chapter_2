@@ -31,7 +31,12 @@ namespace Dziennik_nauczyciela
             cb_przedmiotWykresy.ValueMember = "Key";
             cb_przedmiotDziennik.DisplayMember = "Value";
             cb_przedmiotWykresy.DisplayMember = "Value";
-            //kolorujKalendarz();
+            kolorujKalendarz();
+        }
+
+        private void kolorujKalendarz()
+        {
+            //asdfadsfasdfasdfasdfajsd
         }
 
         static public object listaPrzedmiotow = null;
