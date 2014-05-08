@@ -84,3 +84,7 @@ columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
 [stworzono baze danych.]	0:45 01-05-2014
 [stworzono baze danych.]	1:44 01-05-2014
 [stworzono baze danych.]	1:53 01-05-2014
+[stworzono baze danych.]	21:20 08-05-2014
+[stworzono baze danych.]	23:43 08-05-2014
+[stworzono baze danych.]	23:46 08-05-2014
+[stworzono baze danych.]	0:1 09-05-2014

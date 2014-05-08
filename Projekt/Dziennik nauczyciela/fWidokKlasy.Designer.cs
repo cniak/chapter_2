@@ -66,26 +66,17 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Indywidualne = new System.Windows.Forms.TabPage();
+            this.dgv_listaUczniow_indywidualne = new System.Windows.Forms.DataGridView();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.Oceny = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.NazwaPrzedmiotu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_listaOcen_indywidualne = new System.Windows.Forms.DataGridView();
             this.Obecności = new System.Windows.Forms.TabPage();
             this.label22 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Ocena1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ocena2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ocena3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Srednia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_listaObecnosci_indywidualne = new System.Windows.Forms.DataGridView();
             this.Uwagi = new System.Windows.Forms.TabPage();
+            this.b_zapiszUwagi_indywidualne = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ImieINazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Powiadomienia = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.Typ = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,7 +96,8 @@
             this.Tytuł = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.wczytajPrzedmioty = new System.ComponentModel.BackgroundWorker();
+            this.bg_wczytajPrzedmioty = new System.ComponentModel.BackgroundWorker();
+            this.bg_wczytajDaneIndywidualne = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,13 +108,13 @@
             this.Wykresy.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Indywidualne.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUczniow_indywidualne)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.Oceny.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaOcen_indywidualne)).BeginInit();
             this.Obecności.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaObecnosci_indywidualne)).BeginInit();
             this.Uwagi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.Powiadomienia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -138,7 +130,7 @@
             this.raportyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(866, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -184,7 +176,7 @@
             this.tableLayoutPanel1.Controls.Add(this.l_sredniaOcenUczniow, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.l_sredniaFrekwencjaUczniow, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(665, 46);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(811, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -291,7 +283,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.b_dodajDzien);
             this.groupBox2.Controls.Add(this.mc_kalendarz);
-            this.groupBox2.Location = new System.Drawing.Point(665, 216);
+            this.groupBox2.Location = new System.Drawing.Point(811, 207);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(194, 238);
             this.groupBox2.TabIndex = 23;
@@ -326,7 +318,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(659, 430);
+            this.tabControl1.Size = new System.Drawing.Size(805, 421);
             this.tabControl1.TabIndex = 24;
             // 
             // Dziennik
@@ -336,7 +328,7 @@
             this.Dziennik.Location = new System.Drawing.Point(4, 22);
             this.Dziennik.Name = "Dziennik";
             this.Dziennik.Padding = new System.Windows.Forms.Padding(3);
-            this.Dziennik.Size = new System.Drawing.Size(651, 404);
+            this.Dziennik.Size = new System.Drawing.Size(797, 395);
             this.Dziennik.TabIndex = 0;
             this.Dziennik.Text = "Dziennik";
             this.Dziennik.UseVisualStyleBackColor = true;
@@ -376,6 +368,7 @@
             this.cb_typ.Name = "cb_typ";
             this.cb_typ.Size = new System.Drawing.Size(121, 21);
             this.cb_typ.TabIndex = 6;
+            this.cb_typ.SelectedIndexChanged += new System.EventHandler(this.cb_typ_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -403,6 +396,7 @@
             this.cb_przedmiotDziennik.Name = "cb_przedmiotDziennik";
             this.cb_przedmiotDziennik.Size = new System.Drawing.Size(121, 21);
             this.cb_przedmiotDziennik.TabIndex = 3;
+            this.cb_przedmiotDziennik.SelectedIndexChanged += new System.EventHandler(this.cb_przedmiotDziennik_SelectedIndexChanged);
             // 
             // dgv_dziennik
             // 
@@ -410,11 +404,11 @@
             this.dgv_dziennik.AllowUserToDeleteRows = false;
             this.dgv_dziennik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dziennik.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_dziennik.Location = new System.Drawing.Point(3, 100);
+            this.dgv_dziennik.Location = new System.Drawing.Point(3, 91);
             this.dgv_dziennik.Name = "dgv_dziennik";
             this.dgv_dziennik.ReadOnly = true;
             this.dgv_dziennik.RowHeadersVisible = false;
-            this.dgv_dziennik.Size = new System.Drawing.Size(645, 301);
+            this.dgv_dziennik.Size = new System.Drawing.Size(791, 301);
             this.dgv_dziennik.TabIndex = 0;
             // 
             // Wykresy
@@ -423,7 +417,7 @@
             this.Wykresy.Location = new System.Drawing.Point(4, 22);
             this.Wykresy.Name = "Wykresy";
             this.Wykresy.Padding = new System.Windows.Forms.Padding(3);
-            this.Wykresy.Size = new System.Drawing.Size(651, 404);
+            this.Wykresy.Size = new System.Drawing.Size(797, 395);
             this.Wykresy.TabIndex = 1;
             this.Wykresy.Text = "Wykresy";
             this.Wykresy.UseVisualStyleBackColor = true;
@@ -516,93 +510,80 @@
             // 
             // Indywidualne
             // 
+            this.Indywidualne.Controls.Add(this.dgv_listaUczniow_indywidualne);
             this.Indywidualne.Controls.Add(this.tabControl2);
-            this.Indywidualne.Controls.Add(this.dataGridView2);
             this.Indywidualne.Location = new System.Drawing.Point(4, 22);
             this.Indywidualne.Name = "Indywidualne";
-            this.Indywidualne.Size = new System.Drawing.Size(651, 404);
+            this.Indywidualne.Size = new System.Drawing.Size(797, 395);
             this.Indywidualne.TabIndex = 2;
             this.Indywidualne.Text = "Indywidualne";
             this.Indywidualne.UseVisualStyleBackColor = true;
+            // 
+            // dgv_listaUczniow_indywidualne
+            // 
+            this.dgv_listaUczniow_indywidualne.AllowUserToAddRows = false;
+            this.dgv_listaUczniow_indywidualne.AllowUserToDeleteRows = false;
+            this.dgv_listaUczniow_indywidualne.AllowUserToOrderColumns = true;
+            this.dgv_listaUczniow_indywidualne.AllowUserToResizeRows = false;
+            this.dgv_listaUczniow_indywidualne.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_listaUczniow_indywidualne.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgv_listaUczniow_indywidualne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaUczniow_indywidualne.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgv_listaUczniow_indywidualne.Location = new System.Drawing.Point(0, 0);
+            this.dgv_listaUczniow_indywidualne.MultiSelect = false;
+            this.dgv_listaUczniow_indywidualne.Name = "dgv_listaUczniow_indywidualne";
+            this.dgv_listaUczniow_indywidualne.ReadOnly = true;
+            this.dgv_listaUczniow_indywidualne.RowHeadersVisible = false;
+            this.dgv_listaUczniow_indywidualne.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_listaUczniow_indywidualne.Size = new System.Drawing.Size(223, 395);
+            this.dgv_listaUczniow_indywidualne.TabIndex = 19;
+            this.dgv_listaUczniow_indywidualne.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaUczniow_indywidualne_CellClick);
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.Oceny);
             this.tabControl2.Controls.Add(this.Obecności);
             this.tabControl2.Controls.Add(this.Uwagi);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(120, 0);
+            this.tabControl2.Location = new System.Drawing.Point(225, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(531, 404);
+            this.tabControl2.Size = new System.Drawing.Size(569, 389);
             this.tabControl2.TabIndex = 3;
             // 
             // Oceny
             // 
-            this.Oceny.Controls.Add(this.dataGridView4);
+            this.Oceny.Controls.Add(this.dgv_listaOcen_indywidualne);
             this.Oceny.Location = new System.Drawing.Point(4, 22);
             this.Oceny.Name = "Oceny";
             this.Oceny.Padding = new System.Windows.Forms.Padding(3);
-            this.Oceny.Size = new System.Drawing.Size(523, 378);
+            this.Oceny.Size = new System.Drawing.Size(561, 363);
             this.Oceny.TabIndex = 0;
             this.Oceny.Text = "Oceny";
             this.Oceny.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // dgv_listaOcen_indywidualne
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NazwaPrzedmiotu,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView4.MultiSelect = false;
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.Size = new System.Drawing.Size(517, 372);
-            this.dataGridView4.TabIndex = 5;
-            // 
-            // NazwaPrzedmiotu
-            // 
-            this.NazwaPrzedmiotu.HeaderText = "Nazwa przedmiotu";
-            this.NazwaPrzedmiotu.Name = "NazwaPrzedmiotu";
-            this.NazwaPrzedmiotu.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.HeaderText = "24-01-2014";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 86;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "25-01-2014";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "26-01-2014";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Średnia";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dgv_listaOcen_indywidualne.AllowUserToAddRows = false;
+            this.dgv_listaOcen_indywidualne.AllowUserToDeleteRows = false;
+            this.dgv_listaOcen_indywidualne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaOcen_indywidualne.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_listaOcen_indywidualne.Location = new System.Drawing.Point(3, 3);
+            this.dgv_listaOcen_indywidualne.MultiSelect = false;
+            this.dgv_listaOcen_indywidualne.Name = "dgv_listaOcen_indywidualne";
+            this.dgv_listaOcen_indywidualne.RowHeadersVisible = false;
+            this.dgv_listaOcen_indywidualne.Size = new System.Drawing.Size(555, 357);
+            this.dgv_listaOcen_indywidualne.TabIndex = 5;
+            this.dgv_listaOcen_indywidualne.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaOcen_indywidualne_CellEndEdit);
             // 
             // Obecności
             // 
             this.Obecności.Controls.Add(this.label22);
             this.Obecności.Controls.Add(this.comboBox4);
-            this.Obecności.Controls.Add(this.dataGridView3);
+            this.Obecności.Controls.Add(this.dgv_listaObecnosci_indywidualne);
             this.Obecności.Location = new System.Drawing.Point(4, 22);
             this.Obecności.Name = "Obecności";
             this.Obecności.Padding = new System.Windows.Forms.Padding(3);
-            this.Obecności.Size = new System.Drawing.Size(523, 378);
+            this.Obecności.Size = new System.Drawing.Size(561, 363);
             this.Obecności.TabIndex = 1;
             this.Obecności.Text = "Obecności";
             this.Obecności.UseVisualStyleBackColor = true;
@@ -632,83 +613,48 @@
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 5;
             // 
-            // dataGridView3
+            // dgv_listaObecnosci_indywidualne
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ocena1,
-            this.Ocena2,
-            this.Ocena3,
-            this.Srednia});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 73);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(517, 302);
-            this.dataGridView3.TabIndex = 4;
-            // 
-            // Ocena1
-            // 
-            this.Ocena1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Ocena1.HeaderText = "24-01-2014";
-            this.Ocena1.Name = "Ocena1";
-            this.Ocena1.Width = 86;
-            // 
-            // Ocena2
-            // 
-            this.Ocena2.HeaderText = "25-01-2014";
-            this.Ocena2.Name = "Ocena2";
-            // 
-            // Ocena3
-            // 
-            this.Ocena3.HeaderText = "26-01-2014";
-            this.Ocena3.Name = "Ocena3";
-            // 
-            // Srednia
-            // 
-            this.Srednia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Srednia.HeaderText = "Średnia";
-            this.Srednia.Name = "Srednia";
+            this.dgv_listaObecnosci_indywidualne.AllowUserToAddRows = false;
+            this.dgv_listaObecnosci_indywidualne.AllowUserToDeleteRows = false;
+            this.dgv_listaObecnosci_indywidualne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaObecnosci_indywidualne.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_listaObecnosci_indywidualne.Location = new System.Drawing.Point(3, 58);
+            this.dgv_listaObecnosci_indywidualne.MultiSelect = false;
+            this.dgv_listaObecnosci_indywidualne.Name = "dgv_listaObecnosci_indywidualne";
+            this.dgv_listaObecnosci_indywidualne.ReadOnly = true;
+            this.dgv_listaObecnosci_indywidualne.RowHeadersVisible = false;
+            this.dgv_listaObecnosci_indywidualne.Size = new System.Drawing.Size(555, 302);
+            this.dgv_listaObecnosci_indywidualne.TabIndex = 4;
             // 
             // Uwagi
             // 
+            this.Uwagi.Controls.Add(this.b_zapiszUwagi_indywidualne);
             this.Uwagi.Controls.Add(this.richTextBox1);
             this.Uwagi.Location = new System.Drawing.Point(4, 22);
             this.Uwagi.Name = "Uwagi";
-            this.Uwagi.Size = new System.Drawing.Size(523, 378);
+            this.Uwagi.Size = new System.Drawing.Size(561, 363);
             this.Uwagi.TabIndex = 2;
             this.Uwagi.Text = "Uwagi";
             this.Uwagi.UseVisualStyleBackColor = true;
             // 
+            // b_zapiszUwagi_indywidualne
+            // 
+            this.b_zapiszUwagi_indywidualne.Location = new System.Drawing.Point(483, 330);
+            this.b_zapiszUwagi_indywidualne.Name = "b_zapiszUwagi_indywidualne";
+            this.b_zapiszUwagi_indywidualne.Size = new System.Drawing.Size(75, 23);
+            this.b_zapiszUwagi_indywidualne.TabIndex = 1;
+            this.b_zapiszUwagi_indywidualne.Text = "Zapisz";
+            this.b_zapiszUwagi_indywidualne.UseVisualStyleBackColor = true;
+            // 
             // richTextBox1
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(523, 378);
+            this.richTextBox1.Size = new System.Drawing.Size(561, 324);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ImieINazwisko});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(120, 404);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // ImieINazwisko
-            // 
-            this.ImieINazwisko.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ImieINazwisko.HeaderText = "Imię i nazwisko";
-            this.ImieINazwisko.Name = "ImieINazwisko";
-            this.ImieINazwisko.ReadOnly = true;
-            this.ImieINazwisko.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Powiadomienia
             // 
@@ -716,7 +662,7 @@
             this.Powiadomienia.Location = new System.Drawing.Point(4, 22);
             this.Powiadomienia.Name = "Powiadomienia";
             this.Powiadomienia.Padding = new System.Windows.Forms.Padding(3);
-            this.Powiadomienia.Size = new System.Drawing.Size(651, 404);
+            this.Powiadomienia.Size = new System.Drawing.Size(797, 395);
             this.Powiadomienia.TabIndex = 3;
             this.Powiadomienia.Text = "Powiadomienia[LICZBA]";
             this.Powiadomienia.UseVisualStyleBackColor = true;
@@ -731,7 +677,7 @@
             this.dataGridView5.Location = new System.Drawing.Point(3, 3);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowHeadersVisible = false;
-            this.dataGridView5.Size = new System.Drawing.Size(645, 398);
+            this.dataGridView5.Size = new System.Drawing.Size(791, 389);
             this.dataGridView5.TabIndex = 3;
             // 
             // Typ
@@ -768,7 +714,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(651, 404);
+            this.tabPage1.Size = new System.Drawing.Size(797, 395);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Wyślij wiadomość";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -889,7 +835,7 @@
             "Uczeń 4"});
             this.checkedListBox1.Location = new System.Drawing.Point(3, 3);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 398);
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 389);
             this.checkedListBox1.TabIndex = 1;
             // 
             // textBox1
@@ -899,17 +845,21 @@
             this.textBox1.Size = new System.Drawing.Size(404, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // wczytajPrzedmioty
+            // bg_wczytajPrzedmioty
             // 
-            this.wczytajPrzedmioty.DoWork += new System.ComponentModel.DoWorkEventHandler(this.wczytajPrzedmioty_DoWork);
-            this.wczytajPrzedmioty.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.wczytajPrzedmioty_RunWorkerCompleted);
+            this.bg_wczytajPrzedmioty.DoWork += new System.ComponentModel.DoWorkEventHandler(this.wczytajPrzedmioty_DoWork);
+            this.bg_wczytajPrzedmioty.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.wczytajPrzedmioty_RunWorkerCompleted);
+            // 
+            // bg_wczytajDaneIndywidualne
+            // 
+            this.bg_wczytajDaneIndywidualne.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bg_wczytajDaneIndywidualne_DoWork);
             // 
             // fWidokKlasy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(866, 454);
+            this.ClientSize = new System.Drawing.Size(1012, 445);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -932,14 +882,14 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Indywidualne.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUczniow_indywidualne)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.Oceny.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaOcen_indywidualne)).EndInit();
             this.Obecności.ResumeLayout(false);
             this.Obecności.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaObecnosci_indywidualne)).EndInit();
             this.Uwagi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.Powiadomienia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.tabPage1.ResumeLayout(false);
@@ -990,24 +940,13 @@
         private System.Windows.Forms.TabPage Indywidualne;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage Oceny;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NazwaPrzedmiotu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridView dgv_listaOcen_indywidualne;
         private System.Windows.Forms.TabPage Obecności;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ocena1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ocena2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ocena3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Srednia;
+        private System.Windows.Forms.DataGridView dgv_listaObecnosci_indywidualne;
         private System.Windows.Forms.TabPage Uwagi;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImieINazwisko;
         private System.Windows.Forms.TabPage Powiadomienia;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Typ;
@@ -1027,7 +966,10 @@
         private System.Windows.Forms.Label Tytuł;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.ComponentModel.BackgroundWorker wczytajPrzedmioty;
+        private System.ComponentModel.BackgroundWorker bg_wczytajPrzedmioty;
         private System.Windows.Forms.Button b_pokazDaneDziennik;
+        private System.ComponentModel.BackgroundWorker bg_wczytajDaneIndywidualne;
+        public System.Windows.Forms.DataGridView dgv_listaUczniow_indywidualne;
+        private System.Windows.Forms.Button b_zapiszUwagi_indywidualne;
     }
 }

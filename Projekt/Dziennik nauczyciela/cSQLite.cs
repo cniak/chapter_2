@@ -101,7 +101,7 @@ namespace Dziennik_nauczyciela
                 sql.AppendLine("FOREIGN KEY (klasaNR) REFERENCES klasa(klasaID), ");
                 sql.AppendLine("FOREIGN KEY (przedmiotNR) REFERENCES przedmiot(przedmiotID), ");
                 sql.AppendLine("FOREIGN KEY (dataNR) REFERENCES data(dataID));");
-
+                
                 //struktura: uczen_na_lekcji
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS uczen_na_lekcji([uczen_na_lekcjiID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
                 sql.AppendLine("[uczenNR] INT NOT NULL, ");

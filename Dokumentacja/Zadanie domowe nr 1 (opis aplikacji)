@@ -37,7 +37,7 @@ Wymagania funkcjonalne:
 20.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy z wybranego przedmiotu 					[ ]T
 21.	Jako nauczyciel mam możliwość generowania wykresów frekwencji ucznia 									[ ]T
 22.	Jako nauczyciel mam możliwość generowania wykresów frekwencji klasy										[ ]T
-23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu							[ ]T
+23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu							[ ]M
 24.	Jako nauczyciel mam możliwość dodania nieobecności w wybranym dniu										[ ]M
 
 Wymagania niefunkcjonalne:

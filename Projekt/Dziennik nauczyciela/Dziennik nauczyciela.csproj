@@ -137,12 +137,6 @@
     <Compile Include="fWidokPrzedmiotu.Designer.cs">
       <DependentUpon>fWidokPrzedmiotu.cs</DependentUpon>
     </Compile>
-    <Compile Include="fWidokPrzedmiotu2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fWidokPrzedmiotu2.Designer.cs">
-      <DependentUpon>fWidokPrzedmiotu2.cs</DependentUpon>
-    </Compile>
     <Compile Include="fWidokUcznia.cs">
       <SubType>Form</SubType>
     </Compile>

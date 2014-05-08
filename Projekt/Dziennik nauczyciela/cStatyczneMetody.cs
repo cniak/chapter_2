@@ -58,5 +58,6 @@ namespace Dziennik_nauczyciela
             }
             return listaUczniow;
         }
+        public static string pustaKolekcja = "(Kolekcja)";
     }
 }

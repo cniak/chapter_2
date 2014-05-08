@@ -19,6 +19,8 @@ namespace Dziennik_nauczyciela
         private int klasaID = -1;
         private int gospodarzNR = -1;
         List<DateTime> listaDat = null;
+        /* indywidualne */
+        int zaznaczonyUczenID = -1;
         public fWidokKlasy(int klasaID)
         {
             InitializeComponent();
@@ -32,6 +34,7 @@ namespace Dziennik_nauczyciela
             cb_przedmiotWykresy.ValueMember = "Key";
             cb_przedmiotDziennik.DisplayMember = "Value";
             cb_przedmiotWykresy.DisplayMember = "Value";
+            wczytajDaneIndywidualne();
         }
 
         private void kolorujKalendarz()
@@ -52,13 +55,16 @@ namespace Dziennik_nauczyciela
                 this.mc_kalendarz.BoldedDates = listaDat.ToArray();
             }));
         }
-
-        static public object listaPrzedmiotow = null;
-
+        
         private void fWidokKlasy_Load(object sender, EventArgs e)
         {
-            if(!wczytajPrzedmioty.IsBusy) wczytajPrzedmioty.RunWorkerAsync();
+            if(!bg_wczytajPrzedmioty.IsBusy) bg_wczytajPrzedmioty.RunWorkerAsync();
             kolorujKalendarz();
+            stworzKolumnyIndywidualne("oceny", dgv_listaOcen_indywidualne);
+            stworzKolumnyIndywidualne("obecnosci", dgv_listaObecnosci_indywidualne);
+            dodajPrzedmiotyIndywidualne(dgv_listaOcen_indywidualne);
+            dodajPrzedmiotyIndywidualne(dgv_listaObecnosci_indywidualne);
+
         }
         private void tworzPasekInformacji()
         {
@@ -108,15 +114,7 @@ namespace Dziennik_nauczyciela
             });
             t.Start();
             t.Wait();
-            fWidokKlasy widokKlasy = new fWidokKlasy(this.klasaID);
-            Task t2 = new Task(() =>
-                {
-                    this.Hide();
-                    widokKlasy.ShowDialog();
-                });
-            t2.Start();
-            this.Close();
-            //tworzPasekInformacji();
+            tworzPasekInformacji();
         }
         private void przedmiotToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -127,7 +125,14 @@ namespace Dziennik_nauczyciela
             });
             t.Start();
             t.Wait();
-            if(!wczytajPrzedmioty.IsBusy) wczytajPrzedmioty.RunWorkerAsync();
+            nowyWidokKlasy(this.klasaID);
+        }
+        private void nowyWidokKlasy(int ID)
+        {
+            fWidokKlasy widokKlasy = new fWidokKlasy(ID);
+            this.Hide();
+            widokKlasy.ShowDialog();
+            this.Close();
         }
         private void uczeńToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -138,9 +143,10 @@ namespace Dziennik_nauczyciela
                 });
             t.Start();
             t.Wait();
-            wczytajPrzedmioty.RunWorkerAsync();
-            
+            nowyWidokKlasy(this.klasaID);
         }
+        //TODO 2 poprawic by nie pogrubialo zaznaczonych, tylko te po dodaniu
+        //TODO 1 zrobic komunikat po dodaniu daty (odswiez wszystko!)
         private void mc_kalendarz_DateChanged(object sender, DateRangeEventArgs e)
         {
             
@@ -156,6 +162,7 @@ namespace Dziennik_nauczyciela
         {
             dodajDzien();
             b_dodajDzien.Enabled = false;
+            
         }
         private void dodajDzien()
         {
@@ -185,23 +192,26 @@ namespace Dziennik_nauczyciela
 
         private void b_pokazDaneDziennik_Click(object sender, EventArgs e)
         {
-            usunKolumny();
-            stworzKolumny(cb_typ.Items[cb_typ.SelectedIndex].ToString(), cb_przedmiotDziennik.Items[cb_przedmiotDziennik.SelectedIndex].ToString());
-            usunWiersze();
+            
+            usunKolumny(dgv_dziennik);
+            stworzKolumny_dziennik(cb_typ.Items[cb_typ.SelectedIndex].ToString(), cb_przedmiotDziennik.Items[cb_przedmiotDziennik.SelectedIndex].ToString());
+            usunWiersze(dgv_dziennik);
             wczytajListeUczniowDoDziennika();
             // pobranie ID przedmiotu wybranego
             //string wybranyPrzedmiotID = ((KeyValuePair<int, string>)cb_przedmiotDziennik.SelectedItem).Key.ToString();
+            
         }
 
-        private void usunKolumny()
+        private void usunKolumny(DataGridView dgv)
         {
-            while (dgv_dziennik.Columns.Count != 0) dgv_dziennik.Columns.RemoveAt(dgv_dziennik.Columns.Count - 1);
+            while (dgv.Columns.Count != 0) dgv.Columns.RemoveAt(dgv.Columns.Count - 1);
         }
-        private void usunWiersze()
+        private void usunWiersze(DataGridView dgv)
         {
-            while (dgv_dziennik.Rows.Count != 0) dgv_dziennik.Rows.RemoveAt(dgv_dziennik.Rows.Count - 1);
+            while (dgv.Rows.Count != 0) dgv.Rows.RemoveAt(dgv.Rows.Count - 1);
         }
-        private void stworzKolumny(string typ, string przedmiot)
+
+        private void stworzKolumny_dziennik(string typ, string przedmiot)
         {
             #region ID + schowanie
             DataGridViewColumn newCol = new DataGridViewColumn();
@@ -256,7 +266,7 @@ namespace Dziennik_nauczyciela
             {
                 MessageBox.Show(ex.Message);
             }
-#endregion 
+            #endregion 
             #region frekwencja / srednia
             string ostatniaKolumna = (typ == "obecnosci") ? "Frekwencja" : "Srednia";
             newCol = new DataGridViewColumn();
@@ -304,6 +314,321 @@ namespace Dziennik_nauczyciela
         private void wczytajDaneDziennik(string typ, int przedmiotID)
         {
             
+        }
+
+        private void cb_typ_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            obslugaPokazDziennik();
+        }
+
+        private void cb_przedmiotDziennik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            obslugaPokazDziennik();
+        }
+
+        private void obslugaPokazDziennik()
+        {
+            if ((cb_przedmiotDziennik.SelectedIndex < 0) || (cb_typ.SelectedIndex < 0) || (cb_przedmiotDziennik.Text == cStatyczneMetody.pustaKolekcja)) b_pokazDaneDziennik.Enabled = false;
+            else b_pokazDaneDziennik.Enabled = true;   
+        }
+
+        /* indywidualne */
+        
+
+        //na razie zbedne, pozniej moze wykorzystam
+        private void bg_wczytajDaneIndywidualne_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
+        }
+        private void wczytajDaneIndywidualne()
+        {
+            wczytajListeUczniowIndywidualne();
+        }
+
+        private void wczytajListeUczniowIndywidualne()
+        {
+
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            SQLite.sqliteCommand.CommandText = "SELECT uczenID, imie, nazwisko" +
+                                              " FROM uczen" +
+                                              " WHERE klasaNR = " + this.klasaID +
+                                              " ORDER BY nazwisko;";
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            //tworzenie kolumn
+            DataSet lista = new DataSet();
+            DataTable tabelaListy = new DataTable("lista");
+            lista.Tables.Add(tabelaListy);
+
+            tabelaListy.Columns.Add("ID", typeof(int));
+            tabelaListy.Columns.Add("dane", typeof(string));
+            while (dataReader.Read())
+            {
+                DataRow drr = tabelaListy.NewRow();
+                drr["ID"] = dataReader["uczenID"].ToString();
+
+                drr["dane"] = dataReader["imie"].ToString() + " " + dataReader["nazwisko"].ToString();
+                tabelaListy.Rows.Add(drr);
+            }
+            tabelaListy.AcceptChanges();
+            this.dgv_listaUczniow_indywidualne.AutoGenerateColumns = false;
+            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.DataPropertyName = "ID";
+            col.Name = "ID";
+            col.HeaderText = "ID";
+            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgv_listaUczniow_indywidualne.Columns.Add(col);
+
+            col = new DataGridViewTextBoxColumn();
+            col.DataPropertyName = col.Name = col.HeaderText = "dane";
+            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgv_listaUczniow_indywidualne.Columns.Add(col);
+
+            this.dgv_listaUczniow_indywidualne.DataSource = lista.Tables["lista"];
+            this.dgv_listaUczniow_indywidualne.Columns["ID"].Visible = false;
+            this.dgv_listaUczniow_indywidualne.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+        }
+        private void wczytajOcenyUczniaIndywidualne(int uczenID, string typ, DataGridView dgv)
+        {
+            for (int r = 0; r < dgv.Rows.Count; r++)
+                {
+                    for (int c = 2; c < dgv.Columns.Count - 1; c++)
+                    {
+                        string dataKolumny = dgv_listaOcen_indywidualne.Columns[c].HeaderText.ToString();
+                        dataKolumny += " 00:00:00.000";
+                        int ocena = pobierzOcene(Convert.ToInt32(dgv[0, r].Value), dataKolumny);
+                        if (ocena < 0) dgv[c, r].Value = string.Empty; else dgv[c, r].Value = ocena;
+                    }
+                }
+        }
+
+        private int pobierzOcene(int przedmiotID, string dataKolumny)
+        {
+            int ocena = -1;
+            int lekcjaID            = pobierzIDLekcjiLubStworz(dataKolumny, przedmiotID);
+            int uczen_na_lekcjiID   = pobierzIDUczniaNaLekcjiLubStworz(this.zaznaczonyUczenID, lekcjaID);
+
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "SELECT ocena " +
+                                                "FROM uczen_na_lekcji " +
+                                                "WHERE uczen_na_lekcjiID = " + uczen_na_lekcjiID + " AND ocena is not null;";
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            while (dataReader.Read())
+            {
+                ocena = Convert.ToInt32(dataReader["ocena"].ToString());
+            }
+
+            return ocena;
+        }
+        private void dodajPrzedmiotyIndywidualne(DataGridView dgv)
+        {
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "SELECT przedmiotID, nazwa FROM przedmiot WHERE klasaNR = " + this.klasaID + ";";
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            while (dataReader.Read())
+            {
+                DataGridViewRow row = (DataGridViewRow)dgv.RowTemplate.Clone();
+                row.CreateCells(dgv, Convert.ToInt32(dataReader["przedmiotID"].ToString()), dataReader["nazwa"].ToString());
+                dgv.Rows.Add(row);
+            }
+            SQLite.sqliteConnection.Close();
+        }
+        private void stworzKolumnyIndywidualne(string typ, DataGridView dgv)
+        {
+            #region ID + schowanie
+            DataGridViewColumn newCol = new DataGridViewColumn();
+            DataGridViewCell cell = new DataGridViewTextBoxCell();
+            newCol.CellTemplate = cell;
+
+            newCol.HeaderText = "ID";
+            newCol.Name = "ID";
+            newCol.Visible = true;
+            dgv.Columns.Add(newCol);
+            dgv.Columns[0].Visible = false;
+            #endregion
+            #region nazwa przedmiotu
+            newCol = new DataGridViewColumn();
+            cell = new DataGridViewTextBoxCell();
+            newCol.CellTemplate = cell;
+
+            newCol.HeaderText = "Nazwa przedmiotu";
+            newCol.Name = "nazwa_przedmiotu";
+            newCol.Visible = true;
+            dgv.Columns.Add(newCol);
+            #endregion
+
+            if (this.SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            try
+            {
+                SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+                SQLite.sqliteCommand.CommandText = "SELECT dzien FROM data WHERE klasaNR = " + this.klasaID + " ORDER BY dzien;";
+                SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+                List<DateTime> listaDat = new List<DateTime>();
+                while (dataReader.Read())
+                {
+                    DateTime dt = (DateTime)dataReader["dzien"];
+                    listaDat.Add(dt);
+                    if (typ == "obecnosci")
+                    {
+                        newCol = new DataGridViewCheckBoxColumn();
+                        DataGridViewCheckBoxCell c = new DataGridViewCheckBoxCell();
+                        newCol.CellTemplate = c;
+                    }
+                    else
+                    {
+                        newCol = new DataGridViewColumn();
+                        newCol.CellTemplate = cell;
+                    }
+                    newCol.HeaderText = newCol.Name = dt.ToShortDateString();
+                    dgv.Columns.Add(newCol);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            #region frekwencja / srednia
+            string ostatniaKolumna = (typ == "obecnosci") ? "Frekwencja" : "Srednia";
+            newCol = new DataGridViewColumn();
+            newCol.CellTemplate = cell;
+            newCol.HeaderText = newCol.Name = ostatniaKolumna;
+            dgv.Columns.Add(newCol);
+            #endregion
+        }
+        private void dgv_listaUczniow_indywidualne_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex < 0) || (e.RowIndex >= dgv_listaUczniow_indywidualne.Rows.Count)) return;
+            zaznaczonyUczenID = Convert.ToInt32(dgv_listaUczniow_indywidualne["ID", e.RowIndex].Value);
+            wczytajOcenyUczniaIndywidualne(zaznaczonyUczenID,"oceny",dgv_listaOcen_indywidualne);
+
+        }
+
+        
+
+        private int pobierzIDDaty(string dzien)
+        {
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "SELECT dataID FROM data WHERE dzien ='" + dzien + "';";
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            int ID = -1;
+            while (dataReader.Read())
+            {
+                ID = Convert.ToInt32(dataReader["dataID"].ToString());
+            }
+            SQLite.sqliteConnection.Close();
+            return ID;
+        }
+
+        private int pobierzIDLekcji(string dataKolumny, int przedmiotID)
+        {
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "SELECT " +
+                                                "lekcjaID " +
+                                                "FROM " +
+                                                "lekcja " +
+                                                "LEFT JOIN data ON lekcja.dataNR = data.dataID AND data.klasaNR = " + this.klasaID + " " +
+                                                "WHERE " +
+                                                "data.dzien ='" + dataKolumny + "' AND lekcja.przedmiotNR = " + przedmiotID + ";";
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            int lekcjaID = -1;
+            while (dataReader.Read())
+            {
+                lekcjaID = Convert.ToInt32(dataReader["lekcjaID"].ToString());
+            }
+            SQLite.sqliteConnection.Close();
+            return lekcjaID;
+        }
+
+        private int pobierzIDUczniaNaLekcji(int uczenNR, int lekcjaNR)
+        {
+            int ID = -1;
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "SELECT uczen_na_lekcjiID FROM uczen_na_lekcji WHERE uczenNR = " + uczenNR + " AND lekcjaNR = " + lekcjaNR + ";";
+            SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
+            while (dataReader.Read())
+            {
+                ID = Convert.ToInt32(dataReader["uczen_na_lekcjiID"].ToString());
+            }
+
+            return ID;
+        }
+
+        private int pobierzIDLekcjiLubStworz(string dataKolumny, int przedmiotID)
+        {
+            int lekcjaID = pobierzIDLekcji(dataKolumny, przedmiotID);
+            if (lekcjaID == -1)
+            {
+                int dataID = pobierzIDDaty(dataKolumny);
+                try
+                {
+                    if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+                    SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+                    SQLite.sqliteCommand.CommandText = "INSERT INTO lekcja(klasaNR, przedmiotNR,dataNR) VALUES(@klasa,@przedmiot,@data);";
+                    SQLite.sqliteCommand.Parameters.AddWithValue("klasa", this.klasaID);
+                    SQLite.sqliteCommand.Parameters.AddWithValue("przedmiot", przedmiotID);
+                    SQLite.sqliteCommand.Parameters.AddWithValue("data", dataID);
+                    SQLite.sqliteCommand.ExecuteNonQuery();
+
+                    lekcjaID = pobierzIDLekcji(dataKolumny, przedmiotID);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            SQLite.sqliteConnection.Close();
+            return lekcjaID;
+        }
+
+        private int pobierzIDUczniaNaLekcjiLubStworz(int uczenNR, int lekcjaNR)
+        {
+            int ID = pobierzIDUczniaNaLekcji(uczenNR,lekcjaNR);
+            if (ID < 0)
+            {
+                if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+                SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+                SQLite.sqliteCommand.CommandText = "INSERT INTO uczen_na_lekcji(uczenNR, lekcjaNR, obecnosc) VALUES(@uczen,@lekcja,@obecnosc);";
+                SQLite.sqliteCommand.Parameters.AddWithValue("uczen", uczenNR);
+                SQLite.sqliteCommand.Parameters.AddWithValue("lekcja", lekcjaNR);
+                SQLite.sqliteCommand.Parameters.AddWithValue("obecnosc", 0);
+                //SQLite.sqliteCommand.Parameters.AddWithValue("ocena", 0);
+                SQLite.sqliteCommand.ExecuteNonQuery();
+
+                ID = pobierzIDUczniaNaLekcji(uczenNR, lekcjaNR);
+            }
+            return ID;
+        }
+
+        private void zapiszOcene(int wartosc, int uczen_na_lekcjiID)
+        {
+            if (SQLite.sqliteConnection.State == ConnectionState.Closed) SQLite.sqliteConnection.Open();
+            SQLite.sqliteCommand = SQLite.sqliteConnection.CreateCommand();
+            SQLite.sqliteCommand.CommandText = "UPDATE uczen_na_lekcji SET ocena = " + wartosc + " WHERE uczen_na_lekcjiID = " + uczen_na_lekcjiID + ";";
+            SQLite.sqliteCommand.ExecuteNonQuery();
+            SQLite.sqliteConnection.Close();
+        }
+
+        private void dgv_listaOcen_indywidualne_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((e.RowIndex < 0) || (e.RowIndex >= dgv_listaUczniow_indywidualne.Rows.Count)) return;
+            string dataKolumny = dgv_listaOcen_indywidualne.Columns[e.ColumnIndex].HeaderText.ToString();
+            //TODO 1 nie zapominac o tym!
+            dataKolumny += " 00:00:00.000";
+            int przedmiotID         = Convert.ToInt32(dgv_listaOcen_indywidualne["ID", e.RowIndex].Value);
+            int lekcjaID            = pobierzIDLekcjiLubStworz(dataKolumny, przedmiotID);
+            int uczen_na_lekcjiID   = pobierzIDUczniaNaLekcjiLubStworz(this.zaznaczonyUczenID, lekcjaID);
+            try{
+                int ocena = Convert.ToInt32(dgv_listaOcen_indywidualne[e.ColumnIndex, e.RowIndex].Value);
+                zapiszOcene(ocena, uczen_na_lekcjiID);
+            } catch (Exception ex){
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
