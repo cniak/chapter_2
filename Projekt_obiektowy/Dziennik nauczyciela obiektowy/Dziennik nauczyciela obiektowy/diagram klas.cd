@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dziennik_nauczyciela_obiektowy.cSQLite">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oAAAACAAAAAAAAoAGAAJQAABAAQCAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>baza danych\cSQLite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.ListaNauczycieli">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAIAAAAAIAAAAAAAAQAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DataGridView\ListaNauczycieli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.Lista&lt;T&gt;">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEEAAAAAAKAABAAgAAQAhAAAAAAAQQAACAgABAAE=</HashCode>
+      <FileName>DataGridView\Lista.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.nauczyciel">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAEAAKQIACCwAAAAQIACAAAIAAAICgAQAQCAEIE=</HashCode>
+      <FileName>baza danych\nauczyciel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.klasa">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAQAAAARIIGABQAAAAYAAAwAQIEIAE=</HashCode>
+      <FileName>baza danych\klasa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.bazadanych">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAQAAAAQAAAAAAAAAAIAAAQAAAAQAA=</HashCode>
+      <FileName>baza danych\bazadanych.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.ListaKlas">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="Dziennik_nauczyciela_obiektowy.Lista&lt;T&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="4.381" />
+        <Point X="3.5" Y="4.55" />
+        <Point X="4.688" Y="4.55" />
+        <Point X="4.688" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIAAAAAAAAQAAABAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DataGridView\ListaKlas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

@@ -206,6 +206,7 @@ namespace Dziennik_nauczyciela
             SQLite.sqliteCommand.CommandText = "select * from nauczyciel where nauczycielID=@wybranyUzytkownikID;";
             SQLite.sqliteCommand.Parameters.AddWithValue("wybranyUzytkownikID", row.Cells[0].Value.ToString());
             SQLite.sqliteCommand.ExecuteNonQuery();
+            
             SQLiteDataReader dataReader = SQLite.sqliteCommand.ExecuteReader();
             BAZADANYCH.nauczyciel logujacyUzytkownik = null;
             while (dataReader.Read())
@@ -223,7 +224,7 @@ namespace Dziennik_nauczyciela
                 };
                 //if (counter > 1) MessageBox.Show("za duzo uzytkownikow o takim ID!"); return;
             }
-               
+            
             cDaneDoWatku daneDoWatku = new cDaneDoWatku
             {
                tytulOkna        = logujacyUzytkownik.login,
@@ -246,6 +247,7 @@ namespace Dziennik_nauczyciela
                 this.Close();
             }
             else MessageBox.Show("zle!");
+            
 
         }
         private void t_nazwaUzytkownika_Enter(object sender, EventArgs e)
@@ -352,6 +354,8 @@ namespace Dziennik_nauczyciela
         {
             dgv_listaUzytkownikow.Rows[0].Selected = false;
         }
+
+       
         
     }
 }

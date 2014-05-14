@@ -1,0 +1,8 @@
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\Debug\Dziennik nauczyciela obiektowy.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\Debug\Dziennik nauczyciela obiektowy.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\Debug\Dziennik nauczyciela obiektowy.csprojResolveAssemblyReference.cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\Debug\Dziennik_nauczyciela_obiektowy.fStart.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\Debug\Dziennik_nauczyciela_obiektowy.Properties.Resources.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\Debug\Dziennik nauczyciela obiektowy.csproj.GenerateResource.Cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\Debug\Dziennik nauczyciela obiektowy.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\Debug\Dziennik nauczyciela obiektowy.pdb

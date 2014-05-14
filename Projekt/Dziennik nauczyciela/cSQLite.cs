@@ -31,7 +31,6 @@ namespace Dziennik_nauczyciela
 
             file.Close();
         }
-
         public void tworzenieBazyDanych()
         {
             if (!File.Exists(cSQLite.nazwaPliku))

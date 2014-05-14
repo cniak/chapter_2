@@ -1,0 +1,20 @@
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\Dziennik nauczyciela obiektowy.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\Dziennik nauczyciela obiektowy.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\SQLite.Designer.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.Linq.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\SQLite.Designer.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.Linq.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fStart.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Properties.Resources.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csproj.GenerateResource.Cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.exe
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csprojResolveAssemblyReference.cache
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fWalidacjaHasla.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fListaKlas.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fEdycjaNauczyciela.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\ImapX.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\LinqBridge.dll
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\ImapX.pdb

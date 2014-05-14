@@ -88,3 +88,5 @@ columns klasaNR, imie, nazwisko are not unique]	12:47 23-04-2014
 [stworzono baze danych.]	23:43 08-05-2014
 [stworzono baze danych.]	23:46 08-05-2014
 [stworzono baze danych.]	0:1 09-05-2014
+[constraint failed
+column login is not unique]	2:0 11-05-2014

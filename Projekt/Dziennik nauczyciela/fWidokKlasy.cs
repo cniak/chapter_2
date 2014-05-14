@@ -206,6 +206,7 @@ namespace Dziennik_nauczyciela
         {
             while (dgv.Columns.Count != 0) dgv.Columns.RemoveAt(dgv.Columns.Count - 1);
         }
+        
         private void usunWiersze(DataGridView dgv)
         {
             while (dgv.Rows.Count != 0) dgv.Rows.RemoveAt(dgv.Rows.Count - 1);
@@ -289,6 +290,7 @@ namespace Dziennik_nauczyciela
                     //dgv_dziennik.Columns["imie_i_nazwisko"] = "hehe";
 
                     DataGridViewRow row = (DataGridViewRow)dgv_dziennik.RowTemplate.Clone();
+
                     row.CreateCells(dgv_dziennik, Convert.ToInt32(dataReader["uczenID"].ToString()), dataReader["imie"].ToString() + " " + dataReader["nazwisko"].ToString());
                     dgv_dziennik.Rows.Add(row);
                 }
@@ -401,7 +403,7 @@ namespace Dziennik_nauczyciela
                     }
                 }
         }
-
+        //TODO 1 zablokowac edycje drugiej kolumny (nazwa przedmiotu)
         private int pobierzOcene(int przedmiotID, string dataKolumny)
         {
             int ocena = -1;
@@ -502,7 +504,6 @@ namespace Dziennik_nauczyciela
             if ((e.RowIndex < 0) || (e.RowIndex >= dgv_listaUczniow_indywidualne.Rows.Count)) return;
             zaznaczonyUczenID = Convert.ToInt32(dgv_listaUczniow_indywidualne["ID", e.RowIndex].Value);
             wczytajOcenyUczniaIndywidualne(zaznaczonyUczenID,"oceny",dgv_listaOcen_indywidualne);
-
         }
 
         
