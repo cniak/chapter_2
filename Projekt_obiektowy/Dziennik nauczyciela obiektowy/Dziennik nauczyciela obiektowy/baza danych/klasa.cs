@@ -8,7 +8,6 @@ namespace Dziennik_nauczyciela_obiektowy
 {
     public class klasa : bazadanych
     {
-        private string haslo        = string.Empty;
         private string nazwa        = string.Empty;
         private string rocznik      = string.Empty;
         private int klasaID         = -1;
@@ -42,18 +41,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 return klasaID;
             }
         }
-        public string Haslo
-        {
-            get
-            {
-                return haslo;
-            }
-            set
-            {
-                haslo = value;
-                if (!wylaczEdycje) aktualizuj("haslo");
-            }
-        }
+        
         public string Nazwa
         {
             get
@@ -109,7 +97,6 @@ namespace Dziennik_nauczyciela_obiektowy
             if (wylaczEdycje == true) throw new Exception("wlacz pierw edycje!");
             if ((elementy.Length == 1) && (elementy[0] == "*"))
             {
-                SQLite.Zapytanie = "UPDATE klasa SET haslo = '" + haslo + "' WHERE klasaID = " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = '" + gospodarzNR + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
@@ -119,7 +106,6 @@ namespace Dziennik_nauczyciela_obiektowy
             {
                 switch (element)
                 {
-                    case "haslo": SQLite.Zapytanie = "UPDATE klasa SET haslo = '" + haslo + "' WHERE klasaID = " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "nazwa": SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "gospodarzNR": SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = '" + gospodarzNR + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "rocznik": SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
@@ -164,20 +150,7 @@ namespace Dziennik_nauczyciela_obiektowy
             return listaKlas;
         }
 
-        /// <summary>
-        /// wymusza haslo do logowania
-        /// </summary>
-        public bool podajHaslo()
-        {
-            fWalidacjaHasla walidacjaHasla = new fWalidacjaHasla(haslo);
-            walidacjaHasla.ShowDialog();
-            if (walidacjaHasla.czyPoprawne == false)
-            {
-                MessageBox.Show("zle haslo!");
-            }
-            return walidacjaHasla.czyPoprawne;
-        }
-
+        
         /// <summary>
         /// usuwa obiekt z bazy danych
         /// </summary>
@@ -218,10 +191,7 @@ namespace Dziennik_nauczyciela_obiektowy
         /// </summary>
         public void zaloguj(Form f)
         {
-            if (podajHaslo() == true)
-            {
-                
-            }
+            
         }
     }
 }
