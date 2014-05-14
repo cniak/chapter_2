@@ -10,8 +10,6 @@ namespace Dziennik_nauczyciela_obiektowy
     public class ListaNauczycieli : Lista<nauczyciel>
     {
 
-        public int SQLite;
-
         /// <summary>
         /// tworzy odwolanie do obiektu DataGridView
         /// </summary>

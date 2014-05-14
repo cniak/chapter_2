@@ -13,6 +13,7 @@ namespace Dziennik_nauczyciela_obiektowy
         protected DataGridView dgv = null;
         protected int zaznaczonyWiersz = -1;
         protected Form f;
+
         public Lista(Form f, DataGridView dgv)
         {
             this.dgv = dgv;
