@@ -12,8 +12,6 @@ namespace Dziennik_nauczyciela
 {
     public partial class fWidokUczniaLubPrzedmiotu : Form
     {
-
-
         protected int klasaID = -1;
         protected cSQLite SQLite = null;
         protected string nazwaKolumny = string.Empty;
@@ -255,6 +253,41 @@ namespace Dziennik_nauczyciela
             wyczyscDaneEdytuj();
         }
         public virtual void wyczyscDaneEdytuj()
+        {
+
+        }
+
+        private void tc_widok_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_dodaj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_edytuj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_usun_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void l_zaznaczElementDoUsuniecia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_lista_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -18,3 +18,8 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dzi
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\ImapX.dll
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\LinqBridge.dll
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\ImapX.pdb
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokKlasy.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokUczniaLubPrzedmiotu.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokPrzedmiotu.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokUcznia.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fEdycjaKlasy.resources

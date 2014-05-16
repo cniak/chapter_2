@@ -6,36 +6,21 @@ using System.Windows.Forms;
 
 namespace Dziennik_nauczyciela_obiektowy
 {
-    public class ListaKlas : Lista<klasa>
+    public class ListaUczniow : Lista<uczen>
     {
-        private int nauczycielNR = -1;
-        public ListaKlas(Form f, DataGridView dgv, int nauczycielID) : base(f,dgv)
+        private int klasaNR = -1;
+
+        public ListaUczniow(Form f, DataGridView dgv, int klasaID) : base(f,dgv)
         {
-            this.nauczycielNR = nauczycielID;
+            this.klasaNR = klasaID;
+            this.dgv = dgv;
             dgv.DoubleClick += new System.EventHandler(doubleClick);
             wczytajListe();
             tworzKolumny();
             wczytajWiersze();
             zmianaWiersza(new object(), new EventArgs());
         }
-
-        protected override void wczytajListe()
-        {
-            zbior = klasa.pobierzWszystkich(nauczycielNR);
-        }
-
-        protected override void wczytajWiersze()
-        {
-            usunWiersze();
-            foreach (klasa k in zbior)
-            {
-                DataGridViewRow row = (DataGridViewRow)dgv.RowTemplate.Clone();
-                row.CreateCells(dgv, k.KlasaID, k.Nazwa);
-                dgv.Rows.Add(row);
-            }
-            ustawCzyWidocznyDGV();
-        }
-
+        
         protected override void tworzKolumny()
         {
             DataGridViewColumn newCol = new DataGridViewColumn();
@@ -52,17 +37,34 @@ namespace Dziennik_nauczyciela_obiektowy
             cell = new DataGridViewTextBoxCell();
             newCol.CellTemplate = cell;
 
-            newCol.HeaderText = "nazwa";
-            newCol.Name = "nazwa";
+            newCol.HeaderText = "imie i nazwisko";
+            newCol.Name = "imie_i_nazwisko";
             newCol.Visible = true;
             dgv.Columns.Add(newCol);
             dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ustawZawszeWidoczneNazwyKolumny();
         }
 
+        protected override void wczytajListe()
+        {
+            zbior = uczen.pobierzWszystkich(this.klasaNR);
+        }
+
+        protected override void wczytajWiersze()
+        {
+            usunWiersze();
+            foreach (uczen u in zbior)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgv.RowTemplate.Clone();
+                row.CreateCells(dgv, u.UczenID, u.Imie + " " + u.Nazwisko);
+                dgv.Rows.Add(row);
+            }
+            ustawCzyWidocznyDGV();
+        }
+
         protected override void doubleClick(object sender, EventArgs e)
         {
-            zbior[ZaznaczonyWiersz].zaloguj(f);
+            //nic
         }
     }
 }

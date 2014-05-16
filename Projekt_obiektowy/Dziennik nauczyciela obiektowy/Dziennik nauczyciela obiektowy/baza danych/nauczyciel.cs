@@ -32,13 +32,13 @@ namespace Dziennik_nauczyciela_obiektowy
         /// </summary>
         public override void dodajDoBazy()
         {
-            //SQLite.Zapytanie = "INSERT INTO nauczyciel (login, haslo, imie, nazwisko, email, email_haslo, zalogowany_mail) VALUES (" + login + ", " + haslo + ", " + imie + ", " + nazwisko + ", " + email + ", " + email_haslo + ", " + zalogowany_mail + ");";
-            SQLite.Zapytanie = "INSERT INTO nauczyciel (login, haslo, imie, nazwisko, email, email_haslo, zalogowany_mail) VALUES (@login, @haslo, @imie, @nazwisko, @email, @email_haslo, @zalogowany_mail);";
+            //SQLite.Zapytanie = "INSERT INTO nauczyciel (login, haslo, imie, nazwisko, Email, email_haslo, zalogowany_mail) VALUES (" + login + ", " + haslo + ", " + imie + ", " + nazwisko + ", " + Email + ", " + email_haslo + ", " + zalogowany_mail + ");";
+            SQLite.Zapytanie = "INSERT INTO nauczyciel (login, haslo, imie, nazwisko, Email, email_haslo, zalogowany_mail) VALUES (@login, @haslo, @imie, @nazwisko, @Email, @email_haslo, @zalogowany_mail);";
             SQLite.dodajParametr("login", login);
             SQLite.dodajParametr("haslo", haslo);
             SQLite.dodajParametr("imie", imie);
             SQLite.dodajParametr("nazwisko", nazwisko);
-            SQLite.dodajParametr("email", email);
+            SQLite.dodajParametr("Email", email);
             SQLite.dodajParametr("email_haslo", email_haslo);
             SQLite.dodajParametr("zalogowany_mail", zalogowany_mail);
             //SQLite.sqliteCommand.Parameters.AddWithValue("zalogowany_mail", nowyNauczyciel.zalogowany_mail);
@@ -68,8 +68,11 @@ namespace Dziennik_nauczyciela_obiektowy
             }
             set
             {
-                email = value;
-                if (!wylaczEdycje) aktualizuj("email");
+                if (walidacjaMaila(value) == true)
+                {
+                    email = value;
+                    if (!wylaczEdycje) aktualizuj("email");
+                }
             }
         }
         public string Haslo
@@ -189,7 +192,7 @@ namespace Dziennik_nauczyciela_obiektowy
                     haslo = SQLite.DataReader["haslo"].ToString();
                     imie = SQLite.DataReader["imie"].ToString();
                     nazwisko = SQLite.DataReader["nazwisko"].ToString();
-                    email = SQLite.DataReader["email"].ToString();
+                    email = SQLite.DataReader["Email"].ToString();
                     email_haslo = SQLite.DataReader["email_haslo"].ToString();
                     zalogowany_mail = Convert.ToInt32(SQLite.DataReader["zalogowany_mail"].ToString());
                 }
@@ -210,7 +213,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 SQLite.Zapytanie = "UPDATE nauczyciel SET haslo = '" + haslo + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE nauczyciel SET imie = '" + imie + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE nauczyciel SET nazwisko = '" + nazwisko + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE nauczyciel SET email = '" + email + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE nauczyciel SET Email = '" + email + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE nauczyciel SET email_haslo = '" + email_haslo + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE nauczyciel SET zalogowany_mail = '" + zalogowany_mail + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 return;
@@ -219,11 +222,23 @@ namespace Dziennik_nauczyciela_obiektowy
             {
                 switch (element)
                 {
-                    case "login": SQLite.Zapytanie = "UPDATE nauczyciel SET login = '" + login + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "login":
+                        SQLite.Zapytanie = "UPDATE nauczyciel SET login = '" + login + "' WHERE nauczycielID = " + nauczycielID + ";";
+                        try
+                        {
+                            SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show(string.Empty);
+                        }
+                        break;
                     case "haslo": SQLite.Zapytanie = "UPDATE nauczyciel SET haslo = '" + haslo + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "imie": SQLite.Zapytanie = "UPDATE nauczyciel SET imie = '" + imie + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "nazwisko": SQLite.Zapytanie = "UPDATE nauczyciel SET nazwisko = '" + nazwisko + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "email": SQLite.Zapytanie = "UPDATE nauczyciel SET email = '" + email + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "email":
+                        if (walidacjaMaila(email) == false) break;
+                        SQLite.Zapytanie = "UPDATE nauczyciel SET email = '" + email + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "email_haslo": SQLite.Zapytanie = "UPDATE nauczyciel SET email_haslo = '" + email_haslo + "' WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "zalogowany_mail": SQLite.Zapytanie = "UPDATE nauczyciel SET zalogowany_mail = " + ZalogowanyMail + " WHERE nauczycielID = " + nauczycielID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     default: throw new Exception("niepoprawny parametr do aktualizacji danych");
@@ -245,7 +260,7 @@ namespace Dziennik_nauczyciela_obiektowy
         /// <summary>
         /// loguje sie na wybranego nauczyciela (przechodzi do widoku klas)
         /// </summary>
-        /// <param name="f">podaj formę, ktora ma zostać zamknieta(this = najczesciej)</param>
+        /// <param name="klasaNR">podaj formę, ktora ma zostać zamknieta(this = najczesciej)</param>
         public void zaloguj(Form f)
         {
             if (podajHaslo() == true)

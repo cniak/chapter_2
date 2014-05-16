@@ -6,36 +6,18 @@ using System.Windows.Forms;
 
 namespace Dziennik_nauczyciela_obiektowy
 {
-    public class ListaKlas : Lista<klasa>
+    public class ListaPrzedmiotow : Lista<przedmiot>
     {
-        private int nauczycielNR = -1;
-        public ListaKlas(Form f, DataGridView dgv, int nauczycielID) : base(f,dgv)
+        private int klasaNR = -1;
+        public ListaPrzedmiotow(Form f, DataGridView dgv, int klasaID) : base(f, dgv)
         {
-            this.nauczycielNR = nauczycielID;
             dgv.DoubleClick += new System.EventHandler(doubleClick);
+            this.klasaNR = klasaID;
             wczytajListe();
             tworzKolumny();
-            wczytajWiersze();
             zmianaWiersza(new object(), new EventArgs());
+            odswiezDGV();
         }
-
-        protected override void wczytajListe()
-        {
-            zbior = klasa.pobierzWszystkich(nauczycielNR);
-        }
-
-        protected override void wczytajWiersze()
-        {
-            usunWiersze();
-            foreach (klasa k in zbior)
-            {
-                DataGridViewRow row = (DataGridViewRow)dgv.RowTemplate.Clone();
-                row.CreateCells(dgv, k.KlasaID, k.Nazwa);
-                dgv.Rows.Add(row);
-            }
-            ustawCzyWidocznyDGV();
-        }
-
         protected override void tworzKolumny()
         {
             DataGridViewColumn newCol = new DataGridViewColumn();
@@ -60,9 +42,26 @@ namespace Dziennik_nauczyciela_obiektowy
             ustawZawszeWidoczneNazwyKolumny();
         }
 
+        protected override void wczytajListe()
+        {
+            zbior = przedmiot.pobierzWszystkich(klasaNR);
+        }
+
+        protected override void wczytajWiersze()
+        {
+            usunWiersze();
+            foreach (przedmiot p in zbior)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgv.RowTemplate.Clone();
+                row.CreateCells(dgv, p.PrzedmiotID, p.Nazwa);
+                dgv.Rows.Add(row);
+            }
+            ustawCzyWidocznyDGV();
+        }
+
         protected override void doubleClick(object sender, EventArgs e)
         {
-            zbior[ZaznaczonyWiersz].zaloguj(f);
+            //nic
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Dziennik_nauczyciela
+﻿namespace Dziennik_nauczyciela_obiektowy.Forms
 {
     partial class fWidokUczniaLubPrzedmiotu
     {
@@ -33,7 +33,6 @@
             this.tp_edytuj = new System.Windows.Forms.TabPage();
             this.tp_usun = new System.Windows.Forms.TabPage();
             this.b_usun1 = new System.Windows.Forms.Button();
-            this.l_zaznaczElementDoUsuniecia = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.t_usun = new System.Windows.Forms.TextBox();
             this.dgv_lista = new System.Windows.Forms.DataGridView();
@@ -48,49 +47,44 @@
             this.tc_widok.Controls.Add(this.tp_edytuj);
             this.tc_widok.Controls.Add(this.tp_usun);
             this.tc_widok.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tc_widok.Location = new System.Drawing.Point(183, 0);
+            this.tc_widok.Location = new System.Drawing.Point(184, 0);
             this.tc_widok.Name = "tc_widok";
             this.tc_widok.SelectedIndex = 0;
-            this.tc_widok.Size = new System.Drawing.Size(405, 303);
-            this.tc_widok.TabIndex = 0;
-            this.tc_widok.SelectedIndexChanged += new System.EventHandler(this.tc_widok_SelectedIndexChanged);
+            this.tc_widok.Size = new System.Drawing.Size(405, 245);
+            this.tc_widok.TabIndex = 19;
             // 
             // tp_dodaj
             // 
             this.tp_dodaj.Location = new System.Drawing.Point(4, 22);
             this.tp_dodaj.Name = "tp_dodaj";
             this.tp_dodaj.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_dodaj.Size = new System.Drawing.Size(397, 277);
+            this.tp_dodaj.Size = new System.Drawing.Size(397, 219);
             this.tp_dodaj.TabIndex = 0;
             this.tp_dodaj.Text = "Dodaj";
             this.tp_dodaj.UseVisualStyleBackColor = true;
-            this.tp_dodaj.Click += new System.EventHandler(this.tp_dodaj_Click);
             // 
             // tp_edytuj
             // 
             this.tp_edytuj.Location = new System.Drawing.Point(4, 22);
             this.tp_edytuj.Name = "tp_edytuj";
             this.tp_edytuj.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_edytuj.Size = new System.Drawing.Size(397, 277);
+            this.tp_edytuj.Size = new System.Drawing.Size(397, 219);
             this.tp_edytuj.TabIndex = 1;
             this.tp_edytuj.Text = "Edytuj";
             this.tp_edytuj.UseVisualStyleBackColor = true;
-            this.tp_edytuj.Click += new System.EventHandler(this.tp_edytuj_Click);
             // 
             // tp_usun
             // 
             this.tp_usun.Controls.Add(this.b_usun1);
-            this.tp_usun.Controls.Add(this.l_zaznaczElementDoUsuniecia);
             this.tp_usun.Controls.Add(this.label2);
             this.tp_usun.Controls.Add(this.t_usun);
             this.tp_usun.Location = new System.Drawing.Point(4, 22);
             this.tp_usun.Name = "tp_usun";
             this.tp_usun.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_usun.Size = new System.Drawing.Size(397, 277);
+            this.tp_usun.Size = new System.Drawing.Size(397, 219);
             this.tp_usun.TabIndex = 2;
             this.tp_usun.Text = "Usun";
             this.tp_usun.UseVisualStyleBackColor = true;
-            this.tp_usun.Click += new System.EventHandler(this.tp_usun_Click);
             // 
             // b_usun1
             // 
@@ -100,18 +94,6 @@
             this.b_usun1.TabIndex = 20;
             this.b_usun1.Text = "Usun";
             this.b_usun1.UseVisualStyleBackColor = true;
-            this.b_usun1.Click += new System.EventHandler(this.b_usun1_Click);
-            // 
-            // l_zaznaczElementDoUsuniecia
-            // 
-            this.l_zaznaczElementDoUsuniecia.AutoSize = true;
-            this.l_zaznaczElementDoUsuniecia.ForeColor = System.Drawing.Color.Red;
-            this.l_zaznaczElementDoUsuniecia.Location = new System.Drawing.Point(6, 50);
-            this.l_zaznaczElementDoUsuniecia.Name = "l_zaznaczElementDoUsuniecia";
-            this.l_zaznaczElementDoUsuniecia.Size = new System.Drawing.Size(88, 13);
-            this.l_zaznaczElementDoUsuniecia.TabIndex = 19;
-            this.l_zaznaczElementDoUsuniecia.Text = "Zaznacz element";
-            this.l_zaznaczElementDoUsuniecia.Click += new System.EventHandler(this.l_zaznaczElementDoUsuniecia_Click);
             // 
             // label2
             // 
@@ -121,7 +103,6 @@
             this.label2.Size = new System.Drawing.Size(215, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Zaznacz element i podaj haslo uzytkownika:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // t_usun
             // 
@@ -130,7 +111,6 @@
             this.t_usun.Name = "t_usun";
             this.t_usun.Size = new System.Drawing.Size(172, 20);
             this.t_usun.TabIndex = 3;
-            this.t_usun.TextChanged += new System.EventHandler(this.t_usun_TextChanged);
             // 
             // dgv_lista
             // 
@@ -148,18 +128,16 @@
             this.dgv_lista.ReadOnly = true;
             this.dgv_lista.RowHeadersVisible = false;
             this.dgv_lista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_lista.Size = new System.Drawing.Size(181, 303);
-            this.dgv_lista.TabIndex = 18;
-            this.dgv_lista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_lista_CellClick);
-            this.dgv_lista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_lista_CellContentClick);
+            this.dgv_lista.Size = new System.Drawing.Size(181, 245);
+            this.dgv_lista.TabIndex = 20;
             // 
             // fWidokUczniaLubPrzedmiotu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 303);
-            this.Controls.Add(this.dgv_lista);
+            this.ClientSize = new System.Drawing.Size(589, 245);
             this.Controls.Add(this.tc_widok);
+            this.Controls.Add(this.dgv_lista);
             this.Name = "fWidokUczniaLubPrzedmiotu";
             this.Text = "fWidokUczniaLubPrzedmiotu";
             this.tc_widok.ResumeLayout(false);
@@ -176,10 +154,9 @@
         public System.Windows.Forms.TabPage tp_dodaj;
         public System.Windows.Forms.TabPage tp_edytuj;
         public System.Windows.Forms.TabPage tp_usun;
+        public System.Windows.Forms.Button b_usun1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox t_usun;
         public System.Windows.Forms.DataGridView dgv_lista;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox t_usun;
-        private System.Windows.Forms.Label l_zaznaczElementDoUsuniecia;
-        private System.Windows.Forms.Button b_usun1;
     }
 }

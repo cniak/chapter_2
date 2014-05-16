@@ -78,6 +78,13 @@
   <ItemGroup>
     <Compile Include="baza danych\cSQLite.cs" />
     <Compile Include="baza danych\bazadanych.cs" />
+    <Compile Include="baza danych\data.cs" />
+    <Compile Include="Forms\fEdycjaKlasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fEdycjaKlasy.Designer.cs">
+      <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\fEdycjaNauczyciela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,9 +114,41 @@
     <Compile Include="DataGridView\Lista.cs" />
     <Compile Include="baza danych\klasa.cs" />
     <Compile Include="DataGridView\ListaKlas.cs" />
+    <Compile Include="Forms\fWidokKlasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokKlasy.Designer.cs">
+      <DependentUpon>fWidokKlasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fWidokPrzedmiotu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokPrzedmiotu.Designer.cs">
+      <DependentUpon>fWidokPrzedmiotu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fWidokUcznia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokUcznia.Designer.cs">
+      <DependentUpon>fWidokUcznia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fWidokUczniaLubPrzedmiotu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokUczniaLubPrzedmiotu.Designer.cs">
+      <DependentUpon>fWidokUczniaLubPrzedmiotu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridView\ListaPrzedmiotow.cs" />
+    <Compile Include="DataGridView\ListaUczniow.cs" />
+    <Compile Include="DataGridView\ListaDat.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="enum\rodzajZapytania.cs" />
+    <Compile Include="baza danych\przedmiot.cs" />
+    <Compile Include="baza danych\uczen.cs" />
+    <EmbeddedResource Include="Forms\fEdycjaKlasy.resx">
+      <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fEdycjaNauczyciela.resx">
       <DependentUpon>fEdycjaNauczyciela.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +160,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\fWalidacjaHasla.resx">
       <DependentUpon>fWalidacjaHasla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokKlasy.resx">
+      <DependentUpon>fWidokKlasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokPrzedmiotu.resx">
+      <DependentUpon>fWidokPrzedmiotu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokUcznia.resx">
+      <DependentUpon>fWidokUcznia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokUczniaLubPrzedmiotu.resx">
+      <DependentUpon>fWidokUczniaLubPrzedmiotu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,6 +192,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="baza danych\diagramERD bazy danych - takie jest w aplikacji.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

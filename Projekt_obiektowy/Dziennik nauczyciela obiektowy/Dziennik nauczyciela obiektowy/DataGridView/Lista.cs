@@ -43,26 +43,33 @@ namespace Dziennik_nauczyciela_obiektowy
             }
         }
         /// <summary>
-        /// odswieza liste, przez podawane parametry ustawiane sa czy maja byc widoczne(label), czy aktywne(button)
+        /// przez podawane parametry ustawiane sa czy: maja byc widoczne(label), aktywne(button), zresetowane (textBox)
         /// </summary>
-        /// <param name="ok">przez podawane parametry ustawiane sa czy maja byc widoczne(label), czy aktywne(button)</param>
         public void odswiezDGV(params object[] elementy)
         {
             wczytajListe();
             wczytajWiersze();
             List<Button> lB = new List<Button>();
             List<Label> lL = new List<Label>();
+            List<TextBox> lT = new List<TextBox>();
             foreach (object element in elementy)
             {
                 Button b = element as Button;
                 if (b != null)
                 {
                     lB.Add(b);
+                    continue;
                 }
                 Label l = element as Label;
                 if (l != null)
                 {
                     lL.Add(l);
+                    continue;
+                }
+                TextBox t = element as TextBox;
+                if (t != null)
+                {
+                    lT.Add(t);
                     continue;
                 }
             }
@@ -73,6 +80,10 @@ namespace Dziennik_nauczyciela_obiektowy
             for (int i = 0; i < lL.Count; i++)
             {
                 lL[i].Visible = zbior.Count == 0;
+            }
+            for (int i = 0; i < lT.Count; i++)
+            {
+                lT[i].Text = string.Empty;
             }
         }
         protected abstract void tworzKolumny();
@@ -87,7 +98,17 @@ namespace Dziennik_nauczyciela_obiektowy
         /// </summary>
         protected void zmianaWiersza(object sender, EventArgs e)
         {
-            if(dgv.RowCount != 0) zaznaczonyWiersz = dgv.CurrentRow.Index;
+            if (dgv.RowCount != 0)
+            {
+                try
+                {
+                    zaznaczonyWiersz = dgv.CurrentRow.Index;
+                }
+                catch
+                {
+                    MessageBox.Show(".");   
+                }
+            }
         }
 
         /// <summary>

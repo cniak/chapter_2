@@ -59,7 +59,6 @@
             this.t_email.Name = "t_email";
             this.t_email.Size = new System.Drawing.Size(159, 20);
             this.t_email.TabIndex = 106;
-            this.t_email.TextChanged += new System.EventHandler(this.t_email_TextChanged);
             // 
             // label5
             // 
@@ -114,7 +113,6 @@
             this.t_login.Name = "t_login";
             this.t_login.Size = new System.Drawing.Size(215, 20);
             this.t_login.TabIndex = 102;
-            this.t_login.TextChanged += new System.EventHandler(this.t_login_TextChanged);
             // 
             // t_hasloUzytkownika
             // 
@@ -122,7 +120,6 @@
             this.t_hasloUzytkownika.Name = "t_hasloUzytkownika";
             this.t_hasloUzytkownika.Size = new System.Drawing.Size(215, 20);
             this.t_hasloUzytkownika.TabIndex = 103;
-            this.t_hasloUzytkownika.TextChanged += new System.EventHandler(this.t_hasloUzytkownika_TextChanged);
             // 
             // label3
             // 
@@ -148,7 +145,6 @@
             this.t_imie.Name = "t_imie";
             this.t_imie.Size = new System.Drawing.Size(215, 20);
             this.t_imie.TabIndex = 104;
-            this.t_imie.TextChanged += new System.EventHandler(this.t_imie_TextChanged);
             // 
             // label2
             // 
@@ -165,7 +161,6 @@
             this.t_nazwisko.Name = "t_nazwisko";
             this.t_nazwisko.Size = new System.Drawing.Size(215, 20);
             this.t_nazwisko.TabIndex = 105;
-            this.t_nazwisko.TextChanged += new System.EventHandler(this.t_nazwisko_TextChanged);
             // 
             // label9
             // 
@@ -191,7 +186,6 @@
             this.t_hasloEmail.Name = "t_hasloEmail";
             this.t_hasloEmail.Size = new System.Drawing.Size(215, 20);
             this.t_hasloEmail.TabIndex = 107;
-            this.t_hasloEmail.TextChanged += new System.EventHandler(this.t_hasloEmail_TextChanged);
             // 
             // tableLayoutPanel2
             // 

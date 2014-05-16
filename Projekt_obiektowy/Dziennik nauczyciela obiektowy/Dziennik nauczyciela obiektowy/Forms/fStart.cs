@@ -49,13 +49,12 @@ namespace Dziennik_nauczyciela_obiektowy
             try
             {
                 n.dodajDoBazy();
-                listaNauczycieli.odswiezDGV();
+                listaNauczycieli.odswiezDGV(t_nazwaUzytkownika, t_haslo,b_usun);
             }
             catch (Exception)
             {
                 MessageBox.Show("Login musi byc unikalny");
             }
-            t_nazwaUzytkownika.Text = t_haslo.Text = string.Empty;
         }
 
         /// <summary>
@@ -71,7 +70,7 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             if (listaNauczycieli.zbior[listaNauczycieli.ZaznaczonyWiersz].usun() == true)
             {
-                listaNauczycieli.odswiezDGV(b_usun);
+                listaNauczycieli.odswiezDGV();
             }
         }
     }

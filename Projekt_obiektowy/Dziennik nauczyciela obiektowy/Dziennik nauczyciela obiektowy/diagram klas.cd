@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Dziennik_nauczyciela_obiektowy.cSQLite">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>oAAAACAAAAAAAAoAGAAJQAABAAQCAAAAAAAAAAAAAAA=</HashCode>
       <FileName>baza danych\cSQLite.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dziennik_nauczyciela_obiektowy.ListaNauczycieli">
-    <Position X="5.75" Y="1.5" Width="1.5" />
+    <Position X="1" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAIAAAAAIAAAAAAAAQAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>DataGridView\ListaNauczycieli.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,39 +22,109 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Dziennik_nauczyciela_obiektowy.nauczyciel">
-    <Position X="7.75" Y="1.5" Width="1.5" />
+    <Position X="8.5" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AIAAgAEAAKQIACCwAAAAQIACAAAIAAAICgAQAQCAEIE=</HashCode>
       <FileName>baza danych\nauczyciel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dziennik_nauczyciela_obiektowy.klasa">
-    <Position X="12" Y="1.5" Width="1.5" />
+    <Position X="12.5" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAQAAAARIIGABQAAAAYAAAwAQIEIAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAACAQAAAARAIGABQAAAAYAAAwAAIEIAA=</HashCode>
       <FileName>baza danych\klasa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dziennik_nauczyciela_obiektowy.bazadanych">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+    <Position X="11.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAQAAAAQAAAAAAAAAAIAAAQAAAAQAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAQAAAgQAAAAAAAAAAIAAAQAAAAQAA=</HashCode>
       <FileName>baza danych\bazadanych.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dziennik_nauczyciela_obiektowy.ListaKlas">
-    <Position X="3.75" Y="4.75" Width="1.5" />
+    <Position X="4.5" Y="5" Width="1.5" />
     <InheritanceLine Type="Dziennik_nauczyciela_obiektowy.Lista&lt;T&gt;" FixedToPoint="true">
       <Path>
         <Point X="3.5" Y="4.381" />
-        <Point X="3.5" Y="4.55" />
-        <Point X="4.688" Y="4.55" />
-        <Point X="4.688" Y="4.75" />
+        <Point X="3.5" Y="4.7" />
+        <Point X="5.438" Y="4.7" />
+        <Point X="5.438" Y="5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAIAAAAAAAAQAAABAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>DataGridView\ListaKlas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.uczen">
+    <Position X="10.5" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="Dziennik_nauczyciela_obiektowy.bazadanych" FixedToPoint="true">
+      <Path>
+        <Point X="12" Y="5.435" />
+        <Point X="12" Y="5.875" />
+        <Point X="11.5" Y="5.875" />
+        <Point X="11.5" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIAUAAAAFKAAACCwAACAQAAAAAIAAAAMAACQBACAAAI=</HashCode>
+      <FileName>baza danych\uczen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.przedmiot">
+    <Position X="14.25" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAQAACAQAAAAAAAAAAIAAGwAAABIAA=</HashCode>
+      <FileName>baza danych\przedmiot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.ListaPrzedmiotow">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIAAAAACAAQAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DataGridView\ListaPrzedmiotow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.ListaUczniow">
+    <Position X="6.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAIAAAAACAAQAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DataGridView\ListaUczniow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.data">
+    <Position X="14.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIAAAAAAACAQAACAQAAAAAACAAAIAACQAAAAAAA=</HashCode>
+      <FileName>baza danych\data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dziennik_nauczyciela_obiektowy.ListaDat">
+    <Position X="5.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABkIAAAAAAAACAACAAAAAAAAAAAAAgQCAAAARAAQ=</HashCode>
+      <FileName>DataGridView\ListaDat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Tahoma" Size="8.25" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dziennik_nauczyciela_obiektowy.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -98,7 +99,7 @@ namespace Dziennik_nauczyciela_obiektowy
             if ((elementy.Length == 1) && (elementy[0] == "*"))
             {
                 SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = '" + gospodarzNR + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = " + gospodarzNR + " WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 return;
             }
@@ -107,7 +108,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 switch (element)
                 {
                     case "nazwa": SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "gospodarzNR": SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = '" + gospodarzNR + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "gospodarzNR": SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = " + gospodarzNR + " WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "rocznik": SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     default: throw new Exception("niepoprawny parametr do aktualizacji danych");
                 }
@@ -134,7 +135,7 @@ namespace Dziennik_nauczyciela_obiektowy
         /// <summary>
         /// pobiera wszystkie klasy z bazy po ID nauczyciela
         /// </summary>
-        /// <param name="dgv">ID nauczyciela aktualnie zalogowanego</param>
+        /// <param name="Dgv">ID nauczyciela aktualnie zalogowanego</param>
         public static List<klasa> pobierzWszystkich(int nauczycielID)
         {
             List<klasa> listaKlas = new List<klasa>();
@@ -191,7 +192,10 @@ namespace Dziennik_nauczyciela_obiektowy
         /// </summary>
         public void zaloguj(Form f)
         {
-            
+            fWidokKlasy widokKlas = new fWidokKlasy(this);
+            f.Hide();
+            widokKlas.ShowDialog();
+            f.Close();   
         }
     }
 }
