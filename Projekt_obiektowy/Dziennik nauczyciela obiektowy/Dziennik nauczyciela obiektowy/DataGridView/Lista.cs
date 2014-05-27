@@ -18,11 +18,14 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             this.dgv = dgv;
             this.f = f;
-            dgv.BorderStyle = BorderStyle.None;
-            dgv.AllowUserToAddRows = false;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.SelectionChanged += new EventHandler(zmianaWiersza);
-            ustawCzyWidocznyDGV();
+            if (this.dgv != null)
+            {
+                dgv.BorderStyle = BorderStyle.None;
+                dgv.AllowUserToAddRows = false;
+                dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgv.SelectionChanged += new EventHandler(zmianaWiersza);
+                ustawCzyWidocznyDGV();
+            }
         }
         public DataGridView Dgv
         {
@@ -45,7 +48,7 @@ namespace Dziennik_nauczyciela_obiektowy
         /// <summary>
         /// przez podawane parametry ustawiane sa czy: maja byc widoczne(label), aktywne(button), zresetowane (textBox)
         /// </summary>
-        public void odswiezDGV(params object[] elementy)
+        public virtual void odswiezDGV(params object[] elementy)
         {
             wczytajListe();
             wczytajWiersze();
@@ -114,7 +117,7 @@ namespace Dziennik_nauczyciela_obiektowy
         /// <summary>
         /// jezeli ilosc wierszy = 0, nie wyswietla
         /// </summary>
-        protected void ustawCzyWidocznyDGV()
+        protected virtual void ustawCzyWidocznyDGV()
         {
             dgv.Visible = (dgv.RowCount != 0);
         }

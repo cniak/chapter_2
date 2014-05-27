@@ -79,6 +79,7 @@
     <Compile Include="baza danych\cSQLite.cs" />
     <Compile Include="baza danych\bazadanych.cs" />
     <Compile Include="baza danych\data.cs" />
+    <Compile Include="DataGridView\DuzaLista.cs" />
     <Compile Include="Forms\fEdycjaKlasy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,11 +142,14 @@
     <Compile Include="DataGridView\ListaPrzedmiotow.cs" />
     <Compile Include="DataGridView\ListaUczniow.cs" />
     <Compile Include="DataGridView\ListaDat.cs" />
+    <Compile Include="baza danych\lekcja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="enum\rodzajZapytania.cs" />
     <Compile Include="baza danych\przedmiot.cs" />
     <Compile Include="baza danych\uczen.cs" />
+    <Compile Include="baza danych\uczen_na_lekcji.cs" />
+    <Compile Include="typDanych.cs" />
     <EmbeddedResource Include="Forms\fEdycjaKlasy.resx">
       <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
     </EmbeddedResource>

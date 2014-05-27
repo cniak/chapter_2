@@ -10,7 +10,8 @@ namespace Dziennik_nauczyciela_obiektowy
     {
         private int klasaNR = -1;
 
-        public ListaUczniow(Form f, DataGridView dgv, int klasaID) : base(f,dgv)
+        public ListaUczniow(Form f, DataGridView dgv, int klasaID)
+            : base(f, dgv)
         {
             this.klasaNR = klasaID;
             this.dgv = dgv;
@@ -64,7 +65,7 @@ namespace Dziennik_nauczyciela_obiektowy
 
         protected override void doubleClick(object sender, EventArgs e)
         {
-            //nic
+            //po zmianie uzytkownika ma byc wczytana nowa listaUczniow_indywidualne_oceny
         }
     }
 }

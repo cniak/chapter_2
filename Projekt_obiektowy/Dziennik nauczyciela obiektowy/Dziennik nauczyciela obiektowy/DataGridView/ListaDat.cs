@@ -12,7 +12,7 @@ namespace Dziennik_nauczyciela_obiektowy
         /// <summary>
         /// wczytuje liste wszystkich dat
         /// </summary>
-        private List<data> listaDat;
+        public List<data> zbior;
         private List<DateTime> daty = new List<DateTime>();
         private cSQLite SQLite;
         private int klasaNR = -1;
@@ -46,7 +46,6 @@ namespace Dziennik_nauczyciela_obiektowy
                 mc.RemoveAllBoldedDates();
                 mc.BoldedDates = daty.ToArray();
             }));
-
         }
 
         public MonthCalendar Mc
@@ -60,7 +59,7 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             get
             {
-                throw new System.NotImplementedException();
+                return klasaNR;
             }
             set
             {
@@ -77,10 +76,10 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             data d = new data();
             
-            listaDat = data.pobierzWszystkich(klasaNR);
-            for (int i = 0; i < listaDat.Count; i++)
+            zbior = data.pobierzWszystkich(klasaNR);
+            for (int i = 0; i < zbior.Count; i++)
             {
-                daty.Add(listaDat[i].Dzien);
+                daty.Add(zbior[i].Dzien);
             }
         }
 

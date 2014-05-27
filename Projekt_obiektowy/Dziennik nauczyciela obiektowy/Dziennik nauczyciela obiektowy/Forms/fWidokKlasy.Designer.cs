@@ -33,7 +33,6 @@
             this.klasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uczeńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.przedmiotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.raportyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,54 +49,54 @@
             this.bg_wczytajPrzedmioty = new System.ComponentModel.BackgroundWorker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.Tytuł = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Tytuł = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.Powiadomienia = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Typ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Indywidualne = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.Uwagi = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.b_zapiszUwagi_indywidualne = new System.Windows.Forms.Button();
-            this.Obecności = new System.Windows.Forms.TabPage();
-            this.dgv_listaObecnosci_indywidualne = new System.Windows.Forms.DataGridView();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.dgv_listaUczniow_indywidualne = new System.Windows.Forms.DataGridView();
+            this.tabelaIndywidualne = new System.Windows.Forms.TabControl();
             this.Oceny = new System.Windows.Forms.TabPage();
             this.dgv_listaOcen_indywidualne = new System.Windows.Forms.DataGridView();
-            this.dgv_listaUczniow_indywidualne = new System.Windows.Forms.DataGridView();
+            this.Obecności = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dgv_listaObecnosci_indywidualne = new System.Windows.Forms.DataGridView();
+            this.Uwagi = new System.Windows.Forms.TabPage();
+            this.b_zapiszUwagi_indywidualne = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Wykresy = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.cb_przedmiotWykresy = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.cb_typWykresy = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cb_przedmiotWykresy = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.cb_zbiorWykresy = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.Dziennik = new System.Windows.Forms.TabPage();
-            this.dgv_dziennik = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cb_przedmiotDziennik = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cb_typ = new System.Windows.Forms.ComboBox();
             this.b_pokazDaneDziennik = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.cb_typ = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cb_przedmiotDziennik = new System.Windows.Forms.ComboBox();
+            this.dgv_dziennik = new System.Windows.Forms.DataGridView();
+            this.tabelaGlowna = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -105,19 +104,19 @@
             this.Powiadomienia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.Indywidualne.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.Uwagi.SuspendLayout();
-            this.Obecności.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaObecnosci_indywidualne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUczniow_indywidualne)).BeginInit();
+            this.tabelaIndywidualne.SuspendLayout();
             this.Oceny.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaOcen_indywidualne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUczniow_indywidualne)).BeginInit();
+            this.Obecności.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaObecnosci_indywidualne)).BeginInit();
+            this.Uwagi.SuspendLayout();
             this.Wykresy.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Dziennik.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dziennik)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dziennik)).BeginInit();
+            this.tabelaGlowna.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -126,11 +125,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.klasaToolStripMenuItem,
             this.uczeńToolStripMenuItem,
-            this.przedmiotToolStripMenuItem,
-            this.raportyToolStripMenuItem});
+            this.przedmiotToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(805, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(240, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(220, 24);
             this.menuStrip1.TabIndex = 25;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -155,12 +153,6 @@
             this.przedmiotToolStripMenuItem.Text = "Przedmiot";
             this.przedmiotToolStripMenuItem.Click += new System.EventHandler(this.przedmiotToolStripMenuItem_Click);
             // 
-            // raportyToolStripMenuItem
-            // 
-            this.raportyToolStripMenuItem.Name = "raportyToolStripMenuItem";
-            this.raportyToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.raportyToolStripMenuItem.Text = "Raport";
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -176,7 +168,7 @@
             this.tableLayoutPanel1.Controls.Add(this.l_sredniaOcenUczniow, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.l_sredniaFrekwencjaUczniow, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(839, 43);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(819, 47);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -300,7 +292,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.b_dodajDzien);
             this.groupBox2.Controls.Add(this.mc_kalendarz);
-            this.groupBox2.Location = new System.Drawing.Point(839, 182);
+            this.groupBox2.Location = new System.Drawing.Point(819, 182);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(194, 238);
             this.groupBox2.TabIndex = 27;
@@ -331,12 +323,116 @@
             this.tabPage1.Text = "Wyślij wiadomość";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(241, 39);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(404, 20);
+            this.textBox3.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(545, 13);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 8;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(241, 102);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(404, 96);
+            this.richTextBox2.TabIndex = 5;
+            this.richTextBox2.Text = "";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(241, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(404, 20);
             this.textBox1.TabIndex = 0;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(143, 42);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 13);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "Odbiorcy:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(500, 16);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 13);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Hasło:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(238, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 13);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "main@gmail.com";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(138, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(54, 13);
+            this.label18.TabIndex = 9;
+            this.label18.Text = "Twój mail:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(570, 204);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Wyślij";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(241, 204);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Wybierz plik";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(143, 209);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 13);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Załącznik:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(143, 95);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(37, 13);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Treść:";
+            // 
+            // Tytuł
+            // 
+            this.Tytuł.AutoSize = true;
+            this.Tytuł.Location = new System.Drawing.Point(143, 68);
+            this.Tytuł.Name = "Tytuł";
+            this.Tytuł.Size = new System.Drawing.Size(35, 13);
+            this.Tytuł.TabIndex = 2;
+            this.Tytuł.Text = "Tytuł:";
             // 
             // checkedListBox1
             // 
@@ -352,110 +448,6 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(120, 395);
             this.checkedListBox1.TabIndex = 1;
-            // 
-            // Tytuł
-            // 
-            this.Tytuł.AutoSize = true;
-            this.Tytuł.Location = new System.Drawing.Point(143, 68);
-            this.Tytuł.Name = "Tytuł";
-            this.Tytuł.Size = new System.Drawing.Size(35, 13);
-            this.Tytuł.TabIndex = 2;
-            this.Tytuł.Text = "Tytuł:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(143, 95);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(37, 13);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Treść:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(143, 209);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(58, 13);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Załącznik:";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(241, 102);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(404, 96);
-            this.richTextBox2.TabIndex = 5;
-            this.richTextBox2.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(241, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Wybierz plik";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(570, 204);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Wyślij";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(545, 13);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(138, 16);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(54, 13);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "Twój mail:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(238, 16);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(87, 13);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "main@gmail.com";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(500, 16);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 13);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "Hasło:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(143, 42);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(52, 13);
-            this.label21.TabIndex = 12;
-            this.label21.Text = "Odbiorcy:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(241, 39);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(404, 20);
-            this.textBox3.TabIndex = 13;
             // 
             // Powiadomienia
             // 
@@ -481,13 +473,6 @@
             this.dataGridView5.Size = new System.Drawing.Size(791, 395);
             this.dataGridView5.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Treść";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
             // Typ
             // 
             this.Typ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -496,132 +481,23 @@
             this.Typ.ReadOnly = true;
             this.Typ.Width = 50;
             // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Treść";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
             // Indywidualne
             // 
             this.Indywidualne.Controls.Add(this.dgv_listaUczniow_indywidualne);
-            this.Indywidualne.Controls.Add(this.tabControl2);
+            this.Indywidualne.Controls.Add(this.tabelaIndywidualne);
             this.Indywidualne.Location = new System.Drawing.Point(4, 22);
             this.Indywidualne.Name = "Indywidualne";
             this.Indywidualne.Size = new System.Drawing.Size(797, 401);
             this.Indywidualne.TabIndex = 2;
             this.Indywidualne.Text = "Indywidualne";
             this.Indywidualne.UseVisualStyleBackColor = true;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.Oceny);
-            this.tabControl2.Controls.Add(this.Obecności);
-            this.tabControl2.Controls.Add(this.Uwagi);
-            this.tabControl2.Location = new System.Drawing.Point(225, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(569, 389);
-            this.tabControl2.TabIndex = 3;
-            // 
-            // Uwagi
-            // 
-            this.Uwagi.Controls.Add(this.b_zapiszUwagi_indywidualne);
-            this.Uwagi.Controls.Add(this.richTextBox1);
-            this.Uwagi.Location = new System.Drawing.Point(4, 22);
-            this.Uwagi.Name = "Uwagi";
-            this.Uwagi.Size = new System.Drawing.Size(561, 363);
-            this.Uwagi.TabIndex = 2;
-            this.Uwagi.Text = "Uwagi";
-            this.Uwagi.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(561, 324);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
-            // b_zapiszUwagi_indywidualne
-            // 
-            this.b_zapiszUwagi_indywidualne.Location = new System.Drawing.Point(483, 330);
-            this.b_zapiszUwagi_indywidualne.Name = "b_zapiszUwagi_indywidualne";
-            this.b_zapiszUwagi_indywidualne.Size = new System.Drawing.Size(75, 23);
-            this.b_zapiszUwagi_indywidualne.TabIndex = 1;
-            this.b_zapiszUwagi_indywidualne.Text = "Zapisz";
-            this.b_zapiszUwagi_indywidualne.UseVisualStyleBackColor = true;
-            // 
-            // Obecności
-            // 
-            this.Obecności.Controls.Add(this.label22);
-            this.Obecności.Controls.Add(this.comboBox4);
-            this.Obecności.Controls.Add(this.dgv_listaObecnosci_indywidualne);
-            this.Obecności.Location = new System.Drawing.Point(4, 22);
-            this.Obecności.Name = "Obecności";
-            this.Obecności.Padding = new System.Windows.Forms.Padding(3);
-            this.Obecności.Size = new System.Drawing.Size(561, 363);
-            this.Obecności.TabIndex = 1;
-            this.Obecności.Text = "Obecności";
-            this.Obecności.UseVisualStyleBackColor = true;
-            // 
-            // dgv_listaObecnosci_indywidualne
-            // 
-            this.dgv_listaObecnosci_indywidualne.AllowUserToAddRows = false;
-            this.dgv_listaObecnosci_indywidualne.AllowUserToDeleteRows = false;
-            this.dgv_listaObecnosci_indywidualne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_listaObecnosci_indywidualne.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_listaObecnosci_indywidualne.Location = new System.Drawing.Point(3, 58);
-            this.dgv_listaObecnosci_indywidualne.MultiSelect = false;
-            this.dgv_listaObecnosci_indywidualne.Name = "dgv_listaObecnosci_indywidualne";
-            this.dgv_listaObecnosci_indywidualne.ReadOnly = true;
-            this.dgv_listaObecnosci_indywidualne.RowHeadersVisible = false;
-            this.dgv_listaObecnosci_indywidualne.Size = new System.Drawing.Size(555, 302);
-            this.dgv_listaObecnosci_indywidualne.TabIndex = 4;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "WSZYSTKIE",
-            "styczeń",
-            "luty",
-            "marzec",
-            "kwiecień",
-            "maj",
-            "czerwiec"});
-            this.comboBox4.Location = new System.Drawing.Point(396, 6);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 5;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(304, 11);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 13);
-            this.label22.TabIndex = 6;
-            this.label22.Text = "Wybierz miesiąc:";
-            // 
-            // Oceny
-            // 
-            this.Oceny.Controls.Add(this.dgv_listaOcen_indywidualne);
-            this.Oceny.Location = new System.Drawing.Point(4, 22);
-            this.Oceny.Name = "Oceny";
-            this.Oceny.Padding = new System.Windows.Forms.Padding(3);
-            this.Oceny.Size = new System.Drawing.Size(561, 363);
-            this.Oceny.TabIndex = 0;
-            this.Oceny.Text = "Oceny";
-            this.Oceny.UseVisualStyleBackColor = true;
-            // 
-            // dgv_listaOcen_indywidualne
-            // 
-            this.dgv_listaOcen_indywidualne.AllowUserToAddRows = false;
-            this.dgv_listaOcen_indywidualne.AllowUserToDeleteRows = false;
-            this.dgv_listaOcen_indywidualne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_listaOcen_indywidualne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_listaOcen_indywidualne.Location = new System.Drawing.Point(3, 3);
-            this.dgv_listaOcen_indywidualne.MultiSelect = false;
-            this.dgv_listaOcen_indywidualne.Name = "dgv_listaOcen_indywidualne";
-            this.dgv_listaOcen_indywidualne.RowHeadersVisible = false;
-            this.dgv_listaOcen_indywidualne.Size = new System.Drawing.Size(555, 357);
-            this.dgv_listaOcen_indywidualne.TabIndex = 5;
             // 
             // dgv_listaUczniow_indywidualne
             // 
@@ -642,6 +518,121 @@
             this.dgv_listaUczniow_indywidualne.Size = new System.Drawing.Size(223, 401);
             this.dgv_listaUczniow_indywidualne.TabIndex = 19;
             // 
+            // tabelaIndywidualne
+            // 
+            this.tabelaIndywidualne.Controls.Add(this.Oceny);
+            this.tabelaIndywidualne.Controls.Add(this.Obecności);
+            this.tabelaIndywidualne.Controls.Add(this.Uwagi);
+            this.tabelaIndywidualne.Location = new System.Drawing.Point(225, 3);
+            this.tabelaIndywidualne.Name = "tabelaIndywidualne";
+            this.tabelaIndywidualne.SelectedIndex = 0;
+            this.tabelaIndywidualne.Size = new System.Drawing.Size(569, 389);
+            this.tabelaIndywidualne.TabIndex = 3;
+            this.tabelaIndywidualne.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // Oceny
+            // 
+            this.Oceny.Controls.Add(this.dgv_listaOcen_indywidualne);
+            this.Oceny.Location = new System.Drawing.Point(4, 22);
+            this.Oceny.Name = "Oceny";
+            this.Oceny.Padding = new System.Windows.Forms.Padding(3);
+            this.Oceny.Size = new System.Drawing.Size(561, 363);
+            this.Oceny.TabIndex = 0;
+            this.Oceny.Text = "Oceny";
+            this.Oceny.UseVisualStyleBackColor = true;
+            // 
+            // dgv_listaOcen_indywidualne
+            // 
+            this.dgv_listaOcen_indywidualne.AllowUserToAddRows = false;
+            this.dgv_listaOcen_indywidualne.AllowUserToDeleteRows = false;
+            this.dgv_listaOcen_indywidualne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaOcen_indywidualne.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_listaOcen_indywidualne.Location = new System.Drawing.Point(3, 26);
+            this.dgv_listaOcen_indywidualne.Name = "dgv_listaOcen_indywidualne";
+            this.dgv_listaOcen_indywidualne.RowHeadersVisible = false;
+            this.dgv_listaOcen_indywidualne.Size = new System.Drawing.Size(555, 334);
+            this.dgv_listaOcen_indywidualne.TabIndex = 6;
+            // 
+            // Obecności
+            // 
+            this.Obecności.Controls.Add(this.label22);
+            this.Obecności.Controls.Add(this.comboBox4);
+            this.Obecności.Controls.Add(this.dgv_listaObecnosci_indywidualne);
+            this.Obecności.Location = new System.Drawing.Point(4, 22);
+            this.Obecności.Name = "Obecności";
+            this.Obecności.Padding = new System.Windows.Forms.Padding(3);
+            this.Obecności.Size = new System.Drawing.Size(561, 363);
+            this.Obecności.TabIndex = 1;
+            this.Obecności.Text = "Obecności";
+            this.Obecności.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(304, 11);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(86, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Wybierz miesiąc:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "WSZYSTKIE",
+            "styczeń",
+            "luty",
+            "marzec",
+            "kwiecień",
+            "maj",
+            "czerwiec"});
+            this.comboBox4.Location = new System.Drawing.Point(396, 6);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 5;
+            // 
+            // dgv_listaObecnosci_indywidualne
+            // 
+            this.dgv_listaObecnosci_indywidualne.AllowUserToAddRows = false;
+            this.dgv_listaObecnosci_indywidualne.AllowUserToDeleteRows = false;
+            this.dgv_listaObecnosci_indywidualne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_listaObecnosci_indywidualne.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_listaObecnosci_indywidualne.Location = new System.Drawing.Point(3, 58);
+            this.dgv_listaObecnosci_indywidualne.MultiSelect = false;
+            this.dgv_listaObecnosci_indywidualne.Name = "dgv_listaObecnosci_indywidualne";
+            this.dgv_listaObecnosci_indywidualne.RowHeadersVisible = false;
+            this.dgv_listaObecnosci_indywidualne.Size = new System.Drawing.Size(555, 302);
+            this.dgv_listaObecnosci_indywidualne.TabIndex = 4;
+            // 
+            // Uwagi
+            // 
+            this.Uwagi.Controls.Add(this.b_zapiszUwagi_indywidualne);
+            this.Uwagi.Controls.Add(this.richTextBox1);
+            this.Uwagi.Location = new System.Drawing.Point(4, 22);
+            this.Uwagi.Name = "Uwagi";
+            this.Uwagi.Size = new System.Drawing.Size(561, 363);
+            this.Uwagi.TabIndex = 2;
+            this.Uwagi.Text = "Uwagi";
+            this.Uwagi.UseVisualStyleBackColor = true;
+            // 
+            // b_zapiszUwagi_indywidualne
+            // 
+            this.b_zapiszUwagi_indywidualne.Location = new System.Drawing.Point(483, 330);
+            this.b_zapiszUwagi_indywidualne.Name = "b_zapiszUwagi_indywidualne";
+            this.b_zapiszUwagi_indywidualne.Size = new System.Drawing.Size(75, 23);
+            this.b_zapiszUwagi_indywidualne.TabIndex = 1;
+            this.b_zapiszUwagi_indywidualne.Text = "Zapisz";
+            this.b_zapiszUwagi_indywidualne.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(561, 324);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // Wykresy
             // 
             this.Wykresy.Controls.Add(this.groupBox1);
@@ -655,19 +646,82 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cb_typWykresy);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.cb_przedmiotWykresy);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cb_zbiorWykresy);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Location = new System.Drawing.Point(9, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(636, 50);
+            this.groupBox1.Size = new System.Drawing.Size(782, 50);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wybierz grupę danych";
+            // 
+            // cb_typWykresy
+            // 
+            this.cb_typWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_typWykresy.FormattingEnabled = true;
+            this.cb_typWykresy.Items.AddRange(new object[] {
+            "Oceny",
+            "Obecność"});
+            this.cb_typWykresy.Location = new System.Drawing.Point(268, 16);
+            this.cb_typWykresy.Name = "cb_typWykresy";
+            this.cb_typWykresy.Size = new System.Drawing.Size(121, 21);
+            this.cb_typWykresy.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(234, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Typ:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(395, 19);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Przedmiot:";
+            // 
+            // cb_przedmiotWykresy
+            // 
+            this.cb_przedmiotWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_przedmiotWykresy.FormattingEnabled = true;
+            this.cb_przedmiotWykresy.Location = new System.Drawing.Point(457, 15);
+            this.cb_przedmiotWykresy.Name = "cb_przedmiotWykresy";
+            this.cb_przedmiotWykresy.Size = new System.Drawing.Size(121, 21);
+            this.cb_przedmiotWykresy.TabIndex = 12;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(673, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Zapisz do PDF";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // cb_zbiorWykresy
+            // 
+            this.cb_zbiorWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_zbiorWykresy.FormattingEnabled = true;
+            this.cb_zbiorWykresy.Items.AddRange(new object[] {
+            "Klasa",
+            "Uczeń 1",
+            "Uczeń 2",
+            "Uczeń 3",
+            "Uczeń 4"});
+            this.cb_zbiorWykresy.Location = new System.Drawing.Point(46, 16);
+            this.cb_zbiorWykresy.Name = "cb_zbiorWykresy";
+            this.cb_zbiorWykresy.Size = new System.Drawing.Size(182, 21);
+            this.cb_zbiorWykresy.TabIndex = 11;
             // 
             // label12
             // 
@@ -677,67 +731,6 @@
             this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 9;
             this.label12.Text = "Zbiór:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Klasa",
-            "Uczeń 1",
-            "Uczeń 2",
-            "Uczeń 3",
-            "Uczeń 4"});
-            this.comboBox2.Location = new System.Drawing.Point(46, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 11;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(527, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Zapisz do PDF";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // cb_przedmiotWykresy
-            // 
-            this.cb_przedmiotWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_przedmiotWykresy.FormattingEnabled = true;
-            this.cb_przedmiotWykresy.Location = new System.Drawing.Point(400, 15);
-            this.cb_przedmiotWykresy.Name = "cb_przedmiotWykresy";
-            this.cb_przedmiotWykresy.Size = new System.Drawing.Size(121, 21);
-            this.cb_przedmiotWykresy.TabIndex = 12;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(338, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Przedmiot:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(177, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 13);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Typ:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Oceny",
-            "Obecność"});
-            this.comboBox1.Location = new System.Drawing.Point(211, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
             // 
             // Dziennik
             // 
@@ -751,19 +744,6 @@
             this.Dziennik.Text = "Dziennik";
             this.Dziennik.UseVisualStyleBackColor = true;
             // 
-            // dgv_dziennik
-            // 
-            this.dgv_dziennik.AllowUserToAddRows = false;
-            this.dgv_dziennik.AllowUserToDeleteRows = false;
-            this.dgv_dziennik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_dziennik.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_dziennik.Location = new System.Drawing.Point(3, 97);
-            this.dgv_dziennik.Name = "dgv_dziennik";
-            this.dgv_dziennik.ReadOnly = true;
-            this.dgv_dziennik.RowHeadersVisible = false;
-            this.dgv_dziennik.Size = new System.Drawing.Size(791, 301);
-            this.dgv_dziennik.TabIndex = 0;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.b_pokazDaneDziennik);
@@ -773,37 +753,20 @@
             this.groupBox3.Controls.Add(this.cb_przedmiotDziennik);
             this.groupBox3.Location = new System.Drawing.Point(9, 7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(636, 42);
+            this.groupBox3.Size = new System.Drawing.Size(782, 53);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Wybierz grupę danych";
             // 
-            // cb_przedmiotDziennik
+            // b_pokazDaneDziennik
             // 
-            this.cb_przedmiotDziennik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_przedmiotDziennik.FormattingEnabled = true;
-            this.cb_przedmiotDziennik.Location = new System.Drawing.Point(232, 16);
-            this.cb_przedmiotDziennik.Name = "cb_przedmiotDziennik";
-            this.cb_przedmiotDziennik.Size = new System.Drawing.Size(121, 21);
-            this.cb_przedmiotDziennik.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(170, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 13);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Przedmiot:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 13);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "Typ:";
+            this.b_pokazDaneDziennik.Location = new System.Drawing.Point(701, 18);
+            this.b_pokazDaneDziennik.Name = "b_pokazDaneDziennik";
+            this.b_pokazDaneDziennik.Size = new System.Drawing.Size(75, 23);
+            this.b_pokazDaneDziennik.TabIndex = 7;
+            this.b_pokazDaneDziennik.Text = "Pokaz";
+            this.b_pokazDaneDziennik.UseVisualStyleBackColor = true;
+            this.b_pokazDaneDziennik.Click += new System.EventHandler(this.b_pokazDaneDziennik_Click);
             // 
             // cb_typ
             // 
@@ -812,43 +775,74 @@
             this.cb_typ.Items.AddRange(new object[] {
             "oceny",
             "obecnosci"});
-            this.cb_typ.Location = new System.Drawing.Point(43, 16);
+            this.cb_typ.Location = new System.Drawing.Point(40, 18);
             this.cb_typ.Name = "cb_typ";
             this.cb_typ.Size = new System.Drawing.Size(121, 21);
             this.cb_typ.TabIndex = 6;
             // 
-            // b_pokazDaneDziennik
+            // label14
             // 
-            this.b_pokazDaneDziennik.Location = new System.Drawing.Point(555, 14);
-            this.b_pokazDaneDziennik.Name = "b_pokazDaneDziennik";
-            this.b_pokazDaneDziennik.Size = new System.Drawing.Size(75, 23);
-            this.b_pokazDaneDziennik.TabIndex = 7;
-            this.b_pokazDaneDziennik.Text = "Pokaz";
-            this.b_pokazDaneDziennik.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 13);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Typ:";
             // 
-            // tabControl1
+            // label11
             // 
-            this.tabControl1.Controls.Add(this.Dziennik);
-            this.tabControl1.Controls.Add(this.Wykresy);
-            this.tabControl1.Controls.Add(this.Indywidualne);
-            this.tabControl1.Controls.Add(this.Powiadomienia);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(805, 427);
-            this.tabControl1.TabIndex = 28;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(167, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Przedmiot:";
+            // 
+            // cb_przedmiotDziennik
+            // 
+            this.cb_przedmiotDziennik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_przedmiotDziennik.FormattingEnabled = true;
+            this.cb_przedmiotDziennik.Location = new System.Drawing.Point(229, 18);
+            this.cb_przedmiotDziennik.Name = "cb_przedmiotDziennik";
+            this.cb_przedmiotDziennik.Size = new System.Drawing.Size(121, 21);
+            this.cb_przedmiotDziennik.TabIndex = 3;
+            // 
+            // dgv_dziennik
+            // 
+            this.dgv_dziennik.AllowUserToAddRows = false;
+            this.dgv_dziennik.AllowUserToDeleteRows = false;
+            this.dgv_dziennik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_dziennik.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_dziennik.Location = new System.Drawing.Point(3, 64);
+            this.dgv_dziennik.Name = "dgv_dziennik";
+            this.dgv_dziennik.ReadOnly = true;
+            this.dgv_dziennik.RowHeadersVisible = false;
+            this.dgv_dziennik.Size = new System.Drawing.Size(791, 334);
+            this.dgv_dziennik.TabIndex = 0;
+            // 
+            // tabelaGlowna
+            // 
+            this.tabelaGlowna.Controls.Add(this.Dziennik);
+            this.tabelaGlowna.Controls.Add(this.Wykresy);
+            this.tabelaGlowna.Controls.Add(this.Indywidualne);
+            this.tabelaGlowna.Controls.Add(this.Powiadomienia);
+            this.tabelaGlowna.Controls.Add(this.tabPage1);
+            this.tabelaGlowna.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabelaGlowna.Location = new System.Drawing.Point(0, 0);
+            this.tabelaGlowna.Name = "tabelaGlowna";
+            this.tabelaGlowna.SelectedIndex = 0;
+            this.tabelaGlowna.Size = new System.Drawing.Size(805, 427);
+            this.tabelaGlowna.TabIndex = 28;
+            this.tabelaGlowna.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // fWidokKlasy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 427);
+            this.ClientSize = new System.Drawing.Size(1025, 427);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabelaGlowna);
             this.Controls.Add(this.groupBox2);
             this.Name = "fWidokKlasy";
             this.Text = "fWidokKlasy";
@@ -863,22 +857,22 @@
             this.Powiadomienia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.Indywidualne.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
-            this.Uwagi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUczniow_indywidualne)).EndInit();
+            this.tabelaIndywidualne.ResumeLayout(false);
+            this.Oceny.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaOcen_indywidualne)).EndInit();
             this.Obecności.ResumeLayout(false);
             this.Obecności.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaObecnosci_indywidualne)).EndInit();
-            this.Oceny.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaOcen_indywidualne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_listaUczniow_indywidualne)).EndInit();
+            this.Uwagi.ResumeLayout(false);
             this.Wykresy.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Dziennik.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_dziennik)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_dziennik)).EndInit();
+            this.tabelaGlowna.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -891,7 +885,6 @@
         private System.Windows.Forms.ToolStripMenuItem klasaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uczeńToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem przedmiotToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem raportyToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -928,24 +921,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.TabPage Indywidualne;
         public System.Windows.Forms.DataGridView dgv_listaUczniow_indywidualne;
-        private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage Oceny;
-        private System.Windows.Forms.DataGridView dgv_listaOcen_indywidualne;
-        private System.Windows.Forms.TabPage Obecności;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.DataGridView dgv_listaObecnosci_indywidualne;
-        private System.Windows.Forms.TabPage Uwagi;
-        private System.Windows.Forms.Button b_zapiszUwagi_indywidualne;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TabPage Wykresy;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_typWykresy;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cb_przedmiotWykresy;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_zbiorWykresy;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage Dziennik;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -955,6 +938,16 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cb_przedmiotDziennik;
         private System.Windows.Forms.DataGridView dgv_dziennik;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabelaGlowna;
+        private System.Windows.Forms.TabControl tabelaIndywidualne;
+        private System.Windows.Forms.TabPage Oceny;
+        private System.Windows.Forms.DataGridView dgv_listaOcen_indywidualne;
+        private System.Windows.Forms.TabPage Obecności;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.DataGridView dgv_listaObecnosci_indywidualne;
+        private System.Windows.Forms.TabPage Uwagi;
+        private System.Windows.Forms.Button b_zapiszUwagi_indywidualne;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

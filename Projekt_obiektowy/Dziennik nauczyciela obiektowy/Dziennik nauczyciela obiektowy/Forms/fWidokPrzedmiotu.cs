@@ -12,11 +12,13 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
     public partial class fWidokPrzedmiotu : fWidokUczniaLubPrzedmiotu
     {
         ListaPrzedmiotow listaPrzedmiotow = null;
-        int klasaNR = -1;
-        public fWidokPrzedmiotu(int klasaID) : base(klasaID, typeof(przedmiot))
+        klasa zalogowanaKlasa = null;
+        ListaPrzedmiotow kopiaListy = null;
+        public fWidokPrzedmiotu(klasa zalogowanaKlasa, ListaPrzedmiotow lP) : base(zalogowanaKlasa.KlasaID, typeof(przedmiot))
         {
             InitializeComponent();
-            klasaNR = klasaID;
+            this.kopiaListy = lP;
+            this.zalogowanaKlasa = zalogowanaKlasa;
             b_dodajPrzedmiot.Enabled = false;
         }
 
@@ -49,13 +51,13 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
             przedmiot p = new przedmiot
             {
                 Nazwa = t_nazwaPrzedmiotu.Text,
-                KlasaNR = this.klasaNR
+                KlasaNR = this.zalogowanaKlasa.KlasaID
             };
             try
             {
                 p.dodajDoBazy();
                 listaPrzedmiotow.odswiezDGV(t_nazwaPrzedmiotu);
-                
+                listaPrzedmiotow.odswiezListyWyboru();
             } catch(Exception ){
                 MessageBox.Show("nazwa przedmiotu w klasie musi byc unikalna");
             }
@@ -63,7 +65,8 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
         }
         private void fWidokPrzedmiotu_Load(object sender, EventArgs e)
         {
-            listaPrzedmiotow = new ListaPrzedmiotow(this, dgv_lista, klasaNR);
+            //listaPrzedmiotow = new ListaPrzedmiotow(this, dgv_lista, klasaNR, null);
+            listaPrzedmiotow = new ListaPrzedmiotow(this, dgv_lista, zalogowanaKlasa.KlasaID, kopiaListy.SlownikListyWyboru);
             ustawZdarzenia();
             listaPrzedmiotow.odswiezDGV(t_nazwaPrzedmiotu,b_usun1);
         }
@@ -74,6 +77,7 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
             {
                 listaPrzedmiotow.zbior[listaPrzedmiotow.ZaznaczonyWiersz].aktualizuj("*");
                 listaPrzedmiotow.odswiezDGV();
+                listaPrzedmiotow.odswiezListyWyboru();
             }
             catch (Exception)
             {
@@ -82,12 +86,12 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
         }
         private void b_usun1_Click(object sender, EventArgs e)
         {
-            klasa k = new klasa(this.klasaNR);
-            nauczyciel n = new nauczyciel(k.NauczycielNR);
+            nauczyciel n = new nauczyciel(zalogowanaKlasa.NauczycielNR);
             if (t_usun.Text == n.Haslo)
             {
                 listaPrzedmiotow.zbior[listaPrzedmiotow.ZaznaczonyWiersz].usun();
                 listaPrzedmiotow.odswiezDGV(t_usun);
+                listaPrzedmiotow.odswiezListyWyboru();
             }
             else
             {

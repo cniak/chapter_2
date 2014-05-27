@@ -11,18 +11,37 @@ namespace Dziennik_nauczyciela_obiektowy
         private int dataID = -1;
         private int klasaNR = -1;
         private DateTime dzien;
+        private string dataKolumny;
         public data()
         {
             SQLite = new cSQLite();
             wylaczEdycje = true;
         }
-        public data(int klasaID)
+        public data(int dataID)
         {
-            this.klasaNR = klasaID;
+            //this.klasaNR = klasaID;
+            this.dataID = dataID;
             SQLite = new cSQLite();
-            SQLite.Zapytanie = "SELECT * FROM data WHERE dataID = " + this.klasaNR + ";";
+            SQLite.Zapytanie = "SELECT * FROM data WHERE dataID = " + this.dataID + " ORDER BY dzien;";
             wykonajZapytanie(rodzajZapytania.pobierz);
             wylaczEdycje = false;
+        }
+
+        /// <summary>
+        /// tworzy obiekt na podstawie podanej daty i klasy
+        /// </summary>
+        /// <param name="dataKolumny"></param>
+        /// <param name="klasaNR"></param>
+        public data(string dataKolumny, int klasaNR)
+        {
+            // TODO: Complete member initialization
+            this.dataKolumny = dataKolumny;
+            this.klasaNR = klasaNR;
+            SQLite = new cSQLite();
+            SQLite.Zapytanie = "SELECT * FROM data WHERE klasaNR = " + klasaNR + " AND dzien = '" + dataKolumny + "';";
+            wykonajZapytanie(rodzajZapytania.pobierz);
+            wylaczEdycje = false;
+
         }
 
         public DateTime Dzien
@@ -50,6 +69,15 @@ namespace Dziennik_nauczyciela_obiektowy
                 //if (!wylaczEdycje) aktualizuj("Mc");
             }
         }
+
+        public int DataID
+        {
+            get
+            {
+                return dataID;
+            }
+        }
+
         public override void dodajDoBazy()
         {
             SQLite.Zapytanie = "INSERT INTO data(dzien, klasaNR) VALUES('" + dzien.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', " + this.klasaNR + ");";
@@ -81,7 +109,7 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             List<data> listaDat = new List<data>();
             cSQLite SQLite = new cSQLite();
-            SQLite.Zapytanie = "SELECT * FROM data WHERE klasaNR = " + klasaNR + ";";
+            SQLite.Zapytanie = "SELECT * FROM data WHERE klasaNR = " + klasaNR + " ORDER BY dzien;";
             SQLite.DataReader = SQLite.command.ExecuteReader();
             while (SQLite.DataReader.Read())
             {

@@ -144,12 +144,12 @@ namespace Dziennik_nauczyciela_obiektowy
 
             //struktura: uczen_na_lekcji
             sql.AppendLine("CREATE TABLE IF NOT EXISTS uczen_na_lekcji([uczen_na_lekcjiID] INTEGER PRIMARY KEY AUTOINCREMENT, ");
-            sql.AppendLine("[uczenNR] INT NOT NULL, ");
+            sql.AppendLine("[UczenNR] INT NOT NULL, ");
             sql.AppendLine("[lekcjaNR] INT NOT NULL, ");
             sql.AppendLine("[obecnosc] INT, ");
             sql.AppendLine("[ocena] INT CHECK (ocena >=0 AND ocena <= 5), ");
-            sql.AppendLine("UNIQUE(uczenNR,lekcjaNR), ");
-            sql.AppendLine("FOREIGN KEY (uczenNR) REFERENCES uczen(UczenID), ");
+            sql.AppendLine("UNIQUE(UczenNR,lekcjaNR), ");
+            sql.AppendLine("FOREIGN KEY (UczenNR) REFERENCES uczen(UczenID), ");
             sql.AppendLine("FOREIGN KEY (lekcjaNR) REFERENCES lekcja(lekcjaID));");
 
             Zapytanie = sql.ToString();

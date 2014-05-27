@@ -12,6 +12,7 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
     public partial class fWidokUcznia : fWidokUczniaLubPrzedmiotu
     {
         ListaUczniow listaUczniow = null;
+
         int klasaNR = -1;
         public fWidokUcznia(int klasaID) : base(klasaID, typeof(uczen))
         {

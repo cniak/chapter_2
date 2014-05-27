@@ -390,6 +390,7 @@
             // 
             // cb_przedmiotDziennik
             // 
+            this.cb_przedmiotDziennik.BackColor = System.Drawing.Color.White;
             this.cb_przedmiotDziennik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_przedmiotDziennik.FormattingEnabled = true;
             this.cb_przedmiotDziennik.Location = new System.Drawing.Point(232, 16);
