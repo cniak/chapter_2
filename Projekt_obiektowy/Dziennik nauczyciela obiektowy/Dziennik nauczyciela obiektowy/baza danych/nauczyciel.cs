@@ -68,7 +68,7 @@ namespace Dziennik_nauczyciela_obiektowy
             }
             set
             {
-                if (walidacjaMaila(value) == true)
+                if (walidacjaMaila(value + @"@gmail.com") == true)
                 {
                     email = value;
                     if (!wylaczEdycje) aktualizuj("email");

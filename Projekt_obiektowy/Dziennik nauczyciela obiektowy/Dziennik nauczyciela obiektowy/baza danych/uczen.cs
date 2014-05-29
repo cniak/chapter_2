@@ -13,6 +13,7 @@ namespace Dziennik_nauczyciela_obiektowy
         private string email = string.Empty;
         private string telefon_ucznia = string.Empty;
         private string telefon_rodzica = string.Empty;
+        private string uwagi = "brak";
 
         /// <summary>
         /// tworzy obiekt uczen
@@ -112,6 +113,16 @@ namespace Dziennik_nauczyciela_obiektowy
                 return uczenID;
             }
         }
+        public string Uwagi
+        {
+            get { return uwagi; }
+            set {
+                uwagi = value;
+                if (!wylaczEdycje)
+                    if (uwagi.Length == 0) uwagi = "brak";
+                    aktualizuj("uwagi");
+            }
+        }
         public int KlasaNR
         {
             get
@@ -126,8 +137,8 @@ namespace Dziennik_nauczyciela_obiektowy
 
         public override void dodajDoBazy()
         {
-            SQLite.Zapytanie = "INSERT INTO uczen (klasaNR, imie, nazwisko, pesel, email, telefon_ucznia, telefon_rodzica) " +
-                                                  "VALUES(@klasaNR,@imie,@nazwisko,@pesel,@email,@telefon_ucznia,@telefon_rodzica);";
+            SQLite.Zapytanie = "INSERT INTO uczen (klasaNR, imie, nazwisko, pesel, email, telefon_ucznia, telefon_rodzica, uwagi) " +
+                                                  "VALUES(@klasaNR,@imie,@nazwisko,@pesel,@email,@telefon_ucznia,@telefon_rodzica, @uwagi);";
             SQLite.dodajParametr("klasaNR", klasaNR);
             SQLite.dodajParametr("imie", imie);
             SQLite.dodajParametr("nazwisko", nazwisko);
@@ -135,6 +146,7 @@ namespace Dziennik_nauczyciela_obiektowy
             SQLite.dodajParametr("email", email);
             SQLite.dodajParametr("telefon_ucznia", telefon_ucznia);
             SQLite.dodajParametr("telefon_rodzica", telefon_rodzica);
+            SQLite.dodajParametr("uwagi", uwagi);
             SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
             wylaczEdycje = false;
         }
@@ -151,6 +163,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 SQLite.Zapytanie = "UPDATE uczen SET email = '" + email + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE uczen SET telefon_ucznia = '" + telefon_ucznia + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 SQLite.Zapytanie = "UPDATE uczen SET telefon_rodzica = '" + telefon_rodzica + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET uwagi = '" + uwagi + "' WHERE uczenID =  " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
                 return;
             }
             foreach (string element in elementy)
@@ -164,6 +177,7 @@ namespace Dziennik_nauczyciela_obiektowy
                     case "email":           SQLite.Zapytanie = "UPDATE uczen SET email = '" + email + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "telefon_ucznia":  SQLite.Zapytanie = "UPDATE uczen SET telefon_ucznia = '" + telefon_ucznia + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     case "telefon_rodzica": SQLite.Zapytanie = "UPDATE uczen SET telefon_rodzica = '" + telefon_rodzica + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "uwagi":           SQLite.Zapytanie = "UPDATE uczen SET uwagi = '" + uwagi + "' WHERE uczenID =  " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
                     default: throw new Exception("niepoprawny parametr do aktualizacji danych");
                 }
             }
@@ -186,6 +200,7 @@ namespace Dziennik_nauczyciela_obiektowy
                     email = SQLite.DataReader["email"].ToString();
                     telefon_ucznia = SQLite.DataReader["telefon_ucznia"].ToString();
                     telefon_rodzica = SQLite.DataReader["telefon_rodzica"].ToString();
+                    uwagi = SQLite.DataReader["uwagi"].ToString();
                 }
                 SQLite.zamknijPolaczenie();
             }

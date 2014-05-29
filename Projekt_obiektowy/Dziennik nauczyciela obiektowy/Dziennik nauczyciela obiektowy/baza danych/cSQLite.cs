@@ -73,7 +73,14 @@ namespace Dziennik_nauczyciela_obiektowy
             if (rodzaj == rodzajZapytania.wyslij)
             {
                 otworzPolaczenie();
+                try
+                {
                     command.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw new Exception(Zapytanie);
+                }
                 zamknijPolaczenie();    
             }
             else
@@ -121,6 +128,7 @@ namespace Dziennik_nauczyciela_obiektowy
             sql.AppendLine("[Nazwisko] VARCHAR(25) NOT NULL, ");
             sql.AppendLine("[Pesel] VARCHAR(25) NOT NULL, ");
             sql.AppendLine("[Email] VARCHAR(25), ");
+            sql.AppendLine("[uwagi] varchar(500), ");
             sql.AppendLine("[telefon_ucznia] VARCHAR(25) NOT NULL, ");
             sql.AppendLine("[telefon_rodzica] VARCHAR(25) NOT NULL, ");
             sql.AppendLine("UNIQUE (klasaNR, Imie, Nazwisko), ");

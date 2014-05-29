@@ -41,7 +41,6 @@ namespace Dziennik_nauczyciela_obiektowy
             SQLite.Zapytanie = "SELECT * FROM data WHERE klasaNR = " + klasaNR + " AND dzien = '" + dataKolumny + "';";
             wykonajZapytanie(rodzajZapytania.pobierz);
             wylaczEdycje = false;
-
         }
 
         public DateTime Dzien

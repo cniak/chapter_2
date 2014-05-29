@@ -19,29 +19,37 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
             this.zalogowanaKlasa.wylaczEdycje = true;
             zalogowanyNauczyciel = new nauczyciel(zalogowanaKlasa.NauczycielNR);
             InitializeComponent();
-            
             t_nauczyciel.Text = zalogowanyNauczyciel.Imie + " " + zalogowanyNauczyciel.Nazwisko;
             t_nazwaKlasy.Text = zalogowanaKlasa.Nazwa;
         }
 
         private void b_zapiszZmiany_Click(object sender, EventArgs e)
         {
-            zalogowanaKlasa.wylaczEdycje = false;
+            try
+            {
+                int gospodarzNR = Convert.ToInt32(cb_listaUczniow.SelectedValue.ToString());
+                zalogowanaKlasa.wylaczEdycje = false;
                 zalogowanaKlasa.aktualizuj("nazwa");
                 zalogowanaKlasa.Nazwa = t_nazwaKlasy.Text;
-                zalogowanaKlasa.GospodarzNR = (int)cb_listaUczniow.SelectedValue;
-            zalogowanaKlasa.wylaczEdycje = true;
+                zalogowanaKlasa.GospodarzNR = gospodarzNR;
+                zalogowanaKlasa.wylaczEdycje = true;
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("gospodarz nie zostal zmieniony (pusta wartosc)");
+            }
         }
 
         private void fEdycjaKlasy_Load(object sender, EventArgs e)
         {
             cb_listaUczniow.ValueMember = "Key";
             cb_listaUczniow.DisplayMember = "Value";
+            
             List<uczen> listaUczniow = uczen.pobierzWszystkich(zalogowanaKlasa.KlasaID);
             Dictionary<int, string> slownikUczniow = new Dictionary<int, string>();
             foreach (uczen u in listaUczniow)
             {
-                slownikUczniow.Add(u.UczenID, u.Imie + u.Nazwisko);
+                slownikUczniow.Add(u.UczenID, u.Imie + " " + u.Nazwisko);
             }
             cb_listaUczniow.DataSource = new BindingSource(slownikUczniow, null);
             cb_listaUczniow.SelectedValue = zalogowanaKlasa.GospodarzNR;

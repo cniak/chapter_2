@@ -111,6 +111,7 @@
             this.Controls.Add(this.t_nazwaKlasy);
             this.Controls.Add(this.label1);
             this.Name = "fEdycjaKlasy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fEdycjaKlas";
             this.Load += new System.EventHandler(this.fEdycjaKlasy_Load);
             this.ResumeLayout(false);

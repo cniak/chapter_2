@@ -43,7 +43,7 @@ namespace Dziennik_nauczyciela_obiektowy
                     zalogowanyNauczyciel.Imie = t_imie.Text;
                     zalogowanyNauczyciel.Nazwisko = t_nazwisko.Text;
                     zalogowanyNauczyciel.Email_haslo = t_hasloEmail.Text;
-                    zalogowanyNauczyciel.Email = t_email.Text + @"@gmail.com";
+                    zalogowanyNauczyciel.Email = t_email.Text;
                 zalogowanyNauczyciel.wylaczEdycje = false;
                 try
                 {

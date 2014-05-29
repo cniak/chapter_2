@@ -58,10 +58,6 @@
             this.tp_edytuj.Controls.Add(this.t_edytujNazwaPrzedmiotu);
             this.tp_edytuj.Controls.Add(this.label3);
             // 
-            // tp_usun
-            // 
-            this.tp_usun.Size = new System.Drawing.Size(397, 160);
-            // 
             // b_usun1
             // 
             this.b_usun1.Click += new System.EventHandler(this.b_usun1_Click);
@@ -124,6 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 186);
             this.Name = "fWidokPrzedmiotu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fWidokPrzedmiotu";
             this.Load += new System.EventHandler(this.fWidokPrzedmiotu_Load);
             this.tc_widok.ResumeLayout(false);

@@ -109,6 +109,7 @@ namespace Dziennik_nauczyciela_obiektowy
         public override void dodajDoBazy()
         {
             SQLite.Zapytanie = "INSERT INTO uczen_na_lekcji(uczenNR, lekcjaNR, obecnosc) VALUES(@uczen,@lekcja,@obecnosc);";
+            //SQLite.Zapytanie = "INSERT INTO uczen_na_lekcji(uczenNR, lekcjaNR, obecnosc) VALUES(" + uczenNR + ", " +lekcjaNR + ", " + obecnosc + ");";
             SQLite.dodajParametr("uczen", uczenNR);
             SQLite.dodajParametr("lekcja", lekcjaNR);
             SQLite.dodajParametr("obecnosc", obecnosc);

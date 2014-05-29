@@ -161,7 +161,6 @@
             this.dgv_listaNauczycieli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listaNauczycieli.Size = new System.Drawing.Size(164, 114);
             this.dgv_listaNauczycieli.TabIndex = 21;
-
             // 
             // b_usun
             // 
@@ -182,6 +181,7 @@
             this.Controls.Add(this.dgv_listaNauczycieli);
             this.Controls.Add(this.b_usun);
             this.Name = "fStart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fStart";
             this.Load += new System.EventHandler(this.fStart_Load);
             this.groupBox1.ResumeLayout(false);

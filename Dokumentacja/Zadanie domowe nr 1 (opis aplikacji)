@@ -29,16 +29,16 @@ Wymagania funkcjonalne:
 12.	Jako nauczyciel mam możliwość tworzenia pliku PDF														[ ]T
 13.	Jako nauczyciel mam możliwość zapisu pliku PDF na dysku 												[ ]T
 14.	Jako nauczyciel mam możliwość wysłania pliku PDF do ucznia (mail) 										[2]M
-15.	Jako nauczyciel mam możliwość dodawania uwag dotyczących ucznia 										[0]M
-16.	Jako nauczyciel mam możliwość przeglądania uwag ucznia 													[0]M
+15.	Jako nauczyciel mam możliwość dodawania uwag dotyczących ucznia 										[x]M
+16.	Jako nauczyciel mam możliwość przeglądania uwag ucznia 													[x]M
 17.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia  										[ ]T
 18.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia z wybranego przedmiotu					[ ]T
 19.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy 											[ ]T
 20.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy z wybranego przedmiotu 					[ ]T
 21.	Jako nauczyciel mam możliwość generowania wykresów frekwencji ucznia 									[ ]T
 22.	Jako nauczyciel mam możliwość generowania wykresów frekwencji klasy										[ ]T
-23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu							[0]M
-24.	Jako nauczyciel mam możliwość dodania nieobecności w wybranym dniu										[0]M
+23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu							[x]M
+24.	Jako nauczyciel mam możliwość dodania nieobecności w wybranym dniu										[x]M
 
 Wymagania niefunkcjonalne:
 

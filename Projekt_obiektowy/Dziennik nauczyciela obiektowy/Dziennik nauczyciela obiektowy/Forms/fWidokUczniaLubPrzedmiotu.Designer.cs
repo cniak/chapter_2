@@ -139,6 +139,7 @@
             this.Controls.Add(this.tc_widok);
             this.Controls.Add(this.dgv_lista);
             this.Name = "fWidokUczniaLubPrzedmiotu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fWidokUczniaLubPrzedmiotu";
             this.tc_widok.ResumeLayout(false);
             this.tp_usun.ResumeLayout(false);

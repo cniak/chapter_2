@@ -42,7 +42,14 @@ namespace Dziennik_nauczyciela_obiektowy
             newCol.Name = "imie_i_nazwisko";
             newCol.Visible = true;
             dgv.Columns.Add(newCol);
-            dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            try
+            {
+                dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            catch (Exception)
+            {
+                //TODO 1 nieobslugiwany wyjatek
+            }
             ustawZawszeWidoczneNazwyKolumny();
         }
 

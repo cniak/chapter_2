@@ -224,10 +224,26 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
       {
           zalogowanyNauczyciel.wylaczEdycje = false;
           zalogowanyNauczyciel.Email_haslo = t_hasloMail.Text;
+          int posiadaMalpe = t_loginMail.Text.IndexOf('@');
+          if (posiadaMalpe > 0)
+          {
+              MessageBox.Show("podaj sam login, bez @gmail.com");
+              return;
+          }
           zalogowanyNauczyciel.zalogujMail(bw_polaczZMailem);
+            //if(t_loginMail.Text.IndexOf('@');
+          
           //zalogowanyNauczyciel.ZalogowanyMail = 1;
           l_mail.Text = zalogowanyNauczyciel.Email;
           //if(!bw_polaczZMailem.IsBusy) bw_polaczZMailem.RunWorkerAsync();
-      }        
+      }
+
+        private void b_wylogujSie_Click(object sender, EventArgs e)
+        {
+            fStart start = new fStart();
+            this.Hide();
+            start.ShowDialog();
+            this.Close();
+        }        
     }
 }

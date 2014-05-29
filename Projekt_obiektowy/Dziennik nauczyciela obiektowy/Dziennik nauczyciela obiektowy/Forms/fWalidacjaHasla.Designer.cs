@@ -58,6 +58,7 @@
             this.Controls.Add(this.b_polacz);
             this.Controls.Add(this.t_haslo);
             this.Name = "fWalidacjaHasla";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fWalidacjaHasla";
             this.ResumeLayout(false);
             this.PerformLayout();

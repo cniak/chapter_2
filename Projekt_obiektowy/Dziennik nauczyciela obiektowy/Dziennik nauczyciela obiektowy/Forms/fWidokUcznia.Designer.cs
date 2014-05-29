@@ -87,7 +87,7 @@
             // 
             // tp_usun
             // 
-            this.tp_usun.Size = new System.Drawing.Size(590, 253);
+            this.tp_usun.Size = new System.Drawing.Size(590, 219);
             // 
             // b_usun1
             // 
@@ -401,6 +401,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 279);
             this.Name = "fWidokUcznia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fWidokUcznia";
             this.Load += new System.EventHandler(this.fWidokUcznia_Load);
             this.tc_widok.ResumeLayout(false);

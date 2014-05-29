@@ -262,6 +262,7 @@
             this.ClientSize = new System.Drawing.Size(454, 236);
             this.Controls.Add(this.groupBox1);
             this.Name = "fEdycjaNauczyciela";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fEdycjaNauczyciela";
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

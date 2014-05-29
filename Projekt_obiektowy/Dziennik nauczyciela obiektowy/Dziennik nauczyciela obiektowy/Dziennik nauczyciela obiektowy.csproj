@@ -149,7 +149,7 @@
     <Compile Include="baza danych\przedmiot.cs" />
     <Compile Include="baza danych\uczen.cs" />
     <Compile Include="baza danych\uczen_na_lekcji.cs" />
-    <Compile Include="typDanych.cs" />
+    <Compile Include="enum\typDanych.cs" />
     <EmbeddedResource Include="Forms\fEdycjaKlasy.resx">
       <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
     </EmbeddedResource>

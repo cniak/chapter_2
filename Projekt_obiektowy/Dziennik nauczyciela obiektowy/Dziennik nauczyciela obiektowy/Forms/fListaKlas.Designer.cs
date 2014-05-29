@@ -57,6 +57,7 @@
             this.t_rocznik1 = new System.Windows.Forms.TextBox();
             this.t_nazwa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.b_wylogujSie = new System.Windows.Forms.Button();
             this.gb_mailZalogowany.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaKlas)).BeginInit();
             this.gb_powiazanieKontaZPoczta.SuspendLayout();
@@ -349,11 +350,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Rocznik:";
             // 
+            // b_wylogujSie
+            // 
+            this.b_wylogujSie.Location = new System.Drawing.Point(372, 325);
+            this.b_wylogujSie.Name = "b_wylogujSie";
+            this.b_wylogujSie.Size = new System.Drawing.Size(151, 23);
+            this.b_wylogujSie.TabIndex = 30;
+            this.b_wylogujSie.Text = "Wyloguj";
+            this.b_wylogujSie.UseVisualStyleBackColor = true;
+            this.b_wylogujSie.Click += new System.EventHandler(this.b_wylogujSie_Click);
+            // 
             // fListaKlas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(625, 379);
+            this.Controls.Add(this.b_wylogujSie);
             this.Controls.Add(this.b_edytujDane);
             this.Controls.Add(this.b_usunKlase);
             this.Controls.Add(this.gb_mailZalogowany);
@@ -362,6 +374,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "fListaKlas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fListaKlas";
             this.Load += new System.EventHandler(this.fListaKlas_Load);
             this.gb_mailZalogowany.ResumeLayout(false);
@@ -409,5 +422,6 @@
         protected System.Windows.Forms.TextBox t_rocznik1;
         protected System.Windows.Forms.TextBox t_nazwa;
         protected System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button b_wylogujSie;
     }
 }
