@@ -68,9 +68,9 @@ namespace Dziennik_nauczyciela_obiektowy
         /// <summary>
         /// chyba to przeniose do nauczyciela
         /// </summary>
-        public void wykonajZapytanie(rodzajZapytania rodzaj)
+        public void wykonajZapytanie(ERodzajZapytania rodzaj)
         {
-            if (rodzaj == rodzajZapytania.wyslij)
+            if (rodzaj == ERodzajZapytania.wyslij)
             {
                 otworzPolaczenie();
                 try
@@ -161,7 +161,7 @@ namespace Dziennik_nauczyciela_obiektowy
             sql.AppendLine("FOREIGN KEY (lekcjaNR) REFERENCES lekcja(lekcjaID));");
 
             Zapytanie = sql.ToString();
-            wykonajZapytanie(rodzajZapytania.wyslij);
+            wykonajZapytanie(ERodzajZapytania.wyslij);
         }
         
         /// <summary>

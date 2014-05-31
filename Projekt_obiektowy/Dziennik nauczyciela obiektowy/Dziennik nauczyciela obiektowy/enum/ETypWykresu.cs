@@ -5,10 +5,9 @@ using System.Text;
 
 namespace Dziennik_nauczyciela_obiektowy
 {
-    public enum ETypDanych
+    public enum ETypWykresu
     {
-        ocena = 0,
-        obecnosc = 1,
-        uwagi = 2
+        slupkowy = 0,
+        liniowy = 1
     }
 }

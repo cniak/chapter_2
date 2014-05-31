@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dziennik_nauczyciela_obiektowy
 {
-    public enum rodzajZapytania
+    public enum ERodzajZapytania
     {
         wyslij = 0,
         pobierz = 1,

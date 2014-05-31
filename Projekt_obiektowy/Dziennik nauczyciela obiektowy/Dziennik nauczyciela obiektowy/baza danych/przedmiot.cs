@@ -22,7 +22,7 @@ namespace Dziennik_nauczyciela_obiektowy
             this.przedmiotID = przedmiotID;
             SQLite = new cSQLite();
             SQLite.Zapytanie = "SELECT * FROM przedmiot WHERE przedmiotID = " + przedmiotID + ";";
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
 
@@ -64,7 +64,7 @@ namespace Dziennik_nauczyciela_obiektowy
             SQLite.Zapytanie = "INSERT INTO przedmiot (klasaNR, nazwa) VALUES (@klasaNR, @nazwa);";
             SQLite.dodajParametr("klasaNR", klasaNR);
             SQLite.dodajParametr("nazwa", nazwa);
-            SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+            SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
             wylaczEdycje = false;
         }
 
@@ -73,22 +73,22 @@ namespace Dziennik_nauczyciela_obiektowy
             if (wylaczEdycje == true) throw new Exception("wlacz pierw edycje!");
             if ((elementy.Length == 1) && (elementy[0] == "*"))
             {
-                SQLite.Zapytanie = "UPDATE przedmiot SET nazwa = '" + nazwa + "' WHERE przedmiotID = " + przedmiotID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE przedmiot SET nazwa = '" + nazwa + "' WHERE przedmiotID = " + przedmiotID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
                 return;
             }
             foreach (string element in elementy)
             {
                 switch (element)
                 {
-                    case "nazwa": SQLite.Zapytanie = "UPDATE przedmiot SET nazwa = '" + nazwa + "' WHERE przedmiotID = " + przedmiotID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "nazwa": SQLite.Zapytanie = "UPDATE przedmiot SET nazwa = '" + nazwa + "' WHERE przedmiotID = " + przedmiotID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
                     default: throw new Exception("niepoprawny parametr do aktualizacji danych");
                 }
             }
         }
 
-        protected override void wykonajZapytanie(rodzajZapytania rodzaj)
+        protected override void wykonajZapytanie(ERodzajZapytania rodzaj)
         {
-            if (rodzaj == rodzajZapytania.wyslij) SQLite.wykonajZapytanie(rodzaj);
+            if (rodzaj == ERodzajZapytania.wyslij) SQLite.wykonajZapytanie(rodzaj);
             else
             {
                 SQLite.otworzPolaczenie();
@@ -106,7 +106,7 @@ namespace Dziennik_nauczyciela_obiektowy
         public override bool usun()
         {
             SQLite.Zapytanie = "DELETE FROM przedmiot WHERE przedmiotID = " + przedmiotID + ";";
-            SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+            SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
             return true;
         }
 

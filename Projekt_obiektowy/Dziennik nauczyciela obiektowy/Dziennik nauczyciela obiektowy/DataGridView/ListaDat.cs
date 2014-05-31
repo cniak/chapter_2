@@ -16,7 +16,7 @@ namespace Dziennik_nauczyciela_obiektowy
         public List<data> zbior;
         private List<DateTime> daty = new List<DateTime>();
         private cSQLite SQLite;
-        private int klasaNR = -1;
+        private klasa zalogowanaKlasa = null;
         private DateTime zaznaczonyElement;
         private MonthCalendar mc;
         private ComboBox cb_miesiac;
@@ -24,14 +24,14 @@ namespace Dziennik_nauczyciela_obiektowy
         /// ta lista po niczym nie dziedziczy!
         /// </summary>
         /// <param name="Dgv">jakie Dgv beda na nowo wczytywane</param>
-        public ListaDat(MonthCalendar mc, int klasaID, ComboBox cb_miesiac)
+        public ListaDat(MonthCalendar mc, klasa k, ComboBox cb_miesiac)
         {
             this.mc = mc;
+            zalogowanaKlasa = k;
             if (this.cb_miesiac != null)
             {
                 this.cb_miesiac = cb_miesiac;
             }
-            this.klasaNR = klasaID;
             SQLite = new cSQLite();
             this.mc.DateChanged += new System.Windows.Forms.DateRangeEventHandler(zmianaDaty);
             zaznaczonyElement = mc.SelectionStart;
@@ -69,13 +69,15 @@ namespace Dziennik_nauczyciela_obiektowy
                 cb_miesiac = value;
                 cb_miesiac.ValueMember = "Key";
                 cb_miesiac.DisplayMember = "Value";
-                ustawMiesiacedlacb();
+                cb_miesiac.DataSource = new BindingSource(ustawMiesiacedlacb(zalogowanaKlasa.KlasaID), null);
+                //ustawMiesiacedlacb();
             }
         }
 
-        private void ustawMiesiacedlacb()
+        static public Dictionary<DateTime,string> ustawMiesiacedlacb(int klasaNR)
         {
             List<DateTime> ld = new List<DateTime>();
+            List<data> zbior = data.pobierzWszystkich(klasaNR);
             foreach (data d in zbior)
             {
                 ld.Add(d.Dzien);
@@ -95,18 +97,9 @@ namespace Dziennik_nauczyciela_obiektowy
                     //TODO 1 jak jest juz taki miesiac to ma poprostu go nie dodawac
                 }
             }
-            cb_miesiac.DataSource = new BindingSource(ddt, null);
+            return ddt;
+            //cb_miesiac.DataSource = new BindingSource(ddt, null);
             
-        }
-        public int KlasaNR
-        {
-            get
-            {
-                return klasaNR;
-            }
-            set
-            {
-            }
         }
         public DateTime ZaznaczonyElement
         {
@@ -119,7 +112,7 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             data d = new data();
             
-            zbior = data.pobierzWszystkich(klasaNR);
+            zbior = data.pobierzWszystkich(zalogowanaKlasa.KlasaID);
             for (int i = 0; i < zbior.Count; i++)
             {
                 daty.Add(zbior[i].Dzien);

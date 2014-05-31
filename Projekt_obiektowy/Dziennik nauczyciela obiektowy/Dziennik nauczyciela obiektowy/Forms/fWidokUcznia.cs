@@ -80,7 +80,14 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
                 Telefon_ucznia = t_nrUcznia_dodaj.Text,
                 Telefon_rodzica = t_nrRodzica_dodaj.Text
             };
-            u.dodajDoBazy();
+            try
+            {
+                u.dodajDoBazy();
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("imie i nazwisko musi byc unikalne w klasie");
+            }
             listaUczniow.odswiezDGV(t_imie_dodaj, t_nazwisko_dodaj, t_pesel_dodaj, t_email_dodaj, t_nrUcznia_dodaj, t_nrRodzica_dodaj);
         }
 

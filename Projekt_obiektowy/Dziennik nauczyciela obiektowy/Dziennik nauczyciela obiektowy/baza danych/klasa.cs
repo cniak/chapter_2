@@ -23,7 +23,7 @@ namespace Dziennik_nauczyciela_obiektowy
             this.klasaID = klasaID;
             SQLite = new cSQLite();
             SQLite.Zapytanie = "SELECT * FROM klasa WHERE klasaID = " + klasaID + ";";
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
 
@@ -98,18 +98,18 @@ namespace Dziennik_nauczyciela_obiektowy
             if (wylaczEdycje == true) throw new Exception("wlacz pierw edycje!");
             if ((elementy.Length == 1) && (elementy[0] == "*"))
             {
-                SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = " + gospodarzNR + " WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = " + gospodarzNR + " WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
                 return;
             }
             foreach (string element in elementy)
             {
                 switch (element)
                 {
-                    case "nazwa": SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "gospodarzNR": SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = " + gospodarzNR + " WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "rocznik": SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "nazwa": SQLite.Zapytanie = "UPDATE klasa SET nazwa = '" + nazwa + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "gospodarzNR": SQLite.Zapytanie = "UPDATE klasa SET gospodarzNR = " + gospodarzNR + " WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "rocznik": SQLite.Zapytanie = "UPDATE klasa SET rocznik = '" + rocznik + "' WHERE klasaID= " + klasaID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
                     default: throw new Exception("niepoprawny parametr do aktualizacji danych");
                 }
             }
@@ -127,7 +127,7 @@ namespace Dziennik_nauczyciela_obiektowy
             SQLite.dodajParametr("nauczycielNR", nauczycielNR);
             SQLite.dodajParametr("rocznik", rocznik);
             SQLite.dodajParametr("gospodarzNR", gospodarzNR);
-            wykonajZapytanie(rodzajZapytania.wyslij);
+            wykonajZapytanie(ERodzajZapytania.wyslij);
             wylaczEdycje = false;
             nauczyciel n = new nauczyciel();
         }
@@ -158,16 +158,16 @@ namespace Dziennik_nauczyciela_obiektowy
         public override bool usun()
         {
             SQLite.Zapytanie = "DELETE FROM klasa WHERE klasaID =" + klasaID + ";";
-            SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+            SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
             return true;
         }
 
         /// <summary>
         /// wykonuje zapytanie na obiekcie
         /// </summary>
-        protected override void wykonajZapytanie(rodzajZapytania rodzaj)
+        protected override void wykonajZapytanie(ERodzajZapytania rodzaj)
         {
-            if (rodzaj == rodzajZapytania.wyslij)
+            if (rodzaj == ERodzajZapytania.wyslij)
             {
                 SQLite.wykonajZapytanie(rodzaj);
             }

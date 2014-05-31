@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.bg_wczytajDaneIndywidualne = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.klasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,17 +77,19 @@
             this.b_zapiszUwagi_indywidualne = new System.Windows.Forms.Button();
             this.t_uwagi_indywidualne = new System.Windows.Forms.RichTextBox();
             this.Wykresy = new System.Windows.Forms.TabPage();
+            this.chart_Wykresy = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_typWykresy = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cb_przedmiotWykresy = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.b_pokaz = new System.Windows.Forms.Button();
             this.cb_zbiorWykresy = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.Dziennik = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.b_pokazDaneDziennik = new System.Windows.Forms.Button();
+            this.l_miesiacDziennik = new System.Windows.Forms.Label();
+            this.cb_miesiaceDziennik = new System.Windows.Forms.ComboBox();
             this.cb_typ = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -108,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaObecnosci_indywidualne)).BeginInit();
             this.Uwagi.SuspendLayout();
             this.Wykresy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Wykresy)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.Dziennik.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -597,6 +601,7 @@
             // 
             // Wykresy
             // 
+            this.Wykresy.Controls.Add(this.chart_Wykresy);
             this.Wykresy.Controls.Add(this.groupBox1);
             this.Wykresy.Location = new System.Drawing.Point(4, 22);
             this.Wykresy.Name = "Wykresy";
@@ -606,15 +611,25 @@
             this.Wykresy.Text = "Wykresy";
             this.Wykresy.UseVisualStyleBackColor = true;
             // 
+            // chart_Wykresy
+            // 
+            legend3.Name = "Legend1";
+            this.chart_Wykresy.Legends.Add(legend3);
+            this.chart_Wykresy.Location = new System.Drawing.Point(14, 62);
+            this.chart_Wykresy.Name = "chart_Wykresy";
+            this.chart_Wykresy.Size = new System.Drawing.Size(771, 365);
+            this.chart_Wykresy.TabIndex = 14;
+            this.chart_Wykresy.Text = "chart1";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cb_typWykresy);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.cb_przedmiotWykresy);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.cb_zbiorWykresy);
             this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.cb_przedmiotWykresy);
+            this.groupBox1.Controls.Add(this.b_pokaz);
             this.groupBox1.Location = new System.Drawing.Point(9, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(782, 50);
@@ -626,10 +641,7 @@
             // 
             this.cb_typWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_typWykresy.FormattingEnabled = true;
-            this.cb_typWykresy.Items.AddRange(new object[] {
-            "Oceny",
-            "Obecność"});
-            this.cb_typWykresy.Location = new System.Drawing.Point(268, 16);
+            this.cb_typWykresy.Location = new System.Drawing.Point(40, 16);
             this.cb_typWykresy.Name = "cb_typWykresy";
             this.cb_typWykresy.Size = new System.Drawing.Size(121, 21);
             this.cb_typWykresy.TabIndex = 15;
@@ -637,7 +649,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(234, 19);
+            this.label13.Location = new System.Drawing.Point(6, 19);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(28, 13);
             this.label13.TabIndex = 14;
@@ -646,7 +658,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(395, 19);
+            this.label15.Location = new System.Drawing.Point(167, 19);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(56, 13);
             this.label15.TabIndex = 13;
@@ -656,19 +668,20 @@
             // 
             this.cb_przedmiotWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_przedmiotWykresy.FormattingEnabled = true;
-            this.cb_przedmiotWykresy.Location = new System.Drawing.Point(457, 15);
+            this.cb_przedmiotWykresy.Location = new System.Drawing.Point(229, 15);
             this.cb_przedmiotWykresy.Name = "cb_przedmiotWykresy";
             this.cb_przedmiotWykresy.Size = new System.Drawing.Size(121, 21);
             this.cb_przedmiotWykresy.TabIndex = 12;
             // 
-            // button3
+            // b_pokaz
             // 
-            this.button3.Location = new System.Drawing.Point(673, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Zapisz do PDF";
-            this.button3.UseVisualStyleBackColor = true;
+            this.b_pokaz.Location = new System.Drawing.Point(673, 15);
+            this.b_pokaz.Name = "b_pokaz";
+            this.b_pokaz.Size = new System.Drawing.Size(103, 23);
+            this.b_pokaz.TabIndex = 5;
+            this.b_pokaz.Text = "Pokaz";
+            this.b_pokaz.UseVisualStyleBackColor = true;
+            this.b_pokaz.Click += new System.EventHandler(this.b_zapiszPDFWykresy_Click);
             // 
             // cb_zbiorWykresy
             // 
@@ -680,7 +693,7 @@
             "Uczeń 2",
             "Uczeń 3",
             "Uczeń 4"});
-            this.cb_zbiorWykresy.Location = new System.Drawing.Point(46, 16);
+            this.cb_zbiorWykresy.Location = new System.Drawing.Point(428, 16);
             this.cb_zbiorWykresy.Name = "cb_zbiorWykresy";
             this.cb_zbiorWykresy.Size = new System.Drawing.Size(182, 21);
             this.cb_zbiorWykresy.TabIndex = 11;
@@ -688,11 +701,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 20);
+            this.label12.Location = new System.Drawing.Point(388, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 9;
-            this.label12.Text = "Zbiór:";
+            this.label12.Text = "Uczen:";
             // 
             // Dziennik
             // 
@@ -708,7 +721,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.b_pokazDaneDziennik);
+            this.groupBox3.Controls.Add(this.l_miesiacDziennik);
+            this.groupBox3.Controls.Add(this.cb_miesiaceDziennik);
             this.groupBox3.Controls.Add(this.cb_typ);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label11);
@@ -720,15 +734,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Wybierz grupę danych";
             // 
-            // b_pokazDaneDziennik
+            // l_miesiacDziennik
             // 
-            this.b_pokazDaneDziennik.Location = new System.Drawing.Point(701, 18);
-            this.b_pokazDaneDziennik.Name = "b_pokazDaneDziennik";
-            this.b_pokazDaneDziennik.Size = new System.Drawing.Size(75, 23);
-            this.b_pokazDaneDziennik.TabIndex = 7;
-            this.b_pokazDaneDziennik.Text = "Pokaz";
-            this.b_pokazDaneDziennik.UseVisualStyleBackColor = true;
-            this.b_pokazDaneDziennik.Click += new System.EventHandler(this.b_pokazDaneDziennik_Click);
+            this.l_miesiacDziennik.AutoSize = true;
+            this.l_miesiacDziennik.Location = new System.Drawing.Point(356, 21);
+            this.l_miesiacDziennik.Name = "l_miesiacDziennik";
+            this.l_miesiacDziennik.Size = new System.Drawing.Size(49, 13);
+            this.l_miesiacDziennik.TabIndex = 9;
+            this.l_miesiacDziennik.Text = "Miesiac: ";
+            // 
+            // cb_miesiaceDziennik
+            // 
+            this.cb_miesiaceDziennik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_miesiaceDziennik.FormattingEnabled = true;
+            this.cb_miesiaceDziennik.Location = new System.Drawing.Point(411, 19);
+            this.cb_miesiaceDziennik.Name = "cb_miesiaceDziennik";
+            this.cb_miesiaceDziennik.Size = new System.Drawing.Size(161, 21);
+            this.cb_miesiaceDziennik.TabIndex = 8;
             // 
             // cb_typ
             // 
@@ -738,7 +760,6 @@
             this.cb_typ.Name = "cb_typ";
             this.cb_typ.Size = new System.Drawing.Size(121, 21);
             this.cb_typ.TabIndex = 6;
-            this.cb_typ.SelectedIndexChanged += new System.EventHandler(this.cb_typ_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -773,11 +794,11 @@
             this.dgv_dziennik.AllowUserToDeleteRows = false;
             this.dgv_dziennik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dziennik.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_dziennik.Location = new System.Drawing.Point(3, 109);
+            this.dgv_dziennik.Location = new System.Drawing.Point(3, 66);
             this.dgv_dziennik.Name = "dgv_dziennik";
             this.dgv_dziennik.ReadOnly = true;
             this.dgv_dziennik.RowHeadersVisible = false;
-            this.dgv_dziennik.Size = new System.Drawing.Size(791, 334);
+            this.dgv_dziennik.Size = new System.Drawing.Size(791, 377);
             this.dgv_dziennik.TabIndex = 0;
             // 
             // tabelaGlowna
@@ -848,6 +869,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaObecnosci_indywidualne)).EndInit();
             this.Uwagi.ResumeLayout(false);
             this.Wykresy.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart_Wykresy)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Dziennik.ResumeLayout(false);
@@ -905,12 +927,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cb_przedmiotWykresy;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button b_pokaz;
         private System.Windows.Forms.ComboBox cb_zbiorWykresy;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage Dziennik;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button b_pokazDaneDziennik;
         private System.Windows.Forms.ComboBox cb_typ;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
@@ -929,5 +950,8 @@
         private System.Windows.Forms.RichTextBox t_uwagi_indywidualne;
         private System.Windows.Forms.Button b_odswiezListe;
         private System.Windows.Forms.Button b_wyloguj;
+        private System.Windows.Forms.Label l_miesiacDziennik;
+        private System.Windows.Forms.ComboBox cb_miesiaceDziennik;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_Wykresy;
     }
 }

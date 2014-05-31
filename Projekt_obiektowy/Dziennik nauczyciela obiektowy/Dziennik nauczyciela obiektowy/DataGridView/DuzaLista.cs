@@ -18,10 +18,14 @@ namespace Dziennik_nauczyciela_obiektowy
         ListaUczniow listaUczniow = null;
         ListaDat listaDat = null;
         BackgroundWorker bw = null;
-        private EtypDanych typDanych;
+        DuzyDziennik dziennik = null;
+        klasa zalogowanaKlasa = null;
+        private ETypDanych typDanych;
         /// <param name="listaUczniow">jak sie zmieni element tej listy to ma byc odswiezenie this.dgv</param>
-        public DuzaLista(Form f, ListaUczniow listaUczniow, ListaPrzedmiotow listaPrzedmiotow, ListaDat listaDat, DataGridView dgv,EtypDanych etyp) : base(f,dgv)
+        public DuzaLista(Form f, klasa k, DuzyDziennik dziennik, ListaUczniow listaUczniow, ListaPrzedmiotow listaPrzedmiotow, ListaDat listaDat, DataGridView dgv,ETypDanych etyp) : base(f,dgv)
         {
+            this.dziennik = dziennik;
+            this.zalogowanaKlasa = k;
             bw = new BackgroundWorker();
             bw.DoWork += bw_DoWork;
             bw.ProgressChanged += bw_ProgressChanged;
@@ -33,9 +37,10 @@ namespace Dziennik_nauczyciela_obiektowy
             this.typDanych = etyp;
             this.dgv = dgv;
             usunKolumny();
-            if (typDanych == EtypDanych.ocena)
+            if (typDanych == ETypDanych.ocena)
             {                
                 this.dgv.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listaOcen_indywidualne_CellEndEdit);
+                
             }
             else
             {
@@ -103,7 +108,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 {
                     int przedmiotID = listaPrzedmiotow.zbior[i].PrzedmiotID;
                     string dataKolumny = dgv.Columns[c].HeaderText.ToString() + " 00:00:00.000";
-                    lekcja l = new lekcja(dataKolumny, przedmiotID, listaDat.KlasaNR);
+                    lekcja l = new lekcja(dataKolumny, przedmiotID, zalogowanaKlasa.KlasaID);
                     if (l.LekcjaID < 0)
                     {
                         l.dodajDoBazy();
@@ -126,8 +131,11 @@ namespace Dziennik_nauczyciela_obiektowy
                             //TODO rzuca jakims mega dziwnym wyjatkiem
                         }
                     }
-                    if (typDanych == EtypDanych.ocena)
+                    if (typDanych == ETypDanych.ocena)
                     {
+                        //oc[c] = dataKolumny;
+                        //oc[c] = unl.Uczen_na_lekcjiID + " " + unl.LekcjaNR +" " + przedmiotID +" " + unl.UczenNR;
+                        
                         if (unl.Ocena > 0)
                         {
                             oc[c] = unl.Ocena;
@@ -137,6 +145,7 @@ namespace Dziennik_nauczyciela_obiektowy
                                 iloscDostepnychKolumn++;
                             }
                         }
+                         
                     }
                     else
                     {
@@ -149,13 +158,13 @@ namespace Dziennik_nauczyciela_obiektowy
                     }
                 }
                 object sredniaLubFrekwencja = 0;
-                if (typDanych == EtypDanych.ocena)
+                if (typDanych == ETypDanych.ocena)
                 {
-                    sredniaLubFrekwencja = ((float)sum.Sum() / iloscDostepnychKolumn).ToString();
+                    sredniaLubFrekwencja = Math.Round(((float)sum.Sum() / iloscDostepnychKolumn),2).ToString();
                 }
                 else
                 {
-                    sredniaLubFrekwencja = ((float)sum.Sum() / iloscDostepnychKolumn) * 100 + " %";
+                    sredniaLubFrekwencja = Math.Round(((float)sum.Sum() / iloscDostepnychKolumn),3) * 100 + " %";
                 }
                 if(iloscDostepnychKolumn == 0) sredniaLubFrekwencja = " ";
                 //oc[dgv.Columns.Count - 1] = obliczSrednia(oc,true);
@@ -174,7 +183,7 @@ namespace Dziennik_nauczyciela_obiektowy
             {
                 if (dgv.Columns[i].DefaultCellStyle.BackColor == Color.Chartreuse) break;
                 
-                if (typDanych == EtypDanych.ocena)
+                if (typDanych == ETypDanych.ocena)
                 {
 
                     try
@@ -195,14 +204,14 @@ namespace Dziennik_nauczyciela_obiektowy
                 }
             }
             object sredniaFrekwencja = 0;
-            if (typDanych == EtypDanych.ocena)
+            if (typDanych == ETypDanych.ocena)
             {
-                sredniaFrekwencja = (suma / iloscDostepnychKolumn).ToString();
+                sredniaFrekwencja = Math.Round((suma / iloscDostepnychKolumn),2).ToString();
             }
             else
             {
                 iloscDostepnychKolumn--;
-                sredniaFrekwencja = (suma / iloscDostepnychKolumn) * 100 + " %";
+                sredniaFrekwencja = Math.Round((suma / iloscDostepnychKolumn),3) * 100 + " %";
             }
             if (iloscDostepnychKolumn == 0) return ".";
             return sredniaFrekwencja;
@@ -216,7 +225,7 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             string dataKolumny = dgv.Columns[e.ColumnIndex].HeaderText.ToString() + " 00:00:00.000";
             int przedmiotID = (int)dgv[0, e.RowIndex].Value;
-            lekcja l = new lekcja(dataKolumny, przedmiotID, listaDat.KlasaNR);
+            lekcja l = new lekcja(dataKolumny, przedmiotID, zalogowanaKlasa.KlasaID);
             uczen_na_lekcji unl = new uczen_na_lekcji(listaUczniow.zbior[listaUczniow.ZaznaczonyWiersz].UczenID, l.LekcjaID);
             unl.Obecnosc = (dgv[e.ColumnIndex, e.RowIndex].Value.ToString().ToUpper() == "TRUE") ? 1 : 0;
             //dgv[dgv.Columns.Count - 1, e.RowIndex].Value = obliczSrednia(e.RowIndex);
@@ -228,10 +237,11 @@ namespace Dziennik_nauczyciela_obiektowy
             dgv.CommitEdit(DataGridViewDataErrorContexts.Commit);
             //dgv[dgv.Columns.Count - 1, e.RowIndex].Value = obliczSrednia(new object[]{ e.RowIndex; },false);
             dgv[dgv.Columns.Count-1,e.RowIndex].Value = obliczSrednia(e.RowIndex);
+            dziennik.odswiezDGV();
         }
 
 
-        public EtypDanych TypDanych
+        public ETypDanych TypDanych
         {
             get
             {
@@ -247,7 +257,7 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             string dataKolumny = dgv.Columns[e.ColumnIndex].HeaderText.ToString() + " 00:00:00.000";
             int przedmiotID = (int)dgv[0, e.RowIndex].Value;
-            lekcja l = new lekcja(dataKolumny, przedmiotID, listaDat.KlasaNR);
+            lekcja l = new lekcja(dataKolumny, przedmiotID, zalogowanaKlasa.KlasaID);
             uczen_na_lekcji unl = new uczen_na_lekcji(listaUczniow.zbior[listaUczniow.ZaznaczonyWiersz].UczenID, l.LekcjaID);
             //if (unl.Uczen_na_lekcjiID < 0) unl.dodajDoBazy();
             unl.wylaczEdycje = false;
@@ -266,6 +276,7 @@ namespace Dziennik_nauczyciela_obiektowy
             
             if (unl.Ocena == 0) dgv[e.ColumnIndex, e.RowIndex].Value = string.Empty;
             dgv[dgv.Columns.Count - 1, e.RowIndex].Value = obliczSrednia(e.RowIndex).ToString();
+            dziennik.odswiezDGV();
         }
         protected override void ustawCzyWidocznyDGV()
         {
@@ -287,7 +298,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 miesiac = -1;
             } 
 
-            //typDanych = EtypDanych.obecnosc;
+            //typDanych = ETypDanych.obecnosc;
             DataGridViewColumn newCol = new DataGridViewColumn();
             DataGridViewCell cell = new DataGridViewTextBoxCell();
             newCol.CellTemplate = cell;
@@ -308,7 +319,7 @@ namespace Dziennik_nauczyciela_obiektowy
             {
                 for (int i = 0; i < listaDat.zbior.Count; i++)
                 {
-                    if (typDanych == EtypDanych.ocena)
+                    if (typDanych == ETypDanych.ocena)
                     {
                         newCol = new DataGridViewColumn();
                         cell = new DataGridViewTextBoxCell();
@@ -338,7 +349,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 else ldd = ld.Select(d => new DateTime(d.Year, d.Month, d.Day)).Where(d => d.Month == wybranyMiesiacRok.Month).ToList();
                 foreach (DateTime d in ldd)
                 {
-                    if (typDanych == EtypDanych.ocena)
+                    if (typDanych == ETypDanych.ocena)
                     {
                         newCol = new DataGridViewColumn();
                         cell = new DataGridViewTextBoxCell();
@@ -363,7 +374,7 @@ namespace Dziennik_nauczyciela_obiektowy
             cell = new DataGridViewTextBoxCell();
             newCol.ReadOnly = false;
             newCol.CellTemplate = cell;
-            newCol.HeaderText = newCol.Name = (typDanych == EtypDanych.ocena) ? "srednia" : "frekwencja";
+            newCol.HeaderText = newCol.Name = (typDanych == ETypDanych.ocena) ? "srednia" : "frekwencja";
             newCol.Visible = true;
             newCol.ReadOnly = true;
             newCol.DefaultCellStyle.BackColor = Color.Beige;
@@ -375,7 +386,7 @@ namespace Dziennik_nauczyciela_obiektowy
 
         protected override void wczytajListe()
         {
-            zbior = uczen_na_lekcji.pobierzWszystkich(listaDat.KlasaNR);
+            zbior = uczen_na_lekcji.pobierzWszystkich(zalogowanaKlasa.KlasaID);
         }
 
         protected override void wczytajWiersze()
@@ -394,7 +405,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 {
                     int przedmiotID = (int)dgv[0,r].Value;
                     string dataKolumny = dgv.Columns[c].HeaderText.ToString() + " 00:00:00.000";
-                    lekcja l = new lekcja(dataKolumny, przedmiotID, listaDat.KlasaNR);
+                    lekcja l = new lekcja(dataKolumny, przedmiotID, zalogowanaKlasa.KlasaID);
                     if (l.LekcjaID < 0)
                     {
                         l.dodajDoBazy();
@@ -411,7 +422,7 @@ namespace Dziennik_nauczyciela_obiektowy
                         };
                             unl.dodajDoBazy();
                     }
-                    if (TypDanych == EtypDanych.ocena)
+                    if (TypDanych == ETypDanych.ocena)
                     {
                         if (unl.Ocena > 0) dgv[c, r].Value = unl.Ocena;
                     }

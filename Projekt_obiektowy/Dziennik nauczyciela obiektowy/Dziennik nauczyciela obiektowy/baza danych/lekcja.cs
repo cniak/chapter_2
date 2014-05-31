@@ -82,7 +82,19 @@ namespace Dziennik_nauczyciela_obiektowy
 
             this.przedmiotNR = przedmiotNR;
             this.klasaNR = klasaNR;
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
+            wylaczEdycje = false;
+        }
+        public lekcja(int dataNR, int przedmiotNR, int klasaNR)
+        {
+            SQLite = new cSQLite();
+            SQLite.Zapytanie = "SELECT " +
+                                "* " +
+                                "FROM " +
+                                "lekcja " +
+                                "WHERE " +
+                                "lekcja.dataNR = " + dataNR + " AND lekcja.przedmiotNR = " + przedmiotNR + " AND lekcja.klasaNR = " + klasaNR + ";";
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
         /// <summary>
@@ -94,7 +106,7 @@ namespace Dziennik_nauczyciela_obiektowy
             SQLite.dodajParametr("klasaNR", this.klasaNR);
             SQLite.dodajParametr("przedmiotNR", this.przedmiotNR);
             SQLite.dodajParametr("dataNR", this.dataNR);
-            wykonajZapytanie(rodzajZapytania.wyslij);
+            wykonajZapytanie(ERodzajZapytania.wyslij);
             // jak juz jest dodana klasa to konstruktor zwroci l.lekcjaID != -1, wtedy ta wartosc jest przypisana do obiektu
             lekcja l = new lekcja(dataKolumny, this.przedmiotNR, this.klasaNR);
             this.lekcjaID = l.lekcjaID;
@@ -108,9 +120,14 @@ namespace Dziennik_nauczyciela_obiektowy
         {
         }
 
-        protected override void wykonajZapytanie(rodzajZapytania rodzaj)
+        static public void pobierzWszystkich(int klasaNR, int przedmiotNR)
         {
-            if (rodzaj == rodzajZapytania.wyslij)
+            cSQLite SQLite = new cSQLite();
+            //SQLite.Zapytanie = "SELECT klasaNR, przedmiotNR, 
+        }
+        protected override void wykonajZapytanie(ERodzajZapytania rodzaj)
+        {
+            if (rodzaj == ERodzajZapytania.wyslij)
             {
                 SQLite.wykonajZapytanie(rodzaj);
             }

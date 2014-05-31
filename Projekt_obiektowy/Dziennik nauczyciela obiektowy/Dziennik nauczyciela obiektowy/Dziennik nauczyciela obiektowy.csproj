@@ -66,6 +66,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\System.Data.SQLite\2010\bin\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +81,8 @@
     <Compile Include="baza danych\bazadanych.cs" />
     <Compile Include="baza danych\data.cs" />
     <Compile Include="DataGridView\DuzaLista.cs" />
+    <Compile Include="DataGridView\DuzyDziennik.cs" />
+    <Compile Include="enum\ETypWykresu.cs" />
     <Compile Include="Forms\fEdycjaKlasy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +153,7 @@
     <Compile Include="baza danych\uczen.cs" />
     <Compile Include="baza danych\uczen_na_lekcji.cs" />
     <Compile Include="enum\typDanych.cs" />
+    <Compile Include="Wykresy\Wykresy.cs" />
     <EmbeddedResource Include="Forms\fEdycjaKlasy.resx">
       <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
     </EmbeddedResource>

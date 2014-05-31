@@ -28,7 +28,7 @@ namespace Dziennik_nauczyciela_obiektowy
             this.uczenID = uczenID;
             SQLite = new cSQLite();
             SQLite.Zapytanie = "SELECT * FROM uczen WHERE uczenID = " + this.uczenID + ";";
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
     
@@ -147,7 +147,7 @@ namespace Dziennik_nauczyciela_obiektowy
             SQLite.dodajParametr("telefon_ucznia", telefon_ucznia);
             SQLite.dodajParametr("telefon_rodzica", telefon_rodzica);
             SQLite.dodajParametr("uwagi", uwagi);
-            SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+            SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
             wylaczEdycje = false;
         }
 
@@ -156,36 +156,36 @@ namespace Dziennik_nauczyciela_obiektowy
             if (wylaczEdycje == true) throw new Exception("wlacz pierw edycje!");
             if ((elementy.Length == 1) && (elementy[0] == "*"))
             {
-                SQLite.Zapytanie = "UPDATE uczen SET klasaNR = " + klasaNR + " WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen SET imie = '" + imie + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen SET nazwisko = '" + nazwisko + "' WHERE uczenID= " + uczenID+ ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen SET pesel = '" + pesel + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen SET email = '" + email + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen SET telefon_ucznia = '" + telefon_ucznia + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen SET telefon_rodzica = '" + telefon_rodzica + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen SET uwagi = '" + uwagi + "' WHERE uczenID =  " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET klasaNR = " + klasaNR + " WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET imie = '" + imie + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET nazwisko = '" + nazwisko + "' WHERE uczenID= " + uczenID+ ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET pesel = '" + pesel + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET email = '" + email + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET telefon_ucznia = '" + telefon_ucznia + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET telefon_rodzica = '" + telefon_rodzica + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen SET uwagi = '" + uwagi + "' WHERE uczenID =  " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
                 return;
             }
             foreach (string element in elementy)
             {
                 switch (element)
                 {
-                    case "klasaNR":         SQLite.Zapytanie = "UPDATE uczen SET klasaNR = " + klasaNR + " WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "imie":            SQLite.Zapytanie = "UPDATE uczen SET imie = '" + imie + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "nazwisko":        SQLite.Zapytanie = "UPDATE uczen SET nazwisko = '" + nazwisko + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "pesel":           SQLite.Zapytanie = "UPDATE uczen SET pesel = '" + pesel + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "email":           SQLite.Zapytanie = "UPDATE uczen SET email = '" + email + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "telefon_ucznia":  SQLite.Zapytanie = "UPDATE uczen SET telefon_ucznia = '" + telefon_ucznia + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "telefon_rodzica": SQLite.Zapytanie = "UPDATE uczen SET telefon_rodzica = '" + telefon_rodzica + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "uwagi":           SQLite.Zapytanie = "UPDATE uczen SET uwagi = '" + uwagi + "' WHERE uczenID =  " + uczenID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "klasaNR":         SQLite.Zapytanie = "UPDATE uczen SET klasaNR = " + klasaNR + " WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "imie":            SQLite.Zapytanie = "UPDATE uczen SET imie = '" + imie + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "nazwisko":        SQLite.Zapytanie = "UPDATE uczen SET nazwisko = '" + nazwisko + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "pesel":           SQLite.Zapytanie = "UPDATE uczen SET pesel = '" + pesel + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "email":           SQLite.Zapytanie = "UPDATE uczen SET email = '" + email + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "telefon_ucznia":  SQLite.Zapytanie = "UPDATE uczen SET telefon_ucznia = '" + telefon_ucznia + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "telefon_rodzica": SQLite.Zapytanie = "UPDATE uczen SET telefon_rodzica = '" + telefon_rodzica + "' WHERE uczenID= " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "uwagi":           SQLite.Zapytanie = "UPDATE uczen SET uwagi = '" + uwagi + "' WHERE uczenID =  " + uczenID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
                     default: throw new Exception("niepoprawny parametr do aktualizacji danych");
                 }
             }
         }
 
-        protected override void wykonajZapytanie(rodzajZapytania rodzaj)
+        protected override void wykonajZapytanie(ERodzajZapytania rodzaj)
         {
-            if (rodzaj == rodzajZapytania.wyslij) SQLite.wykonajZapytanie(rodzaj);
+            if (rodzaj == ERodzajZapytania.wyslij) SQLite.wykonajZapytanie(rodzaj);
             else
             {
                 SQLite.otworzPolaczenie();
@@ -209,7 +209,7 @@ namespace Dziennik_nauczyciela_obiektowy
         public override bool usun()
         {
             SQLite.Zapytanie = "DELETE FROM uczen WHERE uczenID = " + uczenID + ";";
-            SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+            SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
             return true;
         }
 

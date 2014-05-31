@@ -11,7 +11,6 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dzi
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csproj.GenerateResource.Cache
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.exe
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.pdb
-M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csprojResolveAssemblyReference.cache
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fWalidacjaHasla.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fListaKlas.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fEdycjaNauczyciela.resources
@@ -23,3 +22,4 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dzi
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokPrzedmiotu.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokUcznia.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fEdycjaKlasy.resources
+M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csprojResolveAssemblyReference.cache

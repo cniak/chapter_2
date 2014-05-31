@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -30,7 +31,7 @@ namespace Dziennik_nauczyciela_obiektowy
 
         private void fStart_Load(object sender, EventArgs e)
         {
-            
+            //Debug.WriteLine("The product name is Field");
             listaNauczycieli = new ListaNauczycieli(this, this.dgv_listaNauczycieli);
             listaNauczycieli.Dgv.BackgroundColor = this.BackColor;
             listaNauczycieli.odswiezDGV(b_usun);

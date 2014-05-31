@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -109,7 +110,7 @@ namespace Dziennik_nauczyciela_obiektowy
                 }
                 catch
                 {
-                    MessageBox.Show(".");   
+                    //Debug.WriteLine("blad");
                 }
             }
         }

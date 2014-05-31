@@ -64,6 +64,11 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
         }
         private void b_dodaj_Click(object sender, EventArgs e)
         {
+            if ((Convert.ToInt32(t_rocznik1.Text) < 1970))
+            {
+                MessageBox.Show("podaj rocznik > 1969");
+                return;
+            }
             klasa k = new klasa
             {
                 Nazwa = t_nazwa.Text,
@@ -244,6 +249,6 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
             this.Hide();
             start.ShowDialog();
             this.Close();
-        }        
+        }
     }
 }

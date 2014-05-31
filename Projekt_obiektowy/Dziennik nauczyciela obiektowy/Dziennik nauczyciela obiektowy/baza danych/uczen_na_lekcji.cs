@@ -27,7 +27,7 @@ namespace Dziennik_nauczyciela_obiektowy
             this.lekcjaNR = lekcjaNR;
             SQLite = new cSQLite();
             SQLite.Zapytanie = "SELECT * FROM uczen_na_lekcji WHERE uczenNR = " + uczenNR + " AND lekcjaNR = " + lekcjaNR + ";";
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
 
@@ -39,7 +39,7 @@ namespace Dziennik_nauczyciela_obiektowy
             this.uczen_na_lekcjiID = uczen_na_lekcjiID;
             SQLite = new cSQLite();
             SQLite.Zapytanie = "SELECT * FROM uczen_na_lekcji WHERE uczen_na_lekcjiID = " + uczen_na_lekcjiID + ";";
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
 
@@ -113,7 +113,7 @@ namespace Dziennik_nauczyciela_obiektowy
             SQLite.dodajParametr("uczen", uczenNR);
             SQLite.dodajParametr("lekcja", lekcjaNR);
             SQLite.dodajParametr("obecnosc", obecnosc);
-            wykonajZapytanie(rodzajZapytania.wyslij);
+            wykonajZapytanie(ERodzajZapytania.wyslij);
             // jak juz jest dany uczen to mozna mu przypisac ID;
             uczen_na_lekcji unl = new uczen_na_lekcji(this.uczenNR, this.lekcjaNR);
             this.uczen_na_lekcjiID = unl.Uczen_na_lekcjiID;
@@ -124,23 +124,23 @@ namespace Dziennik_nauczyciela_obiektowy
             if (wylaczEdycje == true) throw new Exception("wlacz pierw edycje!");
             if ((elementy.Length == 1) && (elementy[0] == "*"))
             {
-                SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET ocena = '" + ocena + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
-                SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET obecnosc = '" + obecnosc + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET ocena = '" + ocena + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
+                SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET obecnosc = '" + obecnosc + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
                 return;
             }
             foreach (string element in elementy)
             {
                 switch(element){
-                    case "ocena": SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET ocena = '" + ocena + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
-                    case "obecnosc": SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET obecnosc = '" + obecnosc + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(rodzajZapytania.wyslij); break;
+                    case "ocena": SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET ocena = '" + ocena + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
+                    case "obecnosc": SQLite.Zapytanie = "UPDATE uczen_na_lekcji SET obecnosc = '" + obecnosc + "' WHERE uczen_na_lekcjiID= " + uczen_na_lekcjiID + ";"; SQLite.wykonajZapytanie(ERodzajZapytania.wyslij); break;
                     default: throw new Exception("niepoprawny parametr do aktualizacji danych");
                 }
             }
         }
 
-        protected override void wykonajZapytanie(rodzajZapytania rodzaj)
+        protected override void wykonajZapytanie(ERodzajZapytania rodzaj)
         {
-            if (rodzaj == rodzajZapytania.wyslij)
+            if (rodzaj == ERodzajZapytania.wyslij)
             {
                 SQLite.wykonajZapytanie(rodzaj);
             }

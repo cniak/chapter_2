@@ -13,7 +13,7 @@ namespace Dziennik_nauczyciela_obiektowy
     
         public abstract void dodajDoBazy();
         public abstract void aktualizuj(params string[] elementy);
-        protected abstract void wykonajZapytanie(rodzajZapytania rodzaj);
+        protected abstract void wykonajZapytanie(ERodzajZapytania rodzaj);
         public abstract bool usun();
         protected bool walidacjaMaila(string mail)
         {

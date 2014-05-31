@@ -23,7 +23,7 @@ namespace Dziennik_nauczyciela_obiektowy
             this.dataID = dataID;
             SQLite = new cSQLite();
             SQLite.Zapytanie = "SELECT * FROM data WHERE dataID = " + this.dataID + " ORDER BY dzien;";
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
 
@@ -39,7 +39,7 @@ namespace Dziennik_nauczyciela_obiektowy
             this.klasaNR = klasaNR;
             SQLite = new cSQLite();
             SQLite.Zapytanie = "SELECT * FROM data WHERE klasaNR = " + klasaNR + " AND dzien = '" + dataKolumny + "';";
-            wykonajZapytanie(rodzajZapytania.pobierz);
+            wykonajZapytanie(ERodzajZapytania.pobierz);
             wylaczEdycje = false;
         }
 
@@ -80,7 +80,7 @@ namespace Dziennik_nauczyciela_obiektowy
         public override void dodajDoBazy()
         {
             SQLite.Zapytanie = "INSERT INTO data(dzien, klasaNR) VALUES('" + dzien.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', " + this.klasaNR + ");";
-            SQLite.wykonajZapytanie(rodzajZapytania.wyslij);
+            SQLite.wykonajZapytanie(ERodzajZapytania.wyslij);
         }
 
         public override void aktualizuj(params string[] elementy)
@@ -89,9 +89,9 @@ namespace Dziennik_nauczyciela_obiektowy
             throw new NotImplementedException();
         }
 
-        protected override void wykonajZapytanie(rodzajZapytania rodzaj)
+        protected override void wykonajZapytanie(ERodzajZapytania rodzaj)
         {
-            if (rodzaj == rodzajZapytania.wyslij) SQLite.wykonajZapytanie(rodzaj);
+            if (rodzaj == ERodzajZapytania.wyslij) SQLite.wykonajZapytanie(rodzaj);
             else
             {
                 SQLite.otworzPolaczenie();

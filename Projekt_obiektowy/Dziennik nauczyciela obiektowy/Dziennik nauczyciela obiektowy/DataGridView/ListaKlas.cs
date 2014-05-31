@@ -30,7 +30,7 @@ namespace Dziennik_nauczyciela_obiektowy
             foreach (klasa k in zbior)
             {
                 DataGridViewRow row = (DataGridViewRow)dgv.RowTemplate.Clone();
-                row.CreateCells(dgv, k.KlasaID, k.Nazwa);
+                row.CreateCells(dgv, k.KlasaID, k.Nazwa + " (" + k.Rocznik + ")");
                 dgv.Rows.Add(row);
             }
             ustawCzyWidocznyDGV();
