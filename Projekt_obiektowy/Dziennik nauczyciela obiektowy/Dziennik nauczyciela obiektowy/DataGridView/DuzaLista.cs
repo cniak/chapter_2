@@ -64,7 +64,7 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             if (bw.IsBusy)
             {
-                MessageBox.Show("poczekaj na wczytanie kolejki, dopiero zmien");
+                //MessageBox.Show("poczekaj na wczytanie kolejki, dopiero zmien");
                 return;
             }
             usunWiersze();
@@ -76,7 +76,7 @@ namespace Dziennik_nauczyciela_obiektowy
             }
             else
             {
-                MessageBox.Show("poczekaj na wczytanie kolejki, dopiero zmien");
+                //MessageBox.Show("poczekaj na wczytanie kolejki, dopiero zmien");
             }
             kolorujKolumny();
         }

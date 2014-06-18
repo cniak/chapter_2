@@ -91,6 +91,15 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
             }
             l_nazwaKlasy.Text = zalogowanaKlasa.Nazwa;
             l_prowadzacy.Text = n.Imie + " " + n.Nazwisko;
+            List<uczen_na_lekcji> listaUczniowNaLekcji = uczen_na_lekcji.pobierzWszystkich(zalogowanaKlasa.KlasaID);
+            var query = listaUczniowNaLekcji.Where(c => c.Ocena > 0);
+            double suma = query.Sum(c=>c.Ocena);
+            double ilosc = query.Count();
+            if (ilosc == 0) l_sredniaOcenUczniow.Text = "brak ocen";
+            else l_sredniaOcenUczniow.Text = (Math.Round(suma / ilosc,2)).ToString();
+
+            
+            //MessageBox.Show("suma = " + query.Sum(c => c.Ocena).ToString() + " ilosc = " + query2.ToString());
         }
 
         private void klasaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +108,7 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
             edycjaKlas.ShowDialog();
             edycjaKlas.Hide();
             edycjaKlas.Close();
+            tworzPasekInformacji();
         }
 
         private void uczeńToolStripMenuItem_Click(object sender, EventArgs e)

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.bg_wczytajDaneIndywidualne = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.klasaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +43,6 @@
             this.l_gospodarz = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.l_sredniaOcenUczniow = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.l_sredniaFrekwencjaUczniow = new System.Windows.Forms.Label();
             this.b_dodajDzien = new System.Windows.Forms.Button();
             this.mc_kalendarz = new System.Windows.Forms.MonthCalendar();
             this.bg_wczytajPrzedmioty = new System.ComponentModel.BackgroundWorker();
@@ -81,11 +79,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cb_typWykresy = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.cb_zbiorWykresy = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cb_przedmiotWykresy = new System.Windows.Forms.ComboBox();
             this.b_pokaz = new System.Windows.Forms.Button();
-            this.cb_zbiorWykresy = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.Dziennik = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.l_miesiacDziennik = new System.Windows.Forms.Label();
@@ -166,18 +164,14 @@
             this.tableLayoutPanel1.Controls.Add(this.l_gospodarz, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.l_sredniaOcenUczniow, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.l_sredniaFrekwencjaUczniow, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(819, 47);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 241F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(194, 119);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(194, 82);
             this.tableLayoutPanel1.TabIndex = 26;
             // 
             // label1
@@ -252,24 +246,6 @@
             this.l_sredniaOcenUczniow.TabIndex = 30;
             this.l_sredniaOcenUczniow.Text = "[LICZBA]";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 74);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 39);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Średnia frekwencja uczniów:";
-            // 
-            // l_sredniaFrekwencjaUczniow
-            // 
-            this.l_sredniaFrekwencjaUczniow.AutoSize = true;
-            this.l_sredniaFrekwencjaUczniow.Location = new System.Drawing.Point(81, 74);
-            this.l_sredniaFrekwencjaUczniow.Name = "l_sredniaFrekwencjaUczniow";
-            this.l_sredniaFrekwencjaUczniow.Size = new System.Drawing.Size(50, 13);
-            this.l_sredniaFrekwencjaUczniow.TabIndex = 32;
-            this.l_sredniaFrekwencjaUczniow.Text = "[LICZBA]";
-            // 
             // b_dodajDzien
             // 
             this.b_dodajDzien.Location = new System.Drawing.Point(12, 198);
@@ -292,7 +268,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.b_dodajDzien);
             this.groupBox2.Controls.Add(this.mc_kalendarz);
-            this.groupBox2.Location = new System.Drawing.Point(819, 231);
+            this.groupBox2.Location = new System.Drawing.Point(819, 233);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(194, 238);
             this.groupBox2.TabIndex = 27;
@@ -613,8 +589,8 @@
             // 
             // chart_Wykresy
             // 
-            legend3.Name = "Legend1";
-            this.chart_Wykresy.Legends.Add(legend3);
+            legend2.Name = "Legend1";
+            this.chart_Wykresy.Legends.Add(legend2);
             this.chart_Wykresy.Location = new System.Drawing.Point(14, 62);
             this.chart_Wykresy.Name = "chart_Wykresy";
             this.chart_Wykresy.Size = new System.Drawing.Size(771, 365);
@@ -655,6 +631,30 @@
             this.label13.TabIndex = 14;
             this.label13.Text = "Typ:";
             // 
+            // cb_zbiorWykresy
+            // 
+            this.cb_zbiorWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_zbiorWykresy.FormattingEnabled = true;
+            this.cb_zbiorWykresy.Items.AddRange(new object[] {
+            "Klasa",
+            "Uczeń 1",
+            "Uczeń 2",
+            "Uczeń 3",
+            "Uczeń 4"});
+            this.cb_zbiorWykresy.Location = new System.Drawing.Point(428, 16);
+            this.cb_zbiorWykresy.Name = "cb_zbiorWykresy";
+            this.cb_zbiorWykresy.Size = new System.Drawing.Size(182, 21);
+            this.cb_zbiorWykresy.TabIndex = 11;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(388, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Uczen:";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -683,30 +683,6 @@
             this.b_pokaz.UseVisualStyleBackColor = true;
             this.b_pokaz.Click += new System.EventHandler(this.b_zapiszPDFWykresy_Click);
             // 
-            // cb_zbiorWykresy
-            // 
-            this.cb_zbiorWykresy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_zbiorWykresy.FormattingEnabled = true;
-            this.cb_zbiorWykresy.Items.AddRange(new object[] {
-            "Klasa",
-            "Uczeń 1",
-            "Uczeń 2",
-            "Uczeń 3",
-            "Uczeń 4"});
-            this.cb_zbiorWykresy.Location = new System.Drawing.Point(428, 16);
-            this.cb_zbiorWykresy.Name = "cb_zbiorWykresy";
-            this.cb_zbiorWykresy.Size = new System.Drawing.Size(182, 21);
-            this.cb_zbiorWykresy.TabIndex = 11;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(388, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Uczen:";
-            // 
             // Dziennik
             // 
             this.Dziennik.Controls.Add(this.groupBox3);
@@ -714,7 +690,7 @@
             this.Dziennik.Location = new System.Drawing.Point(4, 22);
             this.Dziennik.Name = "Dziennik";
             this.Dziennik.Padding = new System.Windows.Forms.Padding(3);
-            this.Dziennik.Size = new System.Drawing.Size(797, 446);
+            this.Dziennik.Size = new System.Drawing.Size(797, 448);
             this.Dziennik.TabIndex = 0;
             this.Dziennik.Text = "Dziennik";
             this.Dziennik.UseVisualStyleBackColor = true;
@@ -794,7 +770,7 @@
             this.dgv_dziennik.AllowUserToDeleteRows = false;
             this.dgv_dziennik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_dziennik.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_dziennik.Location = new System.Drawing.Point(3, 66);
+            this.dgv_dziennik.Location = new System.Drawing.Point(3, 68);
             this.dgv_dziennik.Name = "dgv_dziennik";
             this.dgv_dziennik.ReadOnly = true;
             this.dgv_dziennik.RowHeadersVisible = false;
@@ -811,7 +787,7 @@
             this.tabelaGlowna.Location = new System.Drawing.Point(0, 0);
             this.tabelaGlowna.Name = "tabelaGlowna";
             this.tabelaGlowna.SelectedIndex = 0;
-            this.tabelaGlowna.Size = new System.Drawing.Size(805, 472);
+            this.tabelaGlowna.Size = new System.Drawing.Size(805, 474);
             this.tabelaGlowna.TabIndex = 28;
             this.tabelaGlowna.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -841,7 +817,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 472);
+            this.ClientSize = new System.Drawing.Size(1025, 474);
             this.Controls.Add(this.b_wyloguj);
             this.Controls.Add(this.b_odswiezListe);
             this.Controls.Add(this.menuStrip1);
@@ -898,8 +874,6 @@
         private System.Windows.Forms.Label l_gospodarz;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label l_sredniaOcenUczniow;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label l_sredniaFrekwencjaUczniow;
         private System.Windows.Forms.Button b_dodajDzien;
         private System.Windows.Forms.MonthCalendar mc_kalendarz;
         private System.ComponentModel.BackgroundWorker bg_wczytajPrzedmioty;

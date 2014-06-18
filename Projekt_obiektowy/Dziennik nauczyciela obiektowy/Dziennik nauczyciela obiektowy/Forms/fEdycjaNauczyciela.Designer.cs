@@ -264,6 +264,7 @@
             this.Name = "fEdycjaNauczyciela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fEdycjaNauczyciela";
+            this.Load += new System.EventHandler(this.fEdycjaNauczyciela_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

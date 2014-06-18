@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Dziennik_nauczyciela_obiektowy
@@ -51,6 +52,12 @@ namespace Dziennik_nauczyciela_obiektowy
             }
             set
             {
+                string nowaNazwa = value;
+                Regex walidacjaNazwyKlasy = new Regex("([a-zA-Z0-9]){" + nowaNazwa.Length + "}");
+                if (!walidacjaNazwyKlasy.IsMatch(nowaNazwa))
+                {
+                    throw new Exception("Niedozwolone znaki w nazwie klasy");
+                }
                 nazwa = value;
                 if (!wylaczEdycje) aktualizuj("nazwa");
             }
@@ -87,6 +94,7 @@ namespace Dziennik_nauczyciela_obiektowy
             set
             {
                 gospodarzNR = value;
+                if (!wylaczEdycje) aktualizuj("gospodarzNR");
             }
         }
 

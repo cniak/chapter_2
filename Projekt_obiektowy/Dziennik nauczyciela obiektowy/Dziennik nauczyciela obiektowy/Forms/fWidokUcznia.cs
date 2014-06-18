@@ -48,13 +48,13 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
 
             t_usun.TextChanged += new System.EventHandler((s, e) =>
             {
-                b_usun1.Enabled = t_usun.TextLength != 0;
+                b_usun1.Enabled = (t_usun.TextLength != 0) && (listaUczniow.ZaznaczonyWiersz >= 0);
             });
         }
 
         private void obslugaPrzyciskuZapisz(object sender, EventArgs e)
         {
-            b_zapisz.Enabled = ((t_imie_edytuj.TextLength != 0) && (t_nazwisko_edytuj.TextLength != 0) && (t_pesel_edytuj.TextLength != 0));
+            b_zapisz.Enabled = ((t_imie_edytuj.TextLength != 0) && (t_nazwisko_edytuj.TextLength != 0) && (t_pesel_edytuj.TextLength != 0) && (listaUczniow.ZaznaczonyWiersz >= 0));
         }
         private void obslugaPrzyciskuDodaj(object sender, EventArgs e)
         {

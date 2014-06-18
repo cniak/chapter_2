@@ -249,12 +249,28 @@ namespace Dziennik_nauczyciela_obiektowy
 
         public bool podajHaslo()
         {
+            /*
             fWalidacjaHasla walidacjaHasla = new fWalidacjaHasla(haslo);
             walidacjaHasla.ShowDialog();
             if (walidacjaHasla.czyPoprawne == false)
             {
-                MessageBox.Show("zle haslo!");
+                if(walidacjaHasla.czyAnuluj == false)
+                    MessageBox.Show("zle haslo!");
             }
+            */
+            fWalidacjaHasla walidacjaHasla = null;
+            do
+            {
+                walidacjaHasla = new fWalidacjaHasla(haslo);
+                walidacjaHasla.ShowDialog();
+                if (walidacjaHasla.czyPoprawne == false)
+                {
+                    if (walidacjaHasla.czyAnuluj == false)
+                        MessageBox.Show("zle haslo!");
+                }
+
+            } while (walidacjaHasla.czyPoprawne == false && walidacjaHasla.czyAnuluj == false);
+
             return walidacjaHasla.czyPoprawne;
         }
         /// <summary>

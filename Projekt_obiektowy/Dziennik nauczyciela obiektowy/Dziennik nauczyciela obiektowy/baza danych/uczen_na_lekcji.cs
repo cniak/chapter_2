@@ -170,7 +170,14 @@ namespace Dziennik_nauczyciela_obiektowy
         {
             List<uczen_na_lekcji> listaUnl = new List<uczen_na_lekcji>();
             cSQLite SQLite = new cSQLite();
-            SQLite.Zapytanie = "SELECT * FROM uczen_na_lekcji WHERE uczenNR in (SELECT uczenNR FROM uczen WHERE klasaNR = " + klasaNR + ");";
+            //SQLite.Zapytanie = "SELECT * FROM uczen_na_lekcji WHERE uczenNR in (SELECT uczenNR FROM uczen WHERE klasaNR = " + klasaNR + ");";
+            SQLite.Zapytanie = "SELECT * " +
+                                       "FROM klasa AS k " +
+                                       "JOIN uczen AS u ON u.klasaNR = k.klasaID " +
+                                       "JOIN uczen_na_lekcji AS unl ON unl.uczenNR = u.uczenID " +
+                                       "WHERE k.klasaID = " + klasaNR + ";";
+
+
             SQLite.DataReader = SQLite.command.ExecuteReader();
             while (SQLite.DataReader.Read())
             {

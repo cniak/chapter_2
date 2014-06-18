@@ -13,6 +13,7 @@ namespace Dziennik_nauczyciela_obiektowy
     {
         string haslo = null;
         public bool czyPoprawne = false;
+        public bool czyAnuluj = false;
         public fWalidacjaHasla(string haslo)
         {
             this.haslo = haslo;
@@ -27,6 +28,18 @@ namespace Dziennik_nauczyciela_obiektowy
         private void b_polacz_Click(object sender, EventArgs e)
         {
             czyPoprawne = (t_haslo.Text == haslo);
+            this.Hide();
+            this.Close();
+        }
+
+        private void fWalidacjaHasla_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_anuluj_Click(object sender, EventArgs e)
+        {
+            czyAnuluj = true;
             this.Hide();
             this.Close();
         }

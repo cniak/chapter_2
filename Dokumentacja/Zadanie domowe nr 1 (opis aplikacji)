@@ -15,30 +15,28 @@ Nauczyciel
 
 Wymagania funkcjonalne:
 
-1.	Jako nauczyciel mam możliwość dodania klasy																[x]M
-2.	Jako nauczyciel mam możliwość edycji danych klasy														[x]M
-3.	Jako nauczyciel mam możliwość usunięcia klasy															[x]M
-4.	Jako nauczyciel mam możliwość dodania ucznia do klasy													[x]M
-5.	Jako nauczyciel mam możliwość edycji danych ucznia														[x]M
-6.	Jako nauczyciel mam możliwość usunięcia ucznia z klasy													[x]M
-7.	Jako nauczyciel mam możliwość dodania oceny uczniowi													[x]M
-8.	Jako nauczyciel mam możliwość edycji oceny ucznia														[x]M
-9.	Jako nauczyciel mam możliwość przeglądania ocen ucznia													[x]M
-10.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do ucznia										[1]M
-11.	Jako nauczyciel mam możliwość wysłania wiadomości e-mail do wszystkich uczniów klasy 					[1]M
-12.	Jako nauczyciel mam możliwość tworzenia pliku PDF														[ ]T
-13.	Jako nauczyciel mam możliwość zapisu pliku PDF na dysku 												[ ]T
-14.	Jako nauczyciel mam możliwość wysłania pliku PDF do ucznia (mail) 										[2]M
-15.	Jako nauczyciel mam możliwość dodawania uwag dotyczących ucznia 										[x]M
-16.	Jako nauczyciel mam możliwość przeglądania uwag ucznia 													[x]M
-17.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia  										[ ]T
-18.	Jako nauczyciel mam możliwość generowania wykresów ocen ucznia z wybranego przedmiotu					[ ]T
-19.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy 											[ ]T
-20.	Jako nauczyciel mam możliwość generowania wykresów ocen klasy z wybranego przedmiotu 					[ ]T
-21.	Jako nauczyciel mam możliwość generowania wykresów frekwencji ucznia 									[ ]T
-22.	Jako nauczyciel mam możliwość generowania wykresów frekwencji klasy										[ ]T
-23.	Jako nauczyciel mam możliwość przeglądania frekwencji ucznia w danym miesiącu							[x]M
-24.	Jako nauczyciel mam możliwość dodania nieobecności w wybranym dniu										[x]M
+1.  Jako użytkownik mam możliwość dodania konta
+2.  Jako użytkownik mam możliwość usunięcia konta
+3.  Jako nauczyciel mam możliwość edycji danych konta
+4.  Jako użytkownik mam możliwość logowania na konto
+5.  Jako nauczyciel mam możliwość dodania klasy
+6.  Jako nauczyciel mam możliwość usunięcia klasy
+7.  Jako nauczyciel mam możliwość edycji danych klasy
+8.  Jako nauczyciel mam możliwość logowania do wybranej klasy
+9.  Jako nauczyciel mam możliwość powiązania konta e-mail z serwerem gmail.com
+10. Jako nauczyciel mam możliwość dodania ucznia do klasy
+11. Jako nauczyciel mam możliwość edycji danych ucznia w klasie
+12. Jako nauczyciel mam możliwość usunięcia ucznia z klasy
+13. Jako nauczyciel mam możliwość dodania przedmiotu do klasy
+14. Jako nauczyciel mam możliwość edycji danych przedmiotu w klasie
+15. Jako nauczyciel mam możliwość usunięcia przedmiotu z klasy
+16. Jako nauczyciel mam możliwość dodania dni lekcyjnych w klasie
+17. Jako nauczyciel mam możliwość edycji ocen ucznia w klasie w danym dniu, z danego przedmiotu
+18. Jako nauczyciel mam możliwość edycji frekwencji ucznia w klasie w danym dniu, z danego przedmiotu
+19. Jako nauczyciel mam możliwość edycji uwag w klasie
+20. Jako nauczyciel mam możliwość generowania wykresu zmian średniej ocen ucznia z danego przedmiotu
+21. Jako nauczyciel mam możliwość generowania wykresu zmian frekwencji ucznia z danego przedmiotu
+
 
 Wymagania niefunkcjonalne:
 

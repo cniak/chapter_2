@@ -27,16 +27,24 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
         {
             try
             {
+                zalogowanaKlasa.Nazwa = t_nazwaKlasy.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                zalogowanaKlasa.Nazwa = t_nazwaKlasy.Text;
                 int gospodarzNR = Convert.ToInt32(cb_listaUczniow.SelectedValue.ToString());
                 zalogowanaKlasa.wylaczEdycje = false;
                 zalogowanaKlasa.aktualizuj("nazwa");
-                zalogowanaKlasa.Nazwa = t_nazwaKlasy.Text;
                 zalogowanaKlasa.GospodarzNR = gospodarzNR;
                 zalogowanaKlasa.wylaczEdycje = true;
             }
-            catch(Exception)
+            catch (Exception)
             {
-                MessageBox.Show("gospodarz nie zostal zmieniony (pusta wartosc)");
+                    MessageBox.Show("gospodarz nie zostal zmieniony (pusta wartosc)");
             }
         }
 

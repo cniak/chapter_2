@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Dziennik_nauczyciela_obiektowy
@@ -47,6 +48,17 @@ namespace Dziennik_nauczyciela_obiektowy
                 Haslo = t_haslo.Text,
                 ZalogowanyMail = 0
             };
+            if ((n.Login.Length < 5) || (n.Login.Length > 10))
+            {
+                MessageBox.Show("Login musi miec 5-10 znakow");
+                return;
+            }
+
+            if ((n.Haslo.Length < 5) || (n.Haslo.Length > 15))
+            {
+                MessageBox.Show("Haslo musi miec 5-15 znakow");
+                return;
+            }
             try
             {
                 n.dodajDoBazy();
@@ -54,7 +66,7 @@ namespace Dziennik_nauczyciela_obiektowy
             }
             catch (Exception)
             {
-                MessageBox.Show("Login musi byc unikalny");
+                MessageBox.Show("Nazwa uzytkownika jest juz uzywana");
             }
         }
 

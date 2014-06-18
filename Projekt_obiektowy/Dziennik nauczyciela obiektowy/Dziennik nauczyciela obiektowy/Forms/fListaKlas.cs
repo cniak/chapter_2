@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Dziennik_nauczyciela_obiektowy.Forms
@@ -69,14 +70,23 @@ namespace Dziennik_nauczyciela_obiektowy.Forms
                 MessageBox.Show("podaj rocznik > 1969");
                 return;
             }
-            klasa k = new klasa
+            try
             {
-                Nazwa = t_nazwa.Text,
-                NauczycielNR = this.zalogowanyNauczyciel.NauczycielID,
-                Rocznik = t_rocznik1.Text + @"/" + t_rocznik2.Text,
-                GospodarzNR = -1
-            };
-            k.dodajDoBazy();
+                klasa k = new klasa
+                {
+                    Nazwa = t_nazwa.Text,
+                    NauczycielNR = this.zalogowanyNauczyciel.NauczycielID,
+                    Rocznik = t_rocznik1.Text + @"/" + t_rocznik2.Text,
+                    GospodarzNR = -1
+                };
+                k.dodajDoBazy();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            //k.dodajDoBazy();
             t_nazwa.Text = t_rocznik1.Text = t_rocznik2.Text = string.Empty;
             listaKlas.odswiezDGV(b_usunKlase);
         }

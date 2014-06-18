@@ -31,6 +31,18 @@ namespace Dziennik_nauczyciela_obiektowy
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if ((t_login.Text.Length < 5) || (t_login.Text.Length > 10))
+            {
+                MessageBox.Show("Login musi miec 5-10 znakow");
+                return;
+            }
+
+            if ((t_hasloUzytkownika.Text.Length < 5) || (t_hasloUzytkownika.Text.Length > 15))
+            {
+                MessageBox.Show("Haslo musi miec 5-15 znakow");
+                return;
+            }
+            
             if (t_login.Text.Length != 0 && t_hasloUzytkownika.Text.Length != 0)
             {
                 zalogowanyNauczyciel.wylaczEdycje = true;
@@ -61,6 +73,12 @@ namespace Dziennik_nauczyciela_obiektowy
             {
                 MessageBox.Show("Login i haslo nie moga byc puste");
             }
+        }
+
+        private void fEdycjaNauczyciela_Load(object sender, EventArgs e)
+        {
+            t_hasloEmail.PasswordChar = '\u25CF';
+            t_hasloUzytkownika.PasswordChar = '\u25CF';
         }
     }
 }
