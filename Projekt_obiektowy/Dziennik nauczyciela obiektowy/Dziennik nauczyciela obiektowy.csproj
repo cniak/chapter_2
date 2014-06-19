@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dziennik_nauczyciela_obiektowy</RootNamespace>
+    <AssemblyName>Dziennik nauczyciela obiektowy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>teacher_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ImapX">
+      <HintPath>..\..\LABORATORIA\Projekt zespolowy\Projekt zespolowy\bin\Debug\ImapX.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Designer">
+      <HintPath>C:\Program Files\System.Data.SQLite\2010\bin\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.92.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\System.Data.SQLite\2010\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.92.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\System.Data.SQLite\2010\bin\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="baza danych\cSQLite.cs" />
+    <Compile Include="baza danych\bazadanych.cs" />
+    <Compile Include="baza danych\data.cs" />
+    <Compile Include="DataGridView\DuzaLista.cs" />
+    <Compile Include="DataGridView\DuzyDziennik.cs" />
+    <Compile Include="enum\ETypWykresu.cs" />
+    <Compile Include="Forms\fEdycjaKlasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fEdycjaKlasy.Designer.cs">
+      <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fEdycjaNauczyciela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fEdycjaNauczyciela.Designer.cs">
+      <DependentUpon>fEdycjaNauczyciela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fListaKlas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fListaKlas.Designer.cs">
+      <DependentUpon>fListaKlas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fStart.Designer.cs">
+      <DependentUpon>fStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="baza danych\nauczyciel.cs" />
+    <Compile Include="DataGridView\ListaNauczycieli.cs" />
+    <Compile Include="Forms\fWalidacjaHasla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWalidacjaHasla.Designer.cs">
+      <DependentUpon>fWalidacjaHasla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridView\Lista.cs" />
+    <Compile Include="baza danych\klasa.cs" />
+    <Compile Include="DataGridView\ListaKlas.cs" />
+    <Compile Include="Forms\fWidokKlasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokKlasy.Designer.cs">
+      <DependentUpon>fWidokKlasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fWidokPrzedmiotu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokPrzedmiotu.Designer.cs">
+      <DependentUpon>fWidokPrzedmiotu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fWidokUcznia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokUcznia.Designer.cs">
+      <DependentUpon>fWidokUcznia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\fWidokUczniaLubPrzedmiotu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\fWidokUczniaLubPrzedmiotu.Designer.cs">
+      <DependentUpon>fWidokUczniaLubPrzedmiotu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridView\ListaPrzedmiotow.cs" />
+    <Compile Include="DataGridView\ListaUczniow.cs" />
+    <Compile Include="DataGridView\ListaDat.cs" />
+    <Compile Include="baza danych\lekcja.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="enum\rodzajZapytania.cs" />
+    <Compile Include="baza danych\przedmiot.cs" />
+    <Compile Include="baza danych\uczen.cs" />
+    <Compile Include="baza danych\uczen_na_lekcji.cs" />
+    <Compile Include="enum\typDanych.cs" />
+    <Compile Include="Wykresy\Wykresy.cs" />
+    <EmbeddedResource Include="Forms\fEdycjaKlasy.resx">
+      <DependentUpon>fEdycjaKlasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fEdycjaNauczyciela.resx">
+      <DependentUpon>fEdycjaNauczyciela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fListaKlas.resx">
+      <DependentUpon>fListaKlas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fStart.resx">
+      <DependentUpon>fStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWalidacjaHasla.resx">
+      <DependentUpon>fWalidacjaHasla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokKlasy.resx">
+      <DependentUpon>fWidokKlasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokPrzedmiotu.resx">
+      <DependentUpon>fWidokPrzedmiotu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokUcznia.resx">
+      <DependentUpon>fWidokUcznia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\fWidokUczniaLubPrzedmiotu.resx">
+      <DependentUpon>fWidokUczniaLubPrzedmiotu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="diagram klas.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="baza danych\diagramERD bazy danych - takie jest w aplikacji.png" />
+    <Content Include="teacher_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
