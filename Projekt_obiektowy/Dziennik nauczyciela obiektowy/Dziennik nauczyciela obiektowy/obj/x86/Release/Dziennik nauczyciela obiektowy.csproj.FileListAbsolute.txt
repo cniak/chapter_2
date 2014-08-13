@@ -47,3 +47,27 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA OBIEKTOWY _DO
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA OBIEKTOWY _DO ODDANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokUczniaLubPrzedmiotu.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA OBIEKTOWY _DO ODDANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Properties.Resources.resources
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA OBIEKTOWY _DO ODDANIA\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csproj.GenerateResource.Cache
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.exe
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.pdb
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\Dziennik nauczyciela obiektowy.exe
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\Dziennik nauczyciela obiektowy.pdb
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\SQLite.Designer.dll
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.dll
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.Linq.dll
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\LinqBridge.dll
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\ImapX.pdb
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\SQLite.Designer.pdb
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.pdb
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\bin\x86\Release\System.Data.SQLite.Linq.pdb
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csprojResolveAssemblyReference.cache
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fEdycjaKlasy.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fEdycjaNauczyciela.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fListaKlas.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fStart.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.fWalidacjaHasla.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokKlasy.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokPrzedmiotu.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokUcznia.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Forms.fWidokUczniaLubPrzedmiotu.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik_nauczyciela_obiektowy.Properties.Resources.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt_obiektowy\Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy\obj\x86\Release\Dziennik nauczyciela obiektowy.csproj.GenerateResource.Cache
