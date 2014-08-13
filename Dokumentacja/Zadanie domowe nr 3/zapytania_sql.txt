@@ -68,7 +68,7 @@ FOREIGN KEY (dataID) REFERENCES data(dataID),
 PRIMARY KEY (klasaID,uczenID, przedmiotID, dataID)
 );
 
-
+--komentarz
 CREATE TABLE IF NOT EXISTS telefon (
 telefonID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 uczenNR INT,
