@@ -13,6 +13,7 @@ namespace Dziennik_nauczyciela_obiektowy
         [STAThread]
         static void Main()
         {
+            //dodalem komentarz
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new fStart());
