@@ -14,6 +14,7 @@ namespace Dziennik_nauczyciela_obiektowy
         static void Main()
         {
             //dodalem komentarz
+            //specjalnie nowy komentarz do nowego projektu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new fStart());
