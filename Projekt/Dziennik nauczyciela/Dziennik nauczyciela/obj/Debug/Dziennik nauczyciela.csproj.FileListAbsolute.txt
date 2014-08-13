@@ -15,3 +15,6 @@ M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauc
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\Debug\LinqBridge.dll
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\bin\Debug\ImapX.pdb
 M:\STUDIA 4 SEMESTR\INZYNIERIA OPROGRAMOWANIA\DZIENNIK NAUCZYCIELA\Dziennik nauczyciela\Dziennik nauczyciela\obj\Debug\Dziennik_nauczyciela.fEdycjaNauczyciela.resources
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt\Dziennik nauczyciela\Dziennik nauczyciela\bin\Debug\Dziennik nauczyciela.exe.config
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt\Dziennik nauczyciela\Dziennik nauczyciela\obj\Debug\Dziennik nauczyciela.exe
+C:\Users\Marek\Documents\GitHub\Dziennik-nauczyciela\Projekt\Dziennik nauczyciela\Dziennik nauczyciela\obj\Debug\Dziennik nauczyciela.pdb
