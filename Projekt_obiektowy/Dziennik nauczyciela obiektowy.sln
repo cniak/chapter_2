@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dziennik nauczyciela obiektowy", "Dziennik nauczyciela obiektowy\Dziennik nauczyciela obiektowy.csproj", "{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "instalacja", "instalacja\instalacja.isproj", "{659BF378-9521-41A5-8CA5-D11DB93AE0C8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B} = {6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		CD_ROM|x86 = CD_ROM|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		DVD-5|Any CPU = DVD-5|Any CPU
+		DVD-5|x86 = DVD-5|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+		SingleImage|Any CPU = SingleImage|Any CPU
+		SingleImage|x86 = SingleImage|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.CD_ROM|x86.ActiveCfg = Release|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.CD_ROM|x86.Build.0 = Release|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Debug|x86.ActiveCfg = Debug|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Debug|x86.Build.0 = Debug|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.DVD-5|x86.ActiveCfg = Debug|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.DVD-5|x86.Build.0 = Debug|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Release|x86.ActiveCfg = Release|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.Release|x86.Build.0 = Release|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.SingleImage|x86.ActiveCfg = Release|x86
+		{6DB02D37-6D37-4A0D-AF1B-6F21A6EB706B}.SingleImage|x86.Build.0 = Release|x86
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.CD_ROM|x86.ActiveCfg = CD_ROM
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.CD_ROM|x86.Build.0 = CD_ROM
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Debug|Any CPU.ActiveCfg = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Debug|Any CPU.Build.0 = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Debug|x86.ActiveCfg = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Debug|x86.Build.0 = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.DVD-5|Any CPU.Build.0 = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.DVD-5|x86.ActiveCfg = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.DVD-5|x86.Build.0 = DVD-5
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Release|Any CPU.ActiveCfg = SingleImage
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Release|Any CPU.Build.0 = SingleImage
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Release|x86.ActiveCfg = SingleImage
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.Release|x86.Build.0 = SingleImage
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.SingleImage|Any CPU.Build.0 = SingleImage
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.SingleImage|x86.ActiveCfg = SingleImage
+		{659BF378-9521-41A5-8CA5-D11DB93AE0C8}.SingleImage|x86.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
