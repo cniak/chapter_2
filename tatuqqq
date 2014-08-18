@@ -1,0 +1,564 @@
+[33mcommit 9df0fab8fa2fac88f59833a2b962f947293ddc8b[m
+Author: Marek Wozniak <marekwozniak1992@gmail.com>
+Date:   Sat Aug 16 17:58:32 2014 +0200
+
+    dodalem cos do asdf
+
+[33mcommit d216202ba1727f8da23d1a73954c1287367647f1[m
+Merge: ccabe51 2208895
+Author: Marek Wozniak <marekwozniak1992@gmail.com>
+Date:   Sat Aug 16 17:57:14 2014 +0200
+
+    Merge https://github.com/cniak/asdf
+
+[33mcommit ccabe512d9b70743d0d0049398312f276f802516[m
+Author: Marek Wozniak <marekwozniak1992@gmail.com>
+Date:   Sat Aug 16 17:14:44 2014 +0200
+
+    poczatkowy + ignorowany
+
+[33mcommit 690b18dc9fa970678aad430c08e4d2b6dc66614a[m
+Author: Marek Wozniak <marekwozniak1992@gmail.com>
+Date:   Sat Aug 16 16:32:44 2014 +0200
+
+    cos nowego dzisaij + cos jeszcze
+
+[33mcommit 1fdea5f8cd0326bf35c6ad00768d8531b4e0f029[m
+Author: Marek Wozniak <marekwozniak1992@gmail.com>
+Date:   Fri Aug 15 17:28:06 2014 +0200
+
+    initial commit + dodatkowe README + edycja newFil2
+
+[33mcommit 2208895c6ac08bbea4adaa7e2ef2c06987c4b50b[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:53:35 2014 +0200
+
+    asdf
+
+[33mcommit 42b79a4e0c9f55e610f14894b45ab32b4eee46dd[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:47:46 2014 +0200
+
+    uauniecie
+
+[33mcommit 863a90420703beaaa2dbd900e969e6fd7541b8b6[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:45:10 2014 +0200
+
+    teraz z buildem
+
+[33mcommit 63205dc916598c9c0823448f057fe497560c0523[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:43:49 2014 +0200
+
+    z buildem
+
+[33mcommit 7abc75bfdf834ea03242428cbcb58f5f7b5c782e[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:23:11 2014 +0200
+
+    dodalem komentarz do program.cs
+
+[33mcommit 081dcef3f63d327ebbf9eb83f645c490e352bab3[m
+Merge: 2652898 f7224d8
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:17:46 2014 +0200
+
+    Merge branch 'master' of https://github.com/thompkinss/Dziennik-nauczyciela
+    
+    Conflicts:
+    	Projekt/Dziennik nauczyciela/Dziennik nauczyciela/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+    	Projekt/Dziennik nauczyciela/Dziennik nauczyciela/obj/Debug/Dziennik nauczyciela.csproj.FileListAbsolute.txt
+
+[33mcommit 26528980ac25f75f2bf2f6635a64331d647f0a02[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:15:29 2014 +0200
+
+    fghjfgj
+
+[33mcommit c640488b6a8873c89774dcda5e12b8ef385a419f[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Aug 13 13:12:21 2014 +0200
+
+    caly plik ff
+
+[33mcommit f7224d8a573d1e765374061a95053c0ae3d619fa[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Fri Jun 20 10:02:48 2014 +0200
+
+    Zadanie domowe nr 7
+
+[33mcommit f893efe0d9b4d6db6082b9ce57cd98b174541d8d[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Thu Jun 19 17:37:36 2014 +0200
+
+    Update README.md
+
+[33mcommit e8020a5a45eb57e914681e1a89374d0b1bf05d2d[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu Jun 19 17:36:45 2014 +0200
+
+    usuniecie projektu (niepotrzebne)
+
+[33mcommit 297f877b1b1c367ad077eb57ee2f3839b2903afa[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu Jun 19 17:35:11 2014 +0200
+
+    instalacja + poprawa nazw w okienkach
+
+[33mcommit 95fd92dd7eb30468f410e9058fcc989a6a15081e[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Jun 18 21:22:57 2014 +0200
+
+    wszystko
+
+[33mcommit 961084a50395b8fed78d772a3c710c5bc4f70504[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Fri Jun 6 09:49:40 2014 +0200
+
+    Zadanie domowe nr 6
+
+[33mcommit c010935bc89c6342c96c6430e1d3f3fc6fdd9086[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Sat May 31 20:27:43 2014 +0200
+
+    99% zrobione - brakuje raportu
+
+[33mcommit ac07b883362707020ef025d77cbcd7e19d3060fc[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu May 29 14:56:54 2014 +0200
+
+    baardzo duzo zmian, 95% apki juz jest
+
+[33mcommit 88569950b62e42bb04f3c1b70418c699561eaea3[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Tue May 27 17:35:36 2014 +0200
+
+    bardzo duzo nowosci, pozostało:
+    - wysylanie maili
+    - tworzenie raportu -> zapisywanie do PDF
+    - ustawienie odpowiednich ograniczen na pola
+
+[33mcommit 40428fc4dd2b4499c780832da535088b3ad364e2[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri May 16 04:05:58 2014 +0200
+
+    90% funkcjonalnosci wczesniejszej (z nieobiektowego kodu) juz jest
+
+[33mcommit 603ef9986fe75e427e5554112c3cb409f20c6ab4[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed May 14 03:27:44 2014 +0200
+
+    no message
+
+[33mcommit 73be2f15f80482d3ba5ee20f2fddefd183ae706f[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed May 14 03:18:20 2014 +0200
+
+    no message
+
+[33mcommit fc55aa95aa938e7d948e4283e57d2b15b85e0d59[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed May 14 02:50:31 2014 +0200
+
+    no message
+
+[33mcommit c6b4cf4d0aaff6fdffa1823556f05fec72c56408[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed May 14 02:22:59 2014 +0200
+
+    projekt obiektowy + diagramy klas i sekwencji
+
+[33mcommit 5f09a78e32f2c45d34c9fb3f1a68d4676f2e3b26[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri May 9 00:28:17 2014 +0200
+
+    Edycja na fWidok, zakladka: Indywidualne
+    - fWidok: Load: dodalem funkcje do tworzenia listy Indywiduane - dodaje kolumny: nazwa przedmiotu, wszystkie daty + obecnosc/frekwencja
+    - fWidok: Load: dodalem funkcje do tworzenia listy przedmiotow - w liscie dodaje pokolei liste przedmiotow klasy
+    - reakcja na zmiane ucznia: wczytanie jego oceny
+    - mozliwosc zmiany oceny
+    - mozliwosc zapisania oceny
+    - mozliwosc odczytania oceny na podstawie: daty, wybranego ucznia, przedmiotu
+
+[33mcommit 4282e1369e3a306165787391726da9f10c0187bc[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Sun May 4 14:43:25 2014 +0200
+
+    - pogrubione daty, ktore juz sa dodane
+    - po kliknieciu przycisku dodaj date aktualizuje sie kalendarz, z datami ktore juz sa.
+
+[33mcommit 448af9f76ccd040aedbdc0457eacd2f98e3e8ee3[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Sun May 4 14:12:09 2014 +0200
+
+    wrzucilem costam
+
+[33mcommit 610f51aa44375140e076737b75c6e99bad27216a[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu May 1 19:34:37 2014 +0200
+
+    - kolorowanie dat, ktore juz sa w bazie danych, trzeba jeszcze tylko poprawic troche :-)!
+
+[33mcommit b9feef758d295fb78fff2e13a4f6e255581324f7[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu May 1 17:48:07 2014 +0200
+
+    - poprawne ladowanie danych do przedmiotow + polaczenie wykresy i dzienink (wybor przedmiotow), zmiana w jednym powoduje zmiane w drugim! :-)
+
+[33mcommit 052c9af308df7bf60da471e9a8f3fc8b1e6b6905[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu May 1 17:18:16 2014 +0200
+
+    - wczytywanie i ustawianie gospodarza
+    - odpowiedni wybor gospodarza podczas wczytywania comboBox w widoku fEdycjaKlasy
+    - po zamknieciu fEdycjaKlasy wczytuja sie na nowo informacje o klasie
+    - po zamknieciu fPrzedmiotyKlasy wczytuja sie na nowo comboBoxy dla typow: Przedmiot (dziennik i wykresy)
+
+[33mcommit f68d126b965549b0e7e3e47aa95e95bbaad8bc09[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu May 1 01:48:40 2014 +0200
+
+    poprawiona baza danych - unikalna data, klasa, a nie tylko data
+
+[33mcommit fef9fbbc238e45e8855d1b05986655f2ff9c7441[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu May 1 01:33:00 2014 +0200
+
+    - dodanie checkBoxa dla obecnosci, normalny box dla ocen (dziennik, fWidokKlasy)
+
+[33mcommit 577ca3ec966a15366e7c0ea3839d49ead91b8986[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu May 1 01:26:02 2014 +0200
+
+    - edycja ucznia
+    - wczytywanie listy przedmiotow
+    - wczytywanie listy uczniow + daty
+    - dodawanie daty
+    - wybieranie z daty wedlug dnia (ORDER BY dzien) - dzieki datetime :-)
+
+[33mcommit 39319c970faba61371ca49e9e00616ccbce8a27c[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Apr 30 18:57:07 2014 +0200
+
+    dziala edytowanie uzytkownika i jego zapis
+
+[33mcommit ddc978679a49fc32950ff0c0ebfbdb8382d7b341[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Wed Apr 23 12:58:37 2014 +0200
+
+    dzisiaj
+
+[33mcommit 0d569c145f400b66332594419bcd1542d410aea1[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Mon Apr 21 23:54:58 2014 +0200
+
+    zmiany glownie na przedmiocie i uczniu:
+    - poprawione wczytywanie listy przedimotow i uczniow ( wczesniej przy ladowaniu formy nie dzialalo, dodalem event: Form_load dla kazdego z dziedziczonych widokow);
+    - dodanie widoku ucznia
+    - mozliwosc dodawania ucznia
+    - mozliwosc usuwania ucznia
+    - mozliwosc edycji przedmiotu (poprawione)
+    - mozliwosc usuwania przedmiotu i ucznia (poprawione, ale jeszcze nie dziala jak nalezy - latwy blad, kiedys naprawie :-) )
+
+[33mcommit 0883a8f85a3420bbce838d7fda9a303270ba1161[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Sat Apr 19 18:51:35 2014 +0200
+
+    dodanie widokow: fWidokPrzedmiot, fWidokPrzedmiotLubUczen:
+    - widok dodawania przedmiotu fWidokPrzedmiot dziedziczy po wygladzie fWidokPrzedmiotLubUczen, ktory moze:
+      - edycja przedmiotu (w zakresie fWidokPrzedmiot)
+      - usuwanie przedmiotu (w zakresie fWidokPrzedmiotLubUczen - ta sama funkcja wykonywana w klasie bazowej usuwa zaznaczony element (uczen / przedmiot))
+      - dodawanie przedmiotu (w zakresie fWidokPrzedmiot)
+
+[33mcommit d12a27acfba5c62a6fe9f255e86d40c410b126b4[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Sat Apr 19 14:44:40 2014 +0200
+
+    wymuszenie imienia i nazwiska przy przejsciu do widoku wybranej klasy
+
+[33mcommit c23944fa0aec955392858059ee903f1f8dd6035b[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Sat Apr 19 13:59:19 2014 +0200
+
+    Praca nad uczniem i przedmiotem (wszystko w widokach: fWidokKlasy, fEdycjaKlasy, fDodajPrzedmiot, fUsuwaniePrzedmiotuLubUcznia)
+    - dodanie do bazy danych tabel: przedmiot, uczen;
+    - dodanie widoku przedmiot + pełna funkcjonalnosc
+    - dodanie usuwania przedmiotu + ucznia (wyswietlanie w tej samej formie: fUsuwaniePrzedmiotuLubUczina); (brak funkcjonalnosci usuwania, jest juz wczytywanie);
+
+[33mcommit dd0fe182895dc70d393e5c610cf3cb0c07b84ab2[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Sat Apr 19 11:28:21 2014 +0200
+
+    oj zmiany...zmiany:
+    - dodanie widoku klasy, widok: fWidokKlasy
+    - dodanie edycji klasy, widok: fEdycjaKlasy
+    - mozliwosc edycji klasy (przycisk zapisz zmiany), widok: fEdycjaKlasy
+    - ukrywanie kolumny ID, widok: fStart, fListaKlas
+
+[33mcommit 6b8a51813860de004b44ab1c968eb7356b7fc03a[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 17:08:05 2014 +0200
+
+    - teraz elegancko smiga powiazanie konta e-mail, wszystko wyłapane.
+
+[33mcommit 78ce7a66f8cccff3609f7220a6b71aed2962f243[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 16:42:45 2014 +0200
+
+    - naprawienie sprawdzania polaczenia z internetem, widok: fListaKlas
+
+[33mcommit 3f2f061d04a3fc34a8e8beb26ceb5030ed95b8a1[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 14:16:03 2014 +0200
+
+    no message
+
+[33mcommit b3cbca65ac3317d87e97e48c97f3628cff05aa53[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 13:58:21 2014 +0200
+
+    - poprawiona obsluga przycisku zaloguj do maila, widok: fListaKlas
+
+[33mcommit 2008a62a89fbe9929b0c0729a1988a859d6f29e9[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 13:53:07 2014 +0200
+
+    - dodanie sprawnego capslocka, widok: fStart, fListaKlas
+    - wyswietlanie rocznika w datagridview, widok: fListaKlas
+    - dopasowanie szerokosci kolumn w zaleznosci od wypelnionych danych w liscie klas (datagridview), widok: fListaKlas
+    - dynamiczna obsluga rocznika przy zmienianiu danych, widok: fListaKlas
+    - interakcja przycisku dodaj klase, widok: fListaKlas
+
+[33mcommit a91a09cdbce2ab9fe320960276c4ac6c8d3c6c85[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 12:48:36 2014 +0200
+
+    naprawilem cos tam
+
+[33mcommit 49ed605ea24a8184f9eb47e1799d806eaf244e8e[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 03:15:12 2014 +0200
+
+    - naprawa usuwania uzytkownika (podaj haslo uzytkownika)
+    - naprawa usuwania klasy (podaj haslo klasy)
+    - poprawione zapytania SQL (nie tworzy sie "kolejka")
+    - ogolne poprawienie usuwania (po operacji usuwania mozna wykonywac kolejne zapytania - wczesniej sie tutaj program zawieszal)
+
+[33mcommit 9b71cc81d7b1a75428231e22c25fc5e996817513[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 03:12:23 2014 +0200
+
+    usuniecie calej aplikacji (naprawa powaznego bledu)
+
+[33mcommit 7aff847f99430ab3c37afed0736e5b3659793753[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 18 01:40:56 2014 +0200
+
+    - usuwanie uzytkownika (podaj haslo uzytkownika)
+    - usuwanie klasy (podaj haslo klasy)
+
+[33mcommit 88f3c837be34c4ff00fda5688d6cbd3c5fc26317[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu Apr 17 23:05:16 2014 +0200
+
+    usuniecie starej apki
+
+[33mcommit f51224cb38dfc88bce8df4817931f8623d1e8d53[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu Apr 17 23:03:17 2014 +0200
+
+    usuniecie zlej apki
+
+[33mcommit 31dc1d2bff7dadf295a384c6abeaa187f6ddc4ac[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu Apr 17 23:00:05 2014 +0200
+
+    wrzucenie dobrej wersji
+
+[33mcommit ac61c860f22ec8d2357e95818a3bb4fcd4df0976[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Thu Apr 17 22:57:05 2014 +0200
+
+    usuneicie starej apki
+
+[33mcommit 92b626d09aee74026bf4d2216df6e436eb730131[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 11 23:59:54 2014 +0200
+
+    edycja kilku plikow
+
+[33mcommit e24e29c112d08381a48b22ea7627b9978b8dc713[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 11 23:58:08 2014 +0200
+
+    KOMENTARZ #1
+
+[33mcommit 0553ae311f08705f494e4deddbe8e7c57ee17a4a[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 11 23:53:56 2014 +0200
+
+    dodany komentarz
+
+[33mcommit 52c7ccf58d30b3dc85309af54dcb52df22d3d615[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 11 23:41:14 2014 +0200
+
+    usuniecie starej wersji
+
+[33mcommit d297bec5cf1949f68e696b8c4b2df9318c635020[m
+Author: Marek <marekwozniak1992@gmail.com>
+Date:   Fri Apr 11 23:39:51 2014 +0200
+
+    poprawiona baza danych
+
+[33mcommit 17a1e5b7ec5de0605a38d5b32ab62138675bf962[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Fri Apr 11 00:36:16 2014 +0200
+
+    zad.dom. nr 3
+
+[33mcommit 51fc75f2c31a991de3787cff31c9188de4274252[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:43:11 2014 +0200
+
+    poprawki
+
+[33mcommit 96b57f344f63237d664ecc4a2c33c34e1439654c[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:42:27 2014 +0200
+
+    poprawki
+
+[33mcommit db12412b0a1ec0dd3a8da70f0a5ec57567f944df[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:40:44 2014 +0200
+
+    porzadki
+
+[33mcommit 117a884260d4994a1b8ffa08483b56b54f96af6d[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:39:17 2014 +0200
+
+    porzadki
+
+[33mcommit 3aa0b480bcd10dd45e1613d6c61c32deea79550d[m
+Author: thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:34:46 2014 +0200
+
+    Delete Zadanie domowe nr 1 (widoki + wymagania).pdf
+
+[33mcommit 0e67f967cdc6b48fb00d95ae070fab87721fa4f2[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:13:51 2014 +0200
+
+    dodano plik
+
+[33mcommit 723ae0cf8d744c6f6abcee46fbd978f46db17e29[m
+Author: thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:11:04 2014 +0200
+
+    Delete Zadanie domowe nr 1 (widoki + wymagania).pdf
+
+[33mcommit 54e751d259d5d5ea2c94d74c2373b70b5977ea3f[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:09:06 2014 +0200
+
+    dodano plik
+
+[33mcommit d705368721f6e7e174e5891eb08841c3cb22ee08[m
+Author: Thompkinss <thompkinss@gmail.com>
+Date:   Tue Apr 1 19:03:37 2014 +0200
+
+    dodano:
+    Zadanie domowe nr 1 (widoki + wymagania).pdf
+
+[33mcommit 37049f85dacf1e1bf4c85d816b9e68cebfa0faa1[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Sat Mar 15 00:25:40 2014 +0100
+
+    Update Opis aplikacji
+
+[33mcommit e5b1fd91bfa1c8f1b3f404c2c8d5623e0f4bcd56[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Sat Mar 15 00:24:26 2014 +0100
+
+    Update Opis aplikacji
+
+[33mcommit 71526c2ea7fb739ae96404c6964bd98855964697[m
+Author: thompkinss <thompkinss@gmail.com>
+Date:   Fri Mar 14 23:34:21 2014 +0100
+
+    Delete aaaa
+
+[33mcommit f0e0e6ad3705e682db575686db674ab566cded0d[m
+Author: thompkinss <thompkinss@gmail.com>
+Date:   Fri Mar 14 23:29:06 2014 +0100
+
+    Rename Poprawiona wersja opisu to aaaa
+
+[33mcommit a11d754c4fc7fd83206df99334102074f1287445[m
+Author: thompkinss <thompkinss@gmail.com>
+Date:   Fri Mar 14 23:27:20 2014 +0100
+
+    Update Opis aplikacji
+
+[33mcommit c26e8da69218b4dfa46db2792b2c0806534b74d7[m
+Author: thompkinss <thompkinss@gmail.com>
+Date:   Fri Mar 14 23:26:40 2014 +0100
+
+    Update Opis aplikacji
+
+[33mcommit a89806243e0a72ae2853310e21ed4a403b110160[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Fri Mar 14 12:14:09 2014 +0100
+
+    Update Poprawiona wersja opisu
+
+[33mcommit bb5eff0ee65b0fb0ec41452fdb01084cb4085061[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Fri Mar 14 12:11:54 2014 +0100
+
+    Update Poprawiona wersja opisu
+
+[33mcommit 50be5e43d710d0070ca79704492ccb889cb739b1[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Fri Mar 14 11:46:35 2014 +0100
+
+    Create Poprawiona wersja opisu
+
+[33mcommit 5bb8b1cac4a111ed8262fee3edbb28d59999e727[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Fri Mar 14 11:40:44 2014 +0100
+
+    Update Opis aplikacji
+
+[33mcommit 4c801b1f386d4cff7807081936a690d103fcb726[m
+Author: cniak <marekwozniak1992@gmail.com>
+Date:   Fri Mar 14 02:38:32 2014 +0100
+
+    opis aplikacji
+
+[33mcommit 81b8f5b970a12bd0271274b0584a679726117a82[m
+Author: thompkinss <thompkinss@gmail.com>
+Date:   Fri Feb 28 02:48:23 2014 -0800
+
+    Initial commit
+
+[33mcommit ca82a6dff817ec66f44342007202690a93763949[m
+Author: Scott Chacon <schacon@gmail.com>
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the verison number
+
+[33mcommit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7[m
+Author: Scott Chacon <schacon@gmail.com>
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    removed unnecessary test code
+
+[33mcommit a11bef06a3f659402fe7563abf99ad00de2209e6[m
+Author: Scott Chacon <schacon@gmail.com>
+Date:   Sat Mar 15 10:31:28 2008 -0700
+
+    first commit
